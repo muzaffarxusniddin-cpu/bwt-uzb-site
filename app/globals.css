@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  /* BWT brand */
+  --primary:        #0057A8;
+  --primary-dark:   #00427e;
+  --secondary:      #00AEEF;
+  --accent:         #E30613;
+
+  --bg:             #F5F9FD;
+  --surface:        #ffffff;
+  --text:           #1a1a1a;
+  --text-muted:     #6b7280;
+  --border:         #e5e7eb;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Avoid iOS auto-zoom on focused inputs */
+input, select, textarea { font-size: 16px; }
+
+/* Smooth scroll for anchor links */
+html { scroll-behavior: smooth; }
