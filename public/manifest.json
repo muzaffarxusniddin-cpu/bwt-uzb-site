@@ -1,0 +1,28 @@
+{
+  "name": "BWT Uzbekistan",
+  "short_name": "BWT",
+  "description": "Официальный дистрибьютор BWT в Узбекистане — фильтры для воды",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/?source=pwa",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0057A8",
+  "orientation": "portrait-primary",
+  "lang": "ru",
+  "categories": ["shopping", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icons/bwt-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/bwt-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

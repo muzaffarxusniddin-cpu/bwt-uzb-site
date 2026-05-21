@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { BRAND } from "@/lib/config";
 import { Menu, X, Phone } from "lucide-react";
@@ -19,13 +20,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5">
-          <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg text-white font-bold text-sm shadow-sm"
-            style={{ background: "var(--primary)" }}>BWT</span>
-          <span className="hidden sm:block">
-            <div className="text-sm font-bold leading-tight">BWT Uzbekistan</div>
-            <div className="text-[11px] text-gray-500 leading-tight">{BRAND.tagline}</div>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/bwt-logo.svg"
+            alt="BWT Uzbekistan"
+            width={120}
+            height={41}
+            priority
+            unoptimized
+            style={{ height: "auto", objectFit: "contain" }}
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">

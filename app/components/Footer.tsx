@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BRAND } from "@/lib/config";
 import { Phone, Mail, MapPin, Camera, Send } from "lucide-react";
 
@@ -8,9 +9,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-white text-[color:var(--primary)] font-bold text-sm">BWT</span>
-            <span className="font-bold">BWT Uzbekistan</span>
+          <div className="mb-3">
+            <Image
+              src="/images/bwt-logo.svg"
+              alt="BWT Uzbekistan"
+              width={110}
+              height={38}
+              unoptimized
+              style={{ height: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
+            />
           </div>
           <p className="text-sm text-blue-100 leading-relaxed">
             Официальный дистрибьютор BWT в Узбекистане. Чистая вода для дома, офиса и производства.

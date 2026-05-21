@@ -8,13 +8,19 @@ export const metadata: Metadata = {
   title:        `${BRAND.name} — фильтры воды европейского производства`,
   description:  "Официальный дистрибьютор BWT в Узбекистане. Фильтры, умягчители, обратный осмос. Установка и сервис.",
   applicationName: BRAND.name,
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon:        [{ url: "/icons/bwt-192.png", sizes: "192x192", type: "image/png" }],
+    apple:       [{ url: "/icons/bwt-192.png", sizes: "192x192", type: "image/png" }],
+    shortcut:    "/icons/bwt-192.png",
+  },
+  manifest: "/manifest.json",
   openGraph: {
     title:       `${BRAND.name} — чистая вода для вашего дома`,
     description: "Фильтры BWT европейского производства Германии. Установка за 1 час. Гарантия 3 года.",
     locale:      "ru_UZ",
     siteName:    BRAND.name,
     type:        "website",
+    images:      [{ url: "/images/bwt-logo-1200w.png", width: 1200, alt: "BWT Uzbekistan" }],
   },
 };
 
