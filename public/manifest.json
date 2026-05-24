@@ -7,7 +7,7 @@
   "id": "/?source=pwa",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#0057A8",
+  "theme_color": "#0A1628",
   "orientation": "portrait-primary",
   "lang": "ru",
   "categories": ["shopping", "lifestyle"],

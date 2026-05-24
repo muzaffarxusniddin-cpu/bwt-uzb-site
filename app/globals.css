@@ -1,28 +1,149 @@
 @import "tailwindcss";
 
-:root {
-  /* BWT brand */
-  --primary:        #0057A8;
-  --primary-dark:   #00427e;
-  --secondary:      #00AEEF;
-  --accent:         #E30613;
+/* ─────────────────────────────────────────────────────────────────────────
+   BWT Uzbekistan — premium design tokens (Midnight Navy + Champagne Gold).
+   Registered via Tailwind v4 @theme so utilities are generated:
+   bg-bwt-navy, text-bwt-gold, border-bwt-silver, font-serif, rounded-btn,
+   shadow-card, etc.
+   ───────────────────────────────────────────────────────────────────────── */
+@theme {
+  --color-bwt-navy: #0a1628;
+  --color-bwt-navy-light: #1b2942;
+  --color-bwt-navy-dark: #050b17;
 
-  --bg:             #F5F9FD;
-  --surface:        #ffffff;
-  --text:           #1a1a1a;
-  --text-muted:     #6b7280;
-  --border:         #e5e7eb;
+  --color-bwt-gold: #c9a961;
+  --color-bwt-gold-light: #d9bc78;
+  --color-bwt-gold-dark: #a88a48;
+
+  --color-bwt-aqua: #4dd0e1;
+  --color-bwt-aqua-soft: #b2ebf2;
+
+  --color-bwt-ivory: #fafaf7;
+  --color-bwt-cream: #f5f2eb;
+  --color-bwt-charcoal: #1a1a1a;
+  --color-bwt-graphite: #6b6b6b;
+  --color-bwt-silver: #d4d4d4;
+
+  --color-bwt-success: #2d7a4f;
+  --color-bwt-danger: #b8473a;
+
+  /* Fonts — wired to the next/font CSS variables set in layout.tsx */
+  --font-serif: var(--font-playfair), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --radius-btn: 4px;
+  --radius-card: 12px;
+  --radius-img: 8px;
+
+  --shadow-soft: 0 1px 3px rgba(10, 22, 40, 0.06);
+  --shadow-card: 0 10px 30px rgba(10, 22, 40, 0.08);
+  --shadow-modal: 0 40px 60px rgba(10, 22, 40, 0.15);
 }
 
-html, body {
+/* Legacy palette — kept so pages not yet migrated to the new design system
+   (catalog, about, services, contacts, request) keep rendering correctly. */
+:root {
+  --primary: #0057a8;
+  --primary-dark: #00427e;
+  --secondary: #00aeef;
+  --accent: #e30613;
+  --bg: #f5f9fd;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+html,
+body {
   background: var(--bg);
   color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 /* Avoid iOS auto-zoom on focused inputs */
-input, select, textarea { font-size: 16px; }
+input,
+select,
+textarea {
+  font-size: 16px;
+}
 
-/* Smooth scroll for anchor links */
-html { scroll-behavior: smooth; }
+/* ── Lenis smooth scroll (JS-driven; native scroll-behavior must stay auto) ── */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ── Hero ambient motion ── */
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(24px, -32px, 0);
+  }
+}
+@keyframes hero-float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-28px, 22px, 0);
+  }
+}
+.hero-float {
+  animation: hero-float 16s ease-in-out infinite;
+}
+.hero-float-slow {
+  animation: hero-float-slow 22s ease-in-out infinite;
+}
+
+@keyframes hero-scroll-cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+  }
+  35% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+  65% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0;
+  }
+}
+.hero-scroll-cue {
+  animation: hero-scroll-cue 2.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-float,
+  .hero-float-slow,
+  .hero-scroll-cue {
+    animation: none;
+  }
+}

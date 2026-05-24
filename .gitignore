@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
+
+# Source assets & extraction byproducts (not used by the deployed app)
+*.zip
+/scripts/source/
+/public/images/extracted/
+/public/images/brand_assets/
+/public/images/reference_full_pages/
+/public/images/content/

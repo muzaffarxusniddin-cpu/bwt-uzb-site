@@ -17,8 +17,23 @@ export const BRAND = {
   telegramHandle: "@bwt_uzb",
   instagram:   "https://www.instagram.com/bwt_uzb/",
   instagramHandle: "@bwt_uzb",
-  address:     "г. Ташкент, Юнусабадский р-н, ул. Хушнаво, 4 проезд, д. 2",
-  addressShort:"Ташкент, Юнусабадский р-н",
-  workingHours:"Пн–Сб 9:00–18:00",
-  maps:        "https://maps.google.com/?q=" + encodeURIComponent("BWT Uzbekistan, Tashkent"),
+  address: {
+    ru: "г. Ташкент, Юнусабадский р-н, ул. Хушнаво, 4 проезд, д. 2",
+    uz: "Toshkent sh., Yunusobod tumani, Xushnavo ko'chasi, 4-tor ko'cha, 2-uy",
+  },
+  addressShort:{ ru: "Ташкент, Юнусабадский район", uz: "Toshkent, Yunusobod tumani" },
+  workingHours: {
+    ru: { weekdays: "Понедельник — Суббота: 9:00 – 18:00", sunday: "Воскресенье — выходной" },
+    uz: { weekdays: "Dushanba — Shanba: 9:00 – 18:00", sunday: "Yakshanba — dam olish kuni" },
+  },
+  // Office geo (Yunusabad district, Tashkent) — finalized in v6 Q4.
+  geo: {
+    lat: 41.332167,
+    lng: 69.293616,
+    yandexEmbed:
+      "https://yandex.com/map-widget/v1/?ll=69.293616%2C41.332167&z=17&l=map&pt=69.293616,41.332167,pm2rdm",
+    yandexLink:
+      "https://yandex.ru/maps/?text=41.332167,69.293616&si=rf8498gg7xch67quycx6y8gyyw",
+    googleLink: "https://maps.app.goo.gl/hhk9mys97tKhUi638",
+  },
 } as const;

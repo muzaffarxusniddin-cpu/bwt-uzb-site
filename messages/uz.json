@@ -1,0 +1,305 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "catalog": "Katalog",
+    "services": "Xizmatlar",
+    "about": "Biz haqimizda",
+    "contacts": "Aloqa",
+    "request": "Ariza"
+  },
+  "hero": {
+    "eyebrow": "Best Water Technology",
+    "title": "Suv sifati. Hayot sifati.",
+    "subtitleRu": "Качество воды. Качество жизни.",
+    "body": "Uy uchun Germaniya muhandisligi, har tomchining sifati muhim.",
+    "scroll": "Pastga"
+  },
+  "hiddenThreat": {
+    "eyebrow": "Yashirin tarkib",
+    "title": "Siz O'zbekiston suvi stakanida ko'rmaydigan narsalar",
+    "imageLabel": "Makro suratga olish",
+    "intro": "Suvning tiniqligi uning tarkibi haqida hech narsa aytmaydi. Toza ko'rinadigan narsa O'zbekistonda ko'pincha quyidagilarni o'z ichiga oladi:",
+    "bullets": [
+      { "label": "Qattiqlik 12+", "text": "quyqa, oq dog'lar, teri quruqligi" },
+      { "label": "Xlor va xloratlar", "text": "jo'mrakdan hid va ta'm" },
+      { "label": "Og'ir metallar", "text": "rangsiz, ta'msiz va hidsiz" },
+      { "label": "Mikroplastik", "text": "har litrda zarrachalar" }
+    ],
+    "closer": "Shisha suv — yechim emas. Plastikda mikroplastik bor, va u sog'liq uchun eng xavfli suvlardan biri hisoblanadi."
+  },
+  "painPoints": {
+    "eyebrow": "Oqibatlar",
+    "title": "Bu suv allaqachon sizga qarshi ishlamoqda",
+    "subtitle": "Oddiy bir stakan suv hayotning 6 sohasiga ta'sir qiladi — ular haqida odatda hech kim o'ylamaydi.",
+    "cards": [
+      { "title": "Bolalar terisi", "text": "Cho'milgandan keyin quruqlik va tirnash" },
+      { "title": "Sochlar", "text": "Qattiq suvdan xira va mo'rt bo'ladi" },
+      { "title": "Texnika", "text": "Quyqa kir yuvish mashinalari va boylerlarni ishdan chiqaradi" },
+      { "title": "Taom ta'mi", "text": "Xlor va tuzlar choy, qahva va taom ta'mini o'zgartiradi" },
+      { "title": "Oilaning salomatligi", "text": "Har bir avlod salomatligi uchun tinchlik" },
+      { "title": "Vaqt va pul", "text": "Shishalar, ta'mirlash, quyqaga qarshi vositalar — har oy" }
+    ],
+    "closer": "Filtrsiz har bir kun — sizga pul va salomatlik turadigan qaror.",
+    "accentTitle": "BWT distillyator emas",
+    "accentBody": "Aksariyat filtrlar tuzlar bilan birga butun mineral tarkibni ham olib tashlaydi. BWT foydalini saqlaydi, zararlini yo'qotadi."
+  },
+  "slimReveal": {
+    "eyebrow": "Yechim",
+    "title": "Germaniya muhandisligi o'zbek uyi uchun",
+    "facts": [
+      { "stat": "35+", "unit": "yil", "text": "1990-yildan beri bozorda Germaniya muhandisligi" },
+      { "stat": "90+", "unit": "mamlakat", "text": "Yevropadan Osiyogacha" },
+      { "stat": "5★", "unit": "daraja", "text": "Premium mehmonxona va rezidensiyalar tanlovi" }
+    ],
+    "body": "BWT Slim — flagman liniya. UF-membrana 0.01 μm, faol ko'mirli kartrij, ion almashinish yumshatish va BWT Magnesium minerallashtirish. Suvni o'ldirmaydi — uning tabiiy foydali tarkibini saqlaydi.",
+    "cta": "Texnologiyani o'rganish"
+  },
+  "technology": {
+    "eyebrow": "Texnologiya",
+    "title": "Quvur va stakaningiz orasidagi olti bosqich",
+    "waterIn": "Jo'mrak suvi",
+    "waterOut": "Premium suv",
+    "stepLabel": "Bosqich",
+    "stages": [
+      { "short": "Mexanika", "title": "Mexanik tozalash", "text": "Eski quvurlardan keladigan zang, qum va yirik zarrachalarni ushlab qoladi." },
+      { "short": "Ko'mir", "title": "Faol ko'mir filtri", "text": "Aktivlashtirilgan ko'mir xlorni, hidni va ta'mni yo'qotadi." },
+      { "short": "Yumshatish", "title": "Ion almashinish bilan yumshatish", "text": "Alohida smolali kartrij qattiqlik tuzlarini ajratib oladi. Teri, soch va texnikani cho'kmadan himoya qiladi.", "badge": "Slim 3 va Slim 4 da" },
+      { "short": "Membrana", "title": "Ultrafiltratsiya membranasi (UF)", "text": "0.01 mikrongacha tozalash. Bakteriyalar, sistalar va mikroplastikni ushlab qoladi. Barcha Slim modellarida bor." },
+      { "short": "Magniy", "title": "BWT Magnesium Mineralized Water", "text": "Patentlangan BWT-texnologiya — suvni magniy bilan boyitadi. Filtr suvni deminerallashtirmaydi: tabiiy foydali tarkibni saqlab, ustiga magniy qo'shadi.", "badge": "Faqat Slim 4 da" },
+      { "short": "Ta'm", "title": "Yakuniy sayqal", "text": "Post-filtr suv ta'mini premium-mineral suv darajasiga olib chiqadi." }
+    ],
+    "closer": "BWT foydalini saqlaydi, zararlini yo'qotadi."
+  },
+  "lifestyle": {
+    "eyebrow": "Kundalik o'zgarishlar",
+    "title": "Bir kunlik o'rnatish. Umrlik o'zgarish.",
+    "cards": [
+      { "title": "Ertalab", "text": "Bir stakan toza suv — kunning eng yaxshi boshlanishi" },
+      { "title": "Mehmonlar uchun choy va qahva", "text": "Xlor va quyqasiz ochilgan ta'm" },
+      { "title": "Ovqat tayyorlash", "text": "Sho'rva, bo'tqa va xamir toza suvda" },
+      { "title": "Bolalar", "text": "Chaqaloqlar uchun xavfsiz cho'milish va ichish" },
+      { "title": "Sifat nazorati", "text": "Har bir bosqichda suv tarkibining laboratoriya tekshiruvi" },
+      { "title": "Texnika", "text": "Choynak va qahva mashinasi quyqasiz" }
+    ]
+  },
+  "lineup": {
+    "eyebrow": "Tizimni tanlash",
+    "title": "Uyingiz uchun BWT Slim tanlang",
+    "popular": "★ Mashhur",
+    "learnPrice": "Narxni bilish",
+    "tiers": [
+      { "tagline": "To'liq xavfsizlik", "features": ["UF-membrana 0.01 μm", "Faol ko'mirli kartrij", "Toza ichimlik suv"] },
+      { "tagline": "Cho'kmadan himoya", "features": ["UF-membrana 0.01 μm", "Faol ko'mirli kartrij", "Ion almashinish yumshatish", "Teri, soch va texnikani himoya qiladi"] },
+      { "tagline": "Minerallar bilan boyitish", "features": ["UF-membrana 0.01 μm", "Ko'mir + yumshatish", "BWT Magnesium minerallashtirish", "Suvning tabiiy tarkibini saqlaydi"] }
+    ],
+    "calcTitle": "Qaysi biri kerakligini bilmayapsizmi?",
+    "calcSubtitle": "60 soniyada tanlash kalkulyatori",
+    "stepOf": "{total} dan {step}-qadam",
+    "steps": [
+      { "q": "Uyingiz qaerda joylashgan?", "options": ["Toshkent", "Samarqand / Buxoro", "Farg'ona / Andijon / Namangan", "Urganch / Nukus", "Boshqa viloyat"] },
+      { "q": "Suv qayerdan keladi?", "options": ["Shahar suv tarmog'i", "Quduq", "Aralash", "Bilmayman"] }
+    ],
+    "needsTitle": "Siz uchun nima muhimroq?",
+    "needsHint": "Bir nechtasini tanlash mumkin",
+    "needs": ["Texnikadagi cho'kma", "Teri va sochlar", "Bolalar uchun toza ichimlik", "Choy va kofening premium ta'mi", "Oilaning katta avlodi salomatligi", "Bilmayman — barcha variantlarni ko'rsating"],
+    "back": "Orqaga",
+    "pickSystem": "Tizimni tanlash",
+    "resultEyebrow": "Sizning tizimingiz",
+    "resultTagline": "javoblaringizga eng mos.",
+    "analysisCta": "Mening sharoitimga hisob olish",
+    "altLabel": "Alternativalar",
+    "reset": "Qaytadan o'tish"
+  },
+  "service": {
+    "eyebrow": "Servis",
+    "title": "Bir marta sotib olasiz — o'n yil tashvishlanmaysiz",
+    "items": [
+      { "title": "O'rnatish", "text": "90 daqiqada. Sertifikatlangan BWT muhandisi — kir va tashvishsiz." },
+      { "title": "Kafolat", "text": "Uskuna va o'rnatishga 3 yil. Yevropa sifat standartlari." },
+      { "title": "Servis", "text": "Har 6 oyda kartridj almashtirish. Eslatamiz va o'zimiz kelamiz." },
+      { "title": "Qo'llab-quvvatlash", "text": "Telegram va WhatsAppda. Tez va aniq javob beramiz." }
+    ],
+    "closer": "Butun O'zbekiston bo'ylab chiqamiz"
+  },
+  "residences": {
+    "eyebrow": "O'zbekistonda o'rnatilgan",
+    "countSuffix": "butun mamlakat bo'ylab premium obyekt",
+    "listTitle": "BWT o'rnatilgan premium TJlar",
+    "homes": "+ butun O'zbekiston bo'ylab 100 xususiy uy"
+  },
+  "finalCta": {
+    "title": "Uyingiz suvi tarkibini biling. Bepul. 24 soatda.",
+    "subtitle": "Jo'mragingizdan laboratoriya tahlili. Olib kelamiz, olib ketamiz va natijalarni Telegramda yuboramiz.",
+    "namePlaceholder": "Ism *",
+    "phonePlaceholder": "+998 __ ___-__-__ *",
+    "methods": ["Telegram", "WhatsApp", "Qo'ng'iroq"],
+    "submit": "Bepul tahlilni olish",
+    "reassurance": "Sotuv uchun qo'ng'iroqlar yo'q. Faqat tahlil natijalari.",
+    "successTitle": "Ariza qabul qilindi",
+    "successText": "Bir soat ichida bog'lanamiz va tashrif vaqtini kelishamiz.",
+    "error": "Ism va telefonni kiriting"
+  },
+  "buttons": {
+    "selectSystem": "Tizimni tanlash",
+    "freeAnalysis": "Bepul tahlil",
+    "learnPrice": "Narxni bilish",
+    "getQuote": "Hisobni olish",
+    "submitRequest": "Ariza qoldirish"
+  },
+  "form": {
+    "name": "Ism",
+    "phone": "Telefon",
+    "region": "Hudud"
+  },
+  "catalogPage": {
+    "eyebrow": "Katalog",
+    "title": "BWT Katalog",
+    "subtitle": "Rakovina ostidagi ichimlik tizimlari va butun uy uchun filtrlar. Ixcham Slim 2 dan sanoat yechimlarigacha.",
+    "searchPlaceholder": "Katalogdan qidirish…",
+    "all": "Barchasi",
+    "notFound": "Hech narsa topilmadi. Filtrlarni tozalang.",
+    "priceFrom": "Narxi",
+    "details": "Batafsil"
+  },
+  "productPage": {
+    "back": "Katalogga",
+    "price": "Narx",
+    "inStock": "Mavjud",
+    "onOrder": "Buyurtma bo'yicha",
+    "orderInstall": "O'rnatishga buyurtma",
+    "consultation": "Konsultatsiya",
+    "cartridges": "Almashtiriladigan kartridjlar",
+    "replaceEvery": "Har {months} oyda almashtirish · {qty} dona",
+    "ctaTitle": "Bu filtr qiziqtirdimi?",
+    "ctaText": "Ariza qoldiring — konfiguratsiyani tanlaymiz va o'rnatishni kelishamiz.",
+    "ctaButton": "Ariza qoldirish"
+  },
+  "about": {
+    "heroEyebrow": "Kompaniya haqida",
+    "heroTitle": "BWT — Best Water Technology",
+    "heroSubtitle": "1990 yildan beri suv texnologiyalarida Yevropa yetakchisi. Ildizlari — 1823 yildagi Germaniya kimyo an'anasida.",
+    "heroTagline": "For You and Planet Blue — siz va sayyoramiz uchun.",
+    "storyEyebrow": "Brend merosi",
+    "story": [
+      {
+        "title": "1823 yilgi Pforzxaymdan",
+        "body": "1823 yilda Yohann Adam Benkizer Germaniyaning Pforzxaym shahrida kichik kimyo fabrikasini ochdi. Bu muhandislik maktabidan o'sib chiqgan sifat an'anasi 167 yildan keyin, 1990 yilda, BWT — Best Water Technology bo'lib qayta tug'ildi. Bugun BWT — Yevropaning suv texnologiyalari yetakchisi, 90+ davlatda mavjud, 6500+ xodim."
+      },
+      {
+        "title": "Har bir tomchida Germaniya muhandisligi",
+        "body": "Germaniyadagi laboratoriya va ishlab chiqarish markazlari — Pforzxaym, Shtuttgartda — patentlangan Mg2+ Magnesium minerallashtirish, nanokristal AQA total cho'kmadan himoya texnologiyasi va 0.01 mikrongacha ultrafiltratsiya bo'yicha jahon standartlarini belgilaydi. O'zbekistonga BWT sifatini yo'qotmasdan keladi — har qanday Yevropa poytaxtidagidek o'sha Germaniya muhandislik merosi."
+      },
+      {
+        "title": "BWT O'zbekistonda",
+        "body": "2016-yildan beri O'zbekistonda BWT'ni eksklyuziv ravishda taqdim etamiz. Premium turar joy majmualari, xususiy uylar va tijorat obyektlarida 300+ o'rnatilishlar. Mamlakatning barcha viloyatlarida sertifikatlangan xizmat. Har bir tizim — bu shunchaki filtr emas, bu uyingizdagi Germaniya muhandislik yechimi."
+      }
+    ],
+    "trustEyebrow": "Ishonch va kafolat",
+    "trustTitle": "Nega bizga ishonadilar",
+    "trust": [
+      { "stat": "1823", "label": "Meros tug'ilgan yil — Pforzxaym, Germaniya" },
+      { "stat": "35+", "label": "BWT 1990 yilda tashkil etilgandan beri yil" },
+      { "stat": "90+", "label": "davlat mavjudligi" },
+      { "stat": "6500+", "label": "xodimlar butun dunyoda" },
+      { "stat": "300+", "label": "O'zbekistonda o'rnatilgan obyektlar" },
+      { "stat": "Made in", "label": "Germany — Germaniya muhandisligi" }
+    ],
+    "certsTitle": "Sertifikatlar va standartlar",
+    "milestonesEyebrow": "Bosqichlar",
+    "milestonesTitle": "BWT yo'li — 200 yillik muhandislik",
+    "milestones": [
+      { "year": "1823", "text": "Yohann Adam Benkizer Pforzxaym, Germaniyada kimyo fabrikasini ochadi" },
+      { "year": "1990", "text": "BWT — Best Water Technology tug'ilishi" },
+      { "year": "1997", "text": "Kimyosiz cho'kmadan himoya AQA total ixtiro qilinadi" },
+      { "year": "2011", "text": "Mg2+ minerallashtirish Magnesium patentlanadi" },
+      { "year": "2016", "text": "BWT O'zbekistonda paydo bo'ladi" }
+    ],
+    "missionEyebrow": "Bizning missiyamiz",
+    "missionQuote": "Biz texnologiyalar yaratamiz, har qanday suvni — sog'lom, mazali, minerallashtirilgan ichimlik suviga aylantiruvchi, plastik shishalarni dunyo bo'ylab ishlab chiqarish va tashish zaruratisiz. Bu insonlar va sayyora uchun win-win.",
+    "missionAttribution": "— Andreas Vayssenbaxer, BWT asoschisi",
+    "missionBrandLine": "Change the World — sip by sip.",
+    "ctaTitle": "Toza suv olishga tayyormisiz?",
+    "ctaPrimary": "Bepul suv tahlili",
+    "ctaSecondary": "Katalogni o'rganish"
+  },
+  "servicesPage": {
+    "heroEyebrow": "Servis",
+    "heroTitle": "Bir marta sotib oldingiz — abadiy unutdingiz",
+    "heroSubtitle": "O'rnatish, xizmat ko'rsatish, kafolat — hammasi biz tomondan.",
+    "journeyEyebrow": "Qanday ishlaymiz",
+    "journeyTitle": "To'liq tsikl — o'rnatishdan qo'llab-quvvatlashgacha",
+    "journey": [
+      { "title": "O'rnatish", "text": "Sertifikatlangan BWT muhandisi tomonidan 90 daqiqada. To'liq ulanish to'plami. Kir va tashvishsiz toza ish." },
+      { "title": "Kafolat", "text": "Uskuna va o'rnatishga 3 yil. Yevropa sifat standartlari. Nuqson bo'lsa almashtirish." },
+      { "title": "Xizmat", "text": "Har 6 oyda kartrij almashtirish. O'zimiz eslatamiz va kelamiz — sizga hech narsani kuzatish shart emas." },
+      { "title": "Qo'llab-quvvatlash", "text": "Telegram, WhatsApp, telefon — tez va aniq javob beramiz. Buzilish? 24 soat ichida kelamiz." }
+    ],
+    "coverageEyebrow": "Geografiya",
+    "coverageTitle": "Butun O'zbekiston bo'ylab xizmat",
+    "coverageBody": "Butun mamlakat bo'ylab xususiy uylar va kottejlarga chiqamiz.",
+    "coverageCities": ["Toshkent", "Samarqand", "Buxoro", "Farg'ona", "Andijon", "Namangan", "Urganch", "Nukus"],
+    "includedEyebrow": "Shaffof",
+    "includedTitle": "Narxga nima kiradi",
+    "included": [
+      "Asbob (Slim X modeli)",
+      "Kalit topshirish bilan o'rnatish",
+      "To'liq ulanish to'plami",
+      "3 yil kafolat",
+      "Birinchi kartrij almashtirish",
+      "O'rnatishdan oldin suv tahlili"
+    ],
+    "ctaTitle": "Uyingiz uchun narxni bilib oling",
+    "ctaButton": "Ariza qoldirish"
+  },
+  "contactsPage": {
+    "heroEyebrow": "Aloqa",
+    "heroTitle": "Biz bilan bog'laning",
+    "infoTitle": "Aloqa ma'lumotlari",
+    "labels": {
+      "phone": "Telefon",
+      "email": "Pochta",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "office": "Ofis",
+      "hours": "Ish vaqti"
+    },
+    "whatsappValue": "WhatsAppda yozish",
+    "badge": "Butun O'zbekiston bo'ylab chiqamiz",
+    "formTitle": "Yoki bizga yozing",
+    "formName": "Ism *",
+    "formPhone": "+998 __ ___-__-__ *",
+    "formMessage": "Xabar",
+    "formSubmit": "Yuborish",
+    "formSuccessTitle": "Ariza qabul qilindi",
+    "formSuccessText": "Bir soat ichida bog'lanamiz.",
+    "formError": "Ism va telefonni kiriting",
+    "mapYandex": "Yandex xaritalarida ochish",
+    "mapGoogle": "Google Maps'da ochish"
+  },
+  "requestPage": {
+    "heroEyebrow": "Ariza",
+    "heroTitle": "24 soat ichida bepul suv tahlilini oling",
+    "heroSubtitle": "Jo'mragingizdan laboratoriya tahlili. Olib kelamiz, olib ketamiz, natijalarni Telegramda yuboramiz.",
+    "trustItems": ["24 soat — natija", "Bepul tashrif", "Majburiyatsiz"],
+    "whatYouGet": "Nima olasiz",
+    "benefits": [
+      { "title": "Jo'mragingizdan tahlil", "text": "Qattiqlik, xlor, og'ir metallar va aralashmalarni tekshiramiz" },
+      { "title": "Olib kelamiz va olib ketamiz", "text": "Butun O'zbekiston bo'ylab bepul chiqish" },
+      { "title": "Natijalar Telegramda", "text": "Tushunarli hisobot va tavsiyalar 24 soatda" }
+    ],
+    "interested": "Qiziqtirdi:",
+    "namePlaceholder": "Ism *",
+    "phonePlaceholder": "+998 __ ___-__-__ *",
+    "methods": ["Telegram", "WhatsApp", "Qo'ng'iroq"],
+    "submit": "Bepul tahlilni olish",
+    "reassurance": "Sotuv uchun qo'ng'iroqlar yo'q. Faqat tahlil natijalari.",
+    "successTitle": "Ariza qabul qilindi",
+    "successText": "Bir soat ichida bog'lanamiz.",
+    "error": "Ism va telefonni kiriting",
+    "quizBannerPrefix": "Quiz natijasiga ko'ra tanlangan:",
+    "quizBannerSuffix": "Quyida o'zgartirishingiz mumkin.",
+    "quizGoals": { "slim2": "to'liq xavfsizlik", "slim3": "cho'kmadan himoya", "slim4": "minerallar bilan boyitish" },
+    "regions": ["Toshkent", "Samarqand", "Buxoro", "Namangan", "Andijon", "Farg'ona", "Nukus", "Qarshi", "Termiz", "Navoiy", "Urganch", "Boshqa hudud"]
+  }
+}

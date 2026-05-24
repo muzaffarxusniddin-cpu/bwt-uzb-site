@@ -1,0 +1,139 @@
+[
+  {
+    "file": "hero/water-splash-clean.jpg",
+    "source": "BWT_references.pdf page 1",
+    "description": "Cinematic water splash on white — Hero background",
+    "recommended_use": "Section 1 Hero background, atmospheric",
+    "size": [
+      1456,
+      720
+    ]
+  },
+  {
+    "file": "hero/kitchen-glass-faucet.jpg",
+    "source": "Voda_pure.pdf",
+    "description": "Modern kitchen scene with glass and faucet, soft daylight",
+    "recommended_use": "Section 1 Hero alternative, or Section 6 Lifestyle",
+    "size": [
+      924,
+      550
+    ]
+  },
+  {
+    "file": "lifestyle/kids-drinking-water.jpg",
+    "source": "2026_DT_Sales_Catalogue p60",
+    "description": "Two girls drinking water at kitchen table, official BWT lifestyle shot",
+    "recommended_use": "Section 3 pain points (КОЖА ДЕТЕЙ) or Section 6 lifestyle (Дети)",
+    "size": [
+      645,
+      365
+    ]
+  },
+  {
+    "file": "products/bwt-pure-slim-product.jpg",
+    "source": "2026_DT_Sales_Catalogue p60",
+    "description": "Clean BWT Pure SLIM product shot on white background",
+    "recommended_use": "Section 4 BWT Slim Reveal hero, Section 7 product cards",
+    "size": [
+      190,
+      290
+    ]
+  },
+  {
+    "file": "products/bwt-slim-3-cartridges.jpg",
+    "source": "2026_DT_Sales_Catalogue p60",
+    "description": "BWT SLIM with 3 cartridges visible, white background",
+    "recommended_use": "Section 4 BWT Slim Reveal, or Section 7 Slim 3/4 HW cards",
+    "size": [
+      305,
+      290
+    ]
+  },
+  {
+    "file": "products/bwt-product-lineup.jpg",
+    "source": "2026_DT_Sales_Catalogue p61",
+    "description": "BWT under-sink product variants lined up on white",
+    "recommended_use": "Section 7 product comparison, or technology page",
+    "size": [
+      1080,
+      170
+    ]
+  },
+  {
+    "file": "installations/bwt-under-sink-install.jpg",
+    "source": "2026_DT_Sales_Catalogue p60",
+    "description": "Real BWT SLIM under-sink installation with copper plumbing",
+    "recommended_use": "Section 4 reveal supporting shot, Section 8 service",
+    "size": [
+      360,
+      290
+    ]
+  },
+  {
+    "file": "brand_assets/",
+    "source": "Project files (13 Artboard PNGs)",
+    "description": "Instagram-style ad creatives, OLD pink/blue BWT branding",
+    "recommended_use": "Reference only — content/messaging proven on social. NOT for direct website use (wrong brand colors).",
+    "size": "various"
+  },
+  {
+    "file": "hero/kitchen-faucet-glass-pour.jpg",
+    "source": "Project file: Artboard_3.png",
+    "description": "Premium glass with water being poured from BWT kitchen faucet, light kitchen background",
+    "recommended_use": "Section 1 Hero background alternative",
+    "size": [
+      952,
+      1020
+    ]
+  },
+  {
+    "file": "lifestyle/glass-with-ice-water.jpg",
+    "source": "Project file: Artboard_4.png",
+    "description": "Beautiful glass of clear filtered water with ice cubes, premium product shot",
+    "recommended_use": "Section 6 Lifestyle Gallery cards",
+    "size": [
+      952,
+      1020
+    ]
+  },
+  {
+    "file": "lifestyle/woman-drinking-water-morning.jpg",
+    "source": "Project file: Artboard_8.png",
+    "description": "Smiling woman drinking water by window, morning light, lifestyle moment",
+    "recommended_use": "Section 6 Lifestyle Gallery cards",
+    "size": [
+      952,
+      990
+    ]
+  },
+  {
+    "file": "pain_points/limescale-kettle-interior.jpg",
+    "source": "Project file: Artboard_6.png",
+    "description": "Real macro photo: heavy limescale buildup inside kettle interior",
+    "recommended_use": "Section 3 Pain Points cards",
+    "size": [
+      952,
+      1020
+    ]
+  },
+  {
+    "file": "lifestyle/lab-scientist-water-sample.jpg",
+    "source": "Project file: Artboard_7.png",
+    "description": "Lab scientist examining water sample, scientific credibility, 0.1 micron precision",
+    "recommended_use": "Section 6 Lifestyle Gallery cards",
+    "size": [
+      952,
+      1020
+    ]
+  },
+  {
+    "file": "installations/delivery-installation-team.jpg",
+    "source": "Project file: Artboard_11.png",
+    "description": "BWT delivery person with package, free shipping + installation Uzbekistan-wide",
+    "recommended_use": "Section 8 Service ecosystem, or About page",
+    "size": [
+      952,
+      1020
+    ]
+  }
+]

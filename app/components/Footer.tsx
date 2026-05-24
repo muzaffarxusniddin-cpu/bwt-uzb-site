@@ -1,75 +1,185 @@
-import Link from "next/link";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 import { BRAND } from "@/lib/config";
-import { Phone, Mail, MapPin, Camera, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Camera } from "lucide-react";
 
-export default function Footer() {
+type FooterStrings = {
+  tagline: string;
+  cols: { title: string; links: { label: string; href: string }[] }[];
+  contactsTitle: string;
+  legalSuffix: string;
+};
+
+const FOOTER: Record<string, FooterStrings> = {
+  ru: {
+    tagline:
+      "Официальный дистрибьютор BWT в Узбекистане — чистая вода для дома, офиса и производства.",
+    cols: [
+      {
+        title: "Продукты",
+        links: [
+          { label: "BWT Slim 2", href: "/catalog" },
+          { label: "BWT Slim 3", href: "/catalog" },
+          { label: "BWT Slim 4", href: "/catalog" },
+          { label: "Картриджи", href: "/catalog" },
+          { label: "Колонные умягчители", href: "/catalog#whole-home" },
+          { label: "Магистральные фильтры", href: "/catalog#whole-home" },
+          { label: "Промышленные системы", href: "/catalog#whole-home" },
+        ],
+      },
+      {
+        title: "Сервис",
+        links: [
+          { label: "Установка", href: "/services" },
+          { label: "Замена картриджей", href: "/services" },
+          { label: "Гарантия", href: "/services" },
+          { label: "Анализ воды", href: "/#lead" },
+        ],
+      },
+      {
+        title: "Компания",
+        links: [
+          { label: "О бренде", href: "/about" },
+          { label: "Технология", href: "/#technology" },
+          { label: "Контакты", href: "/contacts" },
+          { label: "Оставить заявку", href: "/request" },
+        ],
+      },
+    ],
+    contactsTitle: "Связь",
+    legalSuffix: "Конфиденциальность · Оферта · Гарантия",
+  },
+  uz: {
+    tagline:
+      "BWTning O'zbekistondagi rasmiy distribyutori — uy, ofis va ishlab chiqarish uchun toza suv.",
+    cols: [
+      {
+        title: "Mahsulotlar",
+        links: [
+          { label: "BWT Slim 2", href: "/catalog" },
+          { label: "BWT Slim 3", href: "/catalog" },
+          { label: "BWT Slim 4", href: "/catalog" },
+          { label: "Kartrijlar", href: "/catalog" },
+          { label: "Kolonnali yumshatgichlar", href: "/catalog#whole-home" },
+          { label: "Magistral filtrlar", href: "/catalog#whole-home" },
+          { label: "Sanoat tizimlari", href: "/catalog#whole-home" },
+        ],
+      },
+      {
+        title: "Servis",
+        links: [
+          { label: "O'rnatish", href: "/services" },
+          { label: "Kartrij almashtirish", href: "/services" },
+          { label: "Kafolat", href: "/services" },
+          { label: "Suv tahlili", href: "/#lead" },
+        ],
+      },
+      {
+        title: "Kompaniya",
+        links: [
+          { label: "Brend haqida", href: "/about" },
+          { label: "Texnologiya", href: "/#technology" },
+          { label: "Aloqa", href: "/contacts" },
+          { label: "Ariza qoldirish", href: "/request" },
+        ],
+      },
+    ],
+    contactsTitle: "Aloqa",
+    legalSuffix: "Maxfiylik · Oferta · Kafolat",
+  },
+};
+
+const CERTS = ["TÜV", "NSF", "ISO 9001"];
+
+export default function Footer({ locale }: { locale: string }) {
+  const f = FOOTER[locale] ?? FOOTER.ru;
+
   return (
-    <footer className="bg-[color:var(--primary-dark)] text-white mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-        <div>
-          <div className="mb-3">
+    <footer className="bg-bwt-navy-dark text-bwt-ivory/70">
+      <div className="mx-auto max-w-[1440px] px-6 py-20 lg:px-16">
+        <div className="grid grid-cols-2 gap-10 lg:grid-cols-5">
+          {/* Brand */}
+          <div className="col-span-2">
             <Image
               src="/images/bwt-logo.svg"
               alt="BWT Uzbekistan"
-              width={110}
-              height={38}
+              width={120}
+              height={41}
               unoptimized
               style={{ height: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
             />
+            <p className="mt-4 max-w-xs font-sans text-sm leading-relaxed text-bwt-ivory/60">
+              {BRAND.tagline}. {f.tagline}
+            </p>
           </div>
-          <p className="text-sm text-blue-100 leading-relaxed">
-            Официальный дистрибьютор BWT в Узбекистане. Чистая вода для дома, офиса и производства.
-          </p>
-        </div>
 
-        <div>
-          <h4 className="text-xs font-semibold tracking-wider uppercase text-blue-200 mb-3">Навигация</h4>
-          <ul className="space-y-2 text-sm">
-            <li><Link href="/catalog"  className="hover:text-white text-blue-100">Каталог</Link></li>
-            <li><Link href="/services" className="hover:text-white text-blue-100">Услуги</Link></li>
-            <li><Link href="/about"    className="hover:text-white text-blue-100">О компании</Link></li>
-            <li><Link href="/contacts" className="hover:text-white text-blue-100">Контакты</Link></li>
-            <li><Link href="/request"  className="hover:text-white text-blue-100">Оставить заявку</Link></li>
-          </ul>
-        </div>
+          {f.cols.map((col) => (
+            <div key={col.title}>
+              <h4 className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-bwt-gold">
+                {col.title}
+              </h4>
+              <ul className="mt-4 space-y-2.5">
+                {col.links.map((l) => (
+                  <li key={l.label}>
+                    <Link
+                      href={l.href}
+                      className="font-sans text-sm text-bwt-ivory/70 transition-colors hover:text-bwt-ivory"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
-        <div>
-          <h4 className="text-xs font-semibold tracking-wider uppercase text-blue-200 mb-3">Контакты</h4>
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-start gap-2"><Phone className="w-4 h-4 mt-0.5 shrink-0" />
-              <a href={BRAND.phoneHref} className="hover:text-white text-blue-100">{BRAND.phone}</a>
-            </li>
-            <li className="flex items-start gap-2"><Mail className="w-4 h-4 mt-0.5 shrink-0" />
-              <a href={`mailto:${BRAND.email}`} className="hover:text-white text-blue-100">{BRAND.email}</a>
-            </li>
-            <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-              <span className="text-blue-100">{BRAND.address}</span>
-            </li>
-            <li className="text-blue-200 text-xs mt-2">{BRAND.workingHours}</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-xs font-semibold tracking-wider uppercase text-blue-200 mb-3">Соц. сети</h4>
-          <div className="flex gap-2">
-            <a href={BRAND.telegram} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition text-sm">
-              <Send className="w-4 h-4" /> Telegram
-            </a>
-            <a href={BRAND.instagram} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition text-sm">
-              <Camera className="w-4 h-4" /> Instagram
-            </a>
+          {/* Contacts */}
+          <div>
+            <h4 className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-bwt-gold">
+              {f.contactsTitle}
+            </h4>
+            <ul className="mt-4 space-y-2.5 font-sans text-sm">
+              <li>
+                <a href={BRAND.phoneHref} className="flex items-start gap-2 text-bwt-ivory/70 transition-colors hover:text-bwt-ivory">
+                  <Phone className="mt-0.5 h-4 w-4 shrink-0 text-bwt-gold" /> {BRAND.phone}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${BRAND.email}`} className="flex items-start gap-2 text-bwt-ivory/70 transition-colors hover:text-bwt-ivory">
+                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-bwt-gold" /> {BRAND.email}
+                </a>
+              </li>
+              <li>
+                <a href={BRAND.telegram} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-bwt-ivory/70 transition-colors hover:text-bwt-ivory">
+                  <Send className="mt-0.5 h-4 w-4 shrink-0 text-bwt-gold" /> {BRAND.telegramHandle}
+                </a>
+              </li>
+              <li>
+                <a href={BRAND.instagram} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-bwt-ivory/70 transition-colors hover:text-bwt-ivory">
+                  <Camera className="mt-0.5 h-4 w-4 shrink-0 text-bwt-gold" /> {BRAND.instagramHandle}
+                </a>
+              </li>
+              <li className="flex items-start gap-2 text-bwt-ivory/60">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-bwt-gold" /> {BRAND.addressShort[locale === "uz" ? "uz" : "ru"]}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 text-xs text-blue-200 flex flex-wrap justify-between gap-2">
-          <span>© {new Date().getFullYear()} {BRAND.legalName}</span>
-          <span>Сделано с заботой о чистой воде 💧</span>
+        <div className="mx-auto flex max-w-[1440px] flex-col gap-4 px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-16">
+          <p className="font-sans text-xs text-bwt-ivory/50">
+            © {new Date().getFullYear()} {BRAND.legalName} · {f.legalSuffix}
+          </p>
+          {/* TODO(asset): swap TÜV / NSF / ISO 9001 text for logo badges when provided */}
+          <div className="flex items-center gap-5">
+            {CERTS.map((c) => (
+              <span key={c} className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-bwt-ivory/40">
+                {c}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
