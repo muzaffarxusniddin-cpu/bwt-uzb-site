@@ -5,7 +5,7 @@ const SITE = "https://bwt-uzb.uz";
 // Locale-agnostic marketing routes. RU (default) is unprefixed; UZ under /uz/*.
 // Catalog product (/catalog/[sku]) pages are statically generated from the ERP
 // and can be added here later from the same source.
-const PATHS = ["", "/about", "/services", "/contacts", "/request", "/catalog"];
+const PATHS = ["", "/about", "/services", "/contacts", "/request", "/catalog", "/promo"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
