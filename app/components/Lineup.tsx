@@ -17,8 +17,8 @@ const fadeUp: Variants = {
 
 const TIERS_META = [
   { id: "slim2", name: "BWT Slim 2", popular: false },
-  { id: "slim3", name: "BWT Slim 3", popular: true },
-  { id: "slim4", name: "BWT Slim 4", popular: false },
+  { id: "slim3", name: "BWT Slim 3", popular: false },
+  { id: "slim4", name: "BWT Slim 4", popular: true },
 ];
 
 const PRODUCT: Record<string, { src: string; w: number; h: number }> = {
@@ -35,7 +35,7 @@ function recommendIndex(needs: number[]): number {
   if (needs.includes(3) || needs.includes(4)) return 2; // премиум-вкус / здоровье пожилых → Slim 4
   if (needs.includes(0) || needs.includes(1)) return 1; // накипь / кожа-волосы → Slim 3
   if (needs.includes(2)) return 0; // только питьевая для детей → Slim 2
-  return 1; // пусто / «не уверен» → Slim 3 (популярный)
+  return 2; // пусто / «не уверен» → Slim 4 (популярный)
 }
 
 export default function Lineup() {

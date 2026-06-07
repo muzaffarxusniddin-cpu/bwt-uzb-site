@@ -1,6 +1,14 @@
 import Image from "next/image";
-import type { PublicProduct } from "@/lib/types";
 import styles from "./promo.module.css";
+
+type PromoProduct = {
+  id: number | string;
+  sku: string | null;
+  name: string;
+  description: string | null;
+  priceRetail: number;
+  imageUrl: string | null;
+};
 
 type ProductsCopy = {
   eyebrow: string;
@@ -17,14 +25,14 @@ type ProductsCopy = {
 };
 
 type Props = {
-  products: ReadonlyArray<PublicProduct>;
+  products: ReadonlyArray<PromoProduct>;
   copy: ProductsCopy;
   /** Locale-aware path to the catalog (RU: "/catalog", UZ: "/uz/catalog"). */
   catalogHref: string;
 };
 
-// SKU of the model we promote as the "popular" pick — keeps that card highlighted.
-const POPULAR_SKUS = new Set(["BWT-SLIM-3-HW", "BWT-SLIM-3-SW"]);
+// SKU of the model we promote as the "popular" pick — Slim 4 (90% of clients).
+const POPULAR_SKUS = new Set(["BWT-SLIM-4-HW", "BWT-SLIM-4-SW"]);
 
 function formatPrice(value: number): string {
   // ERP stores USD; render with comma thousands separator for readability.
