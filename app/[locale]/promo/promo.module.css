@@ -1829,16 +1829,26 @@
 
 /* ─── Reveal animations ─── */
 .fadeIn {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
-    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Visible by default (no JS dependency) — entrance plays as a pure-CSS
+     load animation. The old IntersectionObserver reveal was removed with
+     PromoEnhancements; this guarantees content never stays hidden. */
+  opacity: 1;
+  animation: promoFadeInUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   will-change: opacity, transform;
 }
 .fadeIn.visible {
   opacity: 1;
   transform: none;
+}
+@keyframes promoFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .fadeIn,
@@ -1846,6 +1856,7 @@
     opacity: 1;
     transform: none;
     transition: none;
+    animation: none;
   }
   .prestigeMarqueeTrack,
   .pulse::before,
