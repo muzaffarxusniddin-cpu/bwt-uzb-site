@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ERP_API } from "@/lib/config";
 import styles from "./promo.module.css";
+import Certifications from "@/app/components/Certifications";
 
 type FormCopy = {
   formTag: string;
@@ -177,11 +178,7 @@ export default function PromoLeadForm({ copy, source = "promo" }: Props) {
 
       <div className={styles.formFineprint}>{copy.fineprint}</div>
 
-      <div className={styles.formTrustRow}>
-        <span className={styles.badge}>TÜV</span>
-        <span className={styles.badge}>NSF</span>
-        <span className={styles.badge}>ISO 9001</span>
-      </div>
+      <Certifications compact className="mt-4 justify-start" />
     </form>
   );
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { Droplet } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Certifications from "@/app/components/Certifications";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const VIEWPORT = { once: true, margin: "-80px" } as const;
@@ -13,7 +14,6 @@ const fadeUp: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
 };
 
-const CERTS = ["TÜV", "NSF", "ISO 9001"];
 
 // Minimalist gold outline icons, one per stage (B6).
 const IC = "h-28 w-28";
@@ -199,17 +199,7 @@ export default function Technology() {
           {t("closer")}
         </motion.p>
 
-        {/* TODO(asset): replace TÜV / NSF / ISO 9001 text with certification logo badges when logo files are provided (none currently in /public/images) */}
-        <div className="flex flex-wrap items-center justify-center gap-8 pb-20 lg:pb-32">
-          {CERTS.map((c) => (
-            <span
-              key={c}
-              className="font-sans text-lg font-semibold uppercase tracking-[0.2em] text-bwt-ivory/40 transition-colors duration-300 hover:text-bwt-ivory"
-            >
-              {c}
-            </span>
-          ))}
-        </div>
+        <Certifications className="pb-20 lg:pb-32" />
       </div>
     </section>
   );
