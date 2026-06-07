@@ -3,6 +3,19 @@
       "eyebrow": "BWT · Change the World",
       "title": "Toza suv — faqat sizning uyingiz uchun emas",
       "lead": "BWT sotib olib, siz brendning global missiyasiga qo'shilasiz. BWT Afrikada artezian quduqlarini qazib, filtrlar bilan jihozlaydi — suv tanqis bo'lgan joylarda toza ichimlik suvi.",
+      "mediaImagesTitle": "Missiya amalda",
+      "mediaVideosTitle": "Missiya videolari",
+      "watch": "Ko'rish",
+      "imgAlts": [
+        "Afrikalik ayol BWT eWATER suv kioskida",
+        "BWT texnigi Afrikada suv kioskiga xizmat ko'rsatmoqda",
+        "Afrika qishlog'ida BWT toza suvi"
+      ],
+      "videoTitles": [
+        "AQUA pearls — Afrika uchun suv",
+        "Best Water Run 2025",
+        "Best Water Run 2026"
+      ],
       "stats": [
         { "num": "731", "label": "ishlab turgan quduq" },
         { "num": "10 000", "label": "rejadagi quduq" }
