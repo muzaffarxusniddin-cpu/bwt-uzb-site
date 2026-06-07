@@ -68,6 +68,14 @@ export default function SlimReveal() {
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover"
               />
+              {/* Patented technology seal */}
+              <Image
+                src="/images/bwt-magnesium-patent.webp"
+                alt="Запатентованная технология BWT — минерализация магнием"
+                width={150}
+                height={115}
+                className="absolute right-3 top-3 h-16 w-auto rounded-full bg-white/85 p-1 shadow-md backdrop-blur-sm lg:h-20"
+              />
             </div>
           </motion.div>
 
