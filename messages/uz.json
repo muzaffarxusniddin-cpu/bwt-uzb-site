@@ -11,6 +11,11 @@
       "linkMonitor": "Quduqlarni onlayn kuzatish",
       "brandLine": "BWT — For You and Planet Blue"
     },
+    "installations": {
+      "eyebrow": "Haqiqiy o'rnatishlar",
+      "title": "BWT Slim haqiqiy uyda shunday ko'rinadi",
+      "lead": "Rakovina ostidagi ixcham tizim — ko'rinmaydi, ozoda, 90 daqiqada o'rnatiladi. Premium oshxonalardagi haqiqiy BWT o'rnatishlari."
+    },
     "nav":  {
                 "home":  "Bosh sahifa",
                 "catalog":  "Katalog",

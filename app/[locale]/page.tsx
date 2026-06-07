@@ -5,6 +5,7 @@ import SlimReveal from "@/app/components/SlimReveal";
 import Technology from "@/app/components/Technology";
 import Lifestyle from "@/app/components/Lifestyle";
 import Lineup from "@/app/components/Lineup";
+import Installations from "@/app/components/Installations";
 import ServiceGuarantees from "@/app/components/ServiceGuarantees";
 import Founder from "@/app/components/Founder";
 import Reviews from "@/app/components/Reviews";
@@ -29,6 +30,8 @@ export default function Home() {
       <Lifestyle />
       {/* 7 — Линейка + Калькулятор */}
       <Lineup />
+      {/* 7.5 — Реальные монтажи */}
+      <Installations />
       {/* 8 — Гарантии и сервис */}
       <ServiceGuarantees />
       {/* 8.3 — Основатель */}

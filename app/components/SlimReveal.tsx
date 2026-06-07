@@ -62,11 +62,11 @@ export default function SlimReveal() {
           <motion.div style={{ rotate, y: imgY }} className="lg:col-span-7">
             <div className="relative mx-auto aspect-[5/6] max-w-md overflow-hidden rounded-card bg-white shadow-card">
               <Image
-                src="/images/products/slim-4.webp"
-                alt="BWT Slim 4 с минерализацией BWT Magnesium"
+                src="/images/installations/bwt-slim-install-3.webp"
+                alt="BWT Slim установлен под мойкой в премиум-кухне"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-contain p-6 lg:p-10"
+                className="object-cover"
               />
             </div>
           </motion.div>
