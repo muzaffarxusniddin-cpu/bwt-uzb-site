@@ -649,434 +649,165 @@
                                     ]
                     },
     "promo":  {
-                  "africa":  {
-                                 "eyebrow": "BWT · Change the World",
-                                 "title": "Har bir BWT filtri dunyoni o'zgartiradi",
-                                 "lead": "BWT Afrikada artezian quduqlarini qazib, filtrlar bilan jihozlaydi. Tizim sotib olib, siz shu missiyaning bir qismiga aylanasiz.",
-                                 "stat1Num": "731",
-                                 "stat1Label": "ishlab turgan quduq",
-                                 "stat2Num": "10 000",
-                                 "stat2Label": "rejadagi quduq",
-                                 "linkProject": "AQUA pearls loyihasi",
-                                 "linkMonitor": "Onlayn kuzatish",
-                                 "brandLine": "BWT — For You and Planet Blue"
-                             },
-                  "meta":  {
-                               "title":  "BWT Uzbekistan — kraningizdan premium suv. 24 soatda bepul tahlil.",
-                               "description":  "Kraningizdagi suv darajangizni premium-mineral suvga aylantiring: BWT patentlangan magniy texnologiyasi, bir kunda o'rnatish, 3 yil kafolat. Uy va biznes-klass uy-joy majmualari uchun 24 soatda bepul laboratoriya tahlili.",
-                               "ogTitle":  "BWT Uzbekistan — kraningizdan premium suv",
-                               "ogDescription":  "BWT patentlangan magniy, 1 kunda o'rnatish, 3 yil kafolat. 24 soatda bepul suv tahlili."
-                           },
-                  "hero":  {
-                               "trustLabel":  "Premium obyektlarda o'rnatilgan:",
-                               "trustLogos":  [
-                                                  "NestOne",
-                                                  "Piramit",
-                                                  "NRG Voha",
-                                                  "Mirabad Avenue",
-                                                  "Modera Towers",
-                                                  "Golden House"
-                                              ],
-                               "badge":  "1823 yildan beri Germaniya muhandisligi",
-                               "title":  "Suv sifati. Hayot sifati.",
-                               "subtitle":  "Siri — BWT'ning boshqalarda yo'q patentlangan magniyida. Bir kunda o'rnatish, 3 yil kafolat. Uy va biznes-klass uy-joy majmualari uchun 24 soat ichida bepul laboratoriya tahlili.",
-                               "fineprint":  "Laboratoriya tahlili + BWT muhandisi maslahati. Agar normadan ortiq ifloslanish topa olmasak — sizga 500 000 so'm to'laymiz.",
-                               "ctaPrimary":  "Suvimni bepul tekshirib ko'rish",
-                               "ctaSecondary":  "BWT tizimini tanlash",
-                               "badges":  {
-                                              "ufA":  "0.01 mikron",
-                                              "ufB":  "UF-membrana",
-                                              "warrantyA":  "3 yil kafolat",
-                                              "warrantyB":  "BWT zavodi",
-                                              "installA":  "90 daqiqa",
-                                              "installB":  "O'rnatish"
-                                          },
-                               "shockUnit":  "dH",
-                               "shockText":  "14 dH — Toshkentdagi suv normadan ikki barobar qattiqroq. O'sha choynakdagi oq quyq, kranadagi qatlam va choydagi parda — bularning hammasi shu."
-                           },
-                  "prestige":  {
-                                   "label":  "O'zbekistonda 1200+ premium obyektlar",
-                                   "items":  [
-                                                 "NestOne",
-                                                 "Piramit",
-                                                 "NRG Voha",
-                                                 "NRG Mirzo Ulugbek",
-                                                 "NRG Hayot",
-                                                 "Mirabad Avenue",
-                                                 "Modera Towers",
-                                                 "NRG Park",
-                                                 "KISLOROD",
-                                                 "Golden House",
-                                                 "NRG Oybek",
-                                                 "Murad Buildings"
-                                             ]
-                               },
-                  "pain":  {
-                               "eyebrow":  "Stakaningizdagi yashirin tarkib",
-                               "titleA":  "O'zbekiston suvida",
-                               "titleAccent":  "ko'rmaydigan",
-                               "titleB":  "narsalar",
-                               "lead":  "Tiniq suv — toza suv degani emas. Toshkent, Samarqand va Buxoroda kran suvi 14 dH gacha qattiqlik, xlor qoldiqlari va mikroplastikani o'z ichiga oladi. Tahlilsiz buni har kuni ichasiz.",
-                               "cards":  [
-                                             {
-                                                 "label":  "Muammo 01",
-                                                 "big":  "14 dH",
-                                                 "title":  "Qattiqlik — normadan 2× yuqori",
-                                                 "body":  "Toshkent suvidagi kaltsiy va magniy tuzlari JSST tavsiyalaridan oshib ketadi. Choynakda quyq, dushdan keyin quruq teri, kranda oq dog'lar — bularning hammasi.",
-                                                 "reveal":  "Texnika 3× kam yashaydi"
-                                             },
-                                             {
-                                                 "label":  "Muammo 02",
-                                                 "big":  "Cl₂",
-                                                 "title":  "Xlor va xloratlar",
-                                                 "body":  "Dezinfeksiya uchun ishlatiladi. «Suzish havzasi» hidini va ta'mini beradi, ayniqsa bolalarda terining himoya qatlamini buzadi.",
-                                                 "reveal":  "Bolalar uchun ayniqsa xavfli"
-                                             },
-                                             {
-                                                 "label":  "Muammo 03",
-                                                 "big":  "μm",
-                                                 "title":  "Har litrda mikroplastik",
-                                                 "body":  "1–5 mikron o'lchamdagi zarralar trubalardan va idishdan suvga tushadi. Yillab tanada to'planadi. Plastik butilkada — yechim emas: u erda ham plastik bor.",
-                                                 "reveal":  "UF-membrana 0.01 μm 100% to'sib qo'yadi"
-                                             }
-                                         ],
-                               "bottomA":  "Filtrsiz har kun — bu sizga pul va sog'liqni qimmatga oladi degan qaror.",
-                               "bottomB":  "Bepul laboratoriya tahlili suvingizda nima borligini aniq ko'rsatadi",
-                               "bottomCta":  "Tarkibni bilmoqchiman"
-                           },
-                  "offer":  {
-                                "eyebrow":  "Suv tahlili · Bepul",
-                                "titleA":  "Bizga",
-                                "titleAccent":  "24 soat",
-                                "titleB":  "bering — va suvingiz haqida butun umringizda bilganingizdan ko'ra ko'proq bilib olasiz.",
-                                "leadA":  "Suv tahlilining to'liq paketini olasiz, odatdagi narxi",
-                                "leadPrice":  "1 850 000 so'm",
-                                "leadB":  ". Bugun — bepul. Natija uchun moliyaviy kafolat bilan.",
-                                "items":  [
-                                              {
-                                                  "title":  "Muhandis tashrifi va uyingizda namuna olish",
-                                                  "body":  "Muhandis laboratoriya jihozi bilan keladi. Borishlarsiz va tashvishlarsiz.",
-                                                  "price":  "350 000"
-                                              },
-                                              {
-                                                  "title":  "14 parametr bo'yicha laboratoriya tahlili",
-                                                  "body":  "Qattiqlik, xlor, temir, nitrat, bakteriyalar, og'ir metallar, pH va boshqalar.",
-                                                  "price":  "780 000"
-                                              },
-                                              {
-                                                  "title":  "Tushuntirishli PDF hisobot",
-                                                  "body":  "Oddiy so'zlar bilan: nima topildi, oilaga ta'siri, nima qilish kerak.",
-                                                  "price":  "240 000"
-                                              },
-                                              {
-                                                  "title":  "BWT muhandisi maslahati (45 daqiqa)",
-                                                  "body":  "Uyingiz, byudjetingiz va ustuvorliklaringizga ko'ra tizim tanlash. Bosimsiz.",
-                                                  "price":  "480 000"
-                                              },
-                                              {
-                                                  "title":  "Bonus: «O'zbekiston suvi 2026» qo'llanmasi",
-                                                  "body":  "22 sahifalik PDF — me'yorlar, hududlar bo'yicha tarkib, tahlilni o'qish.",
-                                                  "price":  "Bonus"
-                                              }
-                                          ],
-                                "totalLabel":  "Umumiy qiymat:",
-                                "totalStrike":  "1 850 000",
-                                "totalFree":  "Bepul",
-                                "guaranteeTitle":  "Natija uchun moliyaviy kafolat",
-                                "guaranteeBody":  "Agar tahlil suvingizning JSSTning barcha me'yorlari ichida ekanligini va birorta parametr oshib ketmaganligini ko'rsatsa — sizga 500 000 so'mni hisobingizga o'tkazib beramiz.",
-                                "formTag":  "Bu haftada 7 ta joy qoldi",
-                                "formTitle":  "Suv tahlili olish",
-                                "formSub":  "15 daqiqada qo'ng'iroq qilamiz. Namuna olish uchun qulay vaqtni belgilaymiz.",
-                                "fieldName":  "Ismingiz",
-                                "fieldNamePh":  "Alisher",
-                                "fieldPhone":  "Telefon",
-                                "fieldPhonePh":  "+998 __ ___ __ __",
-                                "fieldDistrict":  "Manzil / Tuman",
-                                "districtPlaceholder":  "Tumanni tanlang",
-                                "districts":  [
-                                                  "Yunusobod",
-                                                  "Mirzo-Ulug'bek",
-                                                  "Sergeli",
-                                                  "Yashnobod",
-                                                  "Chilonzor",
-                                                  "Yakkasaroy",
-                                                  "Mirobod",
-                                                  "Shayxontohur",
-                                                  "Olmazor",
-                                                  "Uchtepa",
-                                                  "Bektemir",
-                                                  "Samarqand",
-                                                  "Buxoro",
-                                                  "Boshqa hudud"
-                                              ],
-                                "fieldHint":  "O'zbekiston bo'ylab boramiz",
-                                "consent":  "Shaxsiy ma'lumotlarni qayta ishlashga roziman. Sotuv qo'ng'iroqlari yo'q — faqat tahlil natijasi.",
-                                "submit":  "Suv tahlili-ni bepul olish",
-                                "submitSending":  "Yuborilmoqda...",
-                                "fineprint":  "Sotuv qo'ng'iroqlari yo'q. Faqat Telegram orqali tahlil natijasi.",
-                                "successTitle":  "Ariza qabul qilindi",
-                                "successBody":  "Muhandisimiz 15 daqiqa ichida namuna olish uchun qulay vaqtni belgilash uchun qo'ng'iroq qiladi. Ishonchingiz uchun rahmat!",
-                                "successAgain":  "Yana yuborish"
-                            },
-                  "products":  {
-                                   "eyebrow":  "BWT SLIM qatori",
-                                   "titleA":  "Uyingizga",
-                                   "titleAccent":  "mos tizimni",
-                                   "lead":  "BWT Uzbekistan katalogidan haqiqiy modellar. Aniq konfiguratsiya — bepul suv tahlilidan keyin.",
-                                   "from":  "dan",
-                                   "currency":  " $",
-                                   "note":  "Aniq narx — suv tahlilidan keyin",
-                                   "ctaQuiz":  "Suv tahlilini olish",
-                                   "ctaCatalog":  "Katalogda batafsil",
-                                   "empty":  "Katalog vaqtinchalik mavjud emas. Biz bilan bog'laning — tizimni shaxsan tanlaymiz.",
-                                   "popularTag":  "★ Mijozlarning 90% tanlaydi"
-                               },
-                  "reviews":  {
-                                  "eyebrow":  "Mutaxassislar fikri",
-                                  "titleA":  "Suvni",
-                                  "titleAccent":  "ichidan biladiganlar",
-                                  "titleB":  "nima deydi",
-                                  "watch":  "Sharhni ko'rish",
-                                  "close":  "Yopish",
-                                  "items":  [
-                                                {
-                                                    "id":  "-k9LLqoQcHs",
-                                                    "name":  "Zafar Og'a",
-                                                    "role":  "Muhandis · BWT'ning ko'p yillik foydalanuvchisi",
-                                                    "caption":  "«Biz ancha yillardan beri BWT filtrlarini ishlatib kelamiz».",
-                                                    "short":  false
-                                                },
-                                                {
-                                                    "id":  "6J7DGWKyj-0",
-                                                    "name":  "Aripov Saidazimxo'ja",
-                                                    "role":  "Suv tozalash mutaxassisi",
-                                                    "caption":  "«Eng yaxshisi qaysi deganlarga BWT filtrlarini tavsiya beraman».",
-                                                    "short":  false
-                                                },
-                                                {
-                                                    "id":  "qdjj6rlegkQ",
-                                                    "name":  "Abror Hamdamov",
-                                                    "role":  "Arxitektor · zamonaviy qurilish",
-                                                    "caption":  "«Hozirgi kundagi zamonaviy qurilishlarimiz uchun BWT tavsiya beramiz».",
-                                                    "short":  false
-                                                },
-                                                {
-                                                    "id":  "NVfUnal8oII",
-                                                    "name":  "Ramziddin",
-                                                    "role":  "Filtratsiya mutaxassisi",
-                                                    "caption":  "«BWT'ni tavsiya qilaman — Yevropaning 1-raqamli suv filtrlari».",
-                                                    "short":  false
-                                                },
-                                                {
-                                                    "id":  "ZDmFpqcdmAA",
-                                                    "name":  "Filial ochilishi",
-                                                    "role":  "Yangiliklar · BWT Toshkent",
-                                                    "caption":  "«Toshkentda BWT rasmiy filiali ochildi — premium suv filtrlari».",
-                                                    "short":  true
-                                                },
-                                                {
-                                                    "id":  "zvOFBqv0HGY",
-                                                    "name":  "Solishtirish",
-                                                    "role":  "Maydon sinovi",
-                                                    "caption":  "BWT filtridan o'tgan va kran suvining farqini ko'ring.",
-                                                    "short":  true
-                                                },
-                                                {
-                                                    "id":  "AOpPSj58QXo",
-                                                    "name":  "Shaxsiy sinov",
-                                                    "role":  "BWT Uzbekistan jamoasi",
-                                                    "caption":  "«Suv sifati qanday o'zgarganini eng avvalo o'zimiz tekshirib ko'rdik».",
-                                                    "short":  true
-                                                }
-                                            ]
-                              },
-                  "tech":  {
-                               "eyebrow":  "BWT texnologiyasi · Germaniya",
-                               "titleA":  "Olti bosqich",
-                               "titleB":  "— truba va stakaningiz orasida",
-                               "lead":  "Har bosqich bitta vazifani hal qiladi. BWT zararlini olib tashlaydi va foydalini saqlab qoladi — suvni «o'ldiradigan» teskari osmosdan farqli o'laroq.",
-                               "flowFrom":  "Vodoprovod",
-                               "flowTo":  "Premium suv",
-                               "cards":  [
-                                             {
-                                                 "tag":  "Mexanika",
-                                                 "title":  "Mexanik tozalash",
-                                                 "body":  "Eski quvurlardan zang, qum va katta zarralarni to'sadi."
-                                             },
-                                             {
-                                                 "tag":  "Ko'mir",
-                                                 "title":  "Ko'mir filtri",
-                                                 "body":  "Faollashtirilgan ko'mir xlor, yoqimsiz hid va suv ta'mini olib tashlaydi."
-                                             },
-                                             {
-                                                 "tag":  "Yumshatish",
-                                                 "title":  "Ion almashinish yumshatish",
-                                                 "body":  "Alohida smola kartriji qattiqlik tuzlarini olib tashlaydi. Teri, soch va texnikani quyqdan himoya qiladi.",
-                                                 "badge":  "Slim 3 va Slim 4 da"
-                                             },
-                                             {
-                                                 "tag":  "UF-membrana",
-                                                 "title":  "Ultrafiltratsiya membranasi",
-                                                 "body":  "0.01 mikrongacha tozalash. Bakteriyalar, sistalar va mikroplastikni to'sadi. Barcha Slim modellarda mavjud."
-                                             },
-                                             {
-                                                 "tag":  "Magniy",
-                                                 "title":  "BWT Magnesium Mineralized",
-                                                 "body":  "Patentlangan BWT texnologiyasi. Filtr deminerallashtirmaydi — tabiiy tarkibni saqlab, magniy qo'shadi.",
-                                                 "badge":  "faqat Slim 4 da"
-                                             },
-                                             {
-                                                 "tag":  "Ta'm",
-                                                 "title":  "Yakuniy sayqal",
-                                                 "body":  "Post-filtr ta'mni premium mineral suv darajasiga olib chiqadi."
-                                             }
-                                         ],
-                               "bottomA":  "BWT foydalini saqlaydi, zararlini olib tashlaydi.",
-                               "bottomB":  "Suvni «suvsizlantiradigan» teskari osmosdan farqli o'laroq"
-                           },
-                  "founder":  {
-                                  "eyebrow":  "Bu ortida kim turibdi",
-                                  "name":  "Ziyodullo Abdukakharov",
-                                  "role":  "Teplovik asoschisi — O'zbekistondagi BWT rasmiy distribyutori",
-                                  "bio":  "Isitish, ventilyatsiya, suv ta'minoti va kanalizatsiya tizimlari muhandisi. Sohada 10 yildan ortiq tajriba, 200 dan ortiq amalga oshirilgan loyihalar. Har bir o'rnatish va servis chiqishini shaxsan nazorat qiladi.",
-                                  "quote":  "Suv sifati — hayot sifati.",
-                                  "imageAlt":  "Ziyodullo Abdukakharov — Teplovik asoschisi, O'zbekistondagi BWT distribyutori"
-                              },
-                  "story":  {
-                                "quote":  "NestOne'da uch yil ichida — 47 ta xonadon BWT o'rnatdi. Suv sifati bo'yicha shikoyatlar — nol.",
-                                "authorName":  "BWT O'zbekiston bosh muhandisi",
-                                "authorRole":  "«MUHANDIS-KONSALTING» MChJ · Yunusobod, Toshkent",
-                                "eyebrow":  "Bir obyekt tarixi · NestOne",
-                                "titleA":  "BWT o'rnatilgandan keyin",
-                                "titleAccent":  "30 kun, 6 oy va 1 yil",
-                                "titleB":  "ichida nima o'zgaradi",
-                                "leadA":  "2023 yilda NestOne'dagi oila",
-                                "leadModel":  "BWT Slim 3",
-                                "leadB":  "'ni o'rnatdi. Quyida — ularning uyidagi haqiqiy o'zgarishlar dinamikasi. Bu Toshkentdagi har qanday premium obyekt uchun tipik manzara.",
-                                "timeline":  [
-                                                 {
-                                                     "time":  "1-kun",
-                                                     "a":  "90 daqiqada o'rnatish — suvni o'chirmasdan",
-                                                     "b":  "Qattiqlik 14 dH dan darhol 2 dH gacha tushadi"
-                                                 },
-                                                 {
-                                                     "time":  "2 hafta",
-                                                     "a":  "Bolaning terisi cho'milgandan keyin qichishishni to'xtatadi",
-                                                     "b":  "Choy va qahva unutilgan ta'mga qaytadi — xlor va metall ta'msiz"
-                                                 },
-                                                 {
-                                                     "time":  "30 kun",
-                                                     "a":  "Choynakda quyq paydo bo'lishni to'xtatadi",
-                                                     "b":  "Butilkalar — endi sotib olmaydi. Oyiga 380 000 so'm tejash"
-                                                 },
-                                                 {
-                                                     "time":  "6 oy",
-                                                     "a":  "Birinchi kartrij almashtirish (BWT jadvali bo'yicha)",
-                                                     "b":  "Kir yuvish mashinasi va boyler — ichida nol quyq. Texnika kafolati xavfsiz."
-                                                 },
-                                                 {
-                                                     "time":  "1 yil",
-                                                     "a":  "4 500 000 so'm tejash (butilkalar, texnika ta'mirlash, quyqqa qarshi vositalar)",
-                                                     "b":  "Tizim o'zini 56%ga qoplabdi. Bundan keyin — toza tejash + oila salomatligi."
-                                                 }
-                                             ],
-                                "cta":  "Shunday natijalarni xohlayman"
-                            },
-                  "trust":  {
-                                "eyebrow":  "O'zbekistonda o'rnatilgan",
-                                "titleA":  "11 ta premium uy-joy majmuasi allaqachon tanladi",
-                                "titleAccent":  "BWT",
-                                "lead":  "+ O'zbekiston bo'ylab 100 dan ortiq xususiy uylar va ofislar. Har bir obyekt — laboratoriya tahlilidan keyin individual tizim tanlash.",
-                                "stats":  [
-                                              {
-                                                  "num":  "1200",
-                                                  "unit":  "+",
-                                                  "label":  "O'zbekistondagi premium obyektlar"
-                                              },
-                                              {
-                                                  "num":  "10",
-                                                  "unit":  " yil",
-                                                  "label":  "O'zbekiston bozorida"
-                                              },
-                                              {
-                                                  "num":  "90",
-                                                  "unit":  " daq",
-                                                  "label":  "Sertifikatlangan jamoa bilan o'rnatish"
-                                              },
-                                              {
-                                                  "num":  "3",
-                                                  "unit":  " yil",
-                                                  "label":  "Jihoz va o'rnatishga kafolat"
-                                              }
-                                          ],
-                                "objectsTitle":  "BWT o'rnatilgan premium uy-joy majmualari",
-                                "objectsMeta":  "+ 100 ta xususiy uy",
-                                "objects":  [
-                                                {
-                                                    "name":  "NestOne",
-                                                    "cat":  "Premium · Toshkent"
-                                                },
-                                                {
-                                                    "name":  "Piramit",
-                                                    "cat":  "Premium · Toshkent"
-                                                },
-                                                {
-                                                    "name":  "NRG Voha",
-                                                    "cat":  "Biznes · Toshkent"
-                                                },
-                                                {
-                                                    "name":  "NRG Mirzo Ulugbek",
-                                                    "cat":  "Biznes · Toshkent"
-                                                },
-                                                {
-                                                    "name":  "NRG Hayot",
-                                                    "cat":  "Biznes · Toshkent"
-                                                },
-                                                {
-                                                    "name":  "Mirabad Avenue",
-                                                    "cat":  "Premium · Toshkent"
-                                                },
-                                                {
-                                                    "name":  "Modera Towers",
-                                                    "cat":  "Premium · Toshkent"
-                                                },
-                                                {
-                                                    "name":  "NRG Park",
-                                                    "cat":  "Biznes · Toshkent"
-                                                },
-                                                {
-                                                    "name":  "KISLOROD",
-                                                    "cat":  "Murad Buildings"
-                                                },
-                                                {
-                                                    "name":  "Golden House",
-                                                    "cat":  "Premium · Toshkent"
-                                                },
-                                                {
-                                                    "name":  "NRG Oybek",
-                                                    "cat":  "Biznes · Toshkent"
-                                                }
-                                            ],
-                                "moreName":  "100+ xususiy uylar",
-                                "moreCat":  "O'zbekiston bo'ylab",
-                                "certsLabel":  "Xalqaro sertifikatsiya:"
-                            },
-                  "final":  {
-                                "eyebrow":  "So'nggi ekran · So'nggi imkoniyat",
-                                "titleA":  "Suvingiz haqida",
-                                "titleAccent":  "24 soatda",
-                                "titleB":  "bilib oling. Bepul.",
-                                "lead":  "Suv tahlili — narxi 1 850 000 so'm, siz uchun bepul, moliyaviy kafolat bilan. Sotuv qo'ng'iroqlari yo'q: faqat Telegram orqali tahlil natijasi.",
-                                "ctaPrimary":  "Suvimni bepul tekshirib ko'rish",
-                                "ctaSecondary":  "BWT tizimini tanlash",
-                                "urgency":  "Bu haftada 7 ta joy qoldi · O'rtacha javob vaqti: 15 daqiqa"
-                            },
-                  "popup":  {
-                                "eyebrow":  "Ketishdan oldin",
-                                "title":  "24 soatda bepul bilib oling",
-                                "body":  "Suvingizda nima borligini. Laboratoriya tahlili + PDF hisobot + BWT muhandisi maslahati. Ifloslanish topa olmasak — sizga 500 000 so'm to'laymiz.",
-                                "cta":  "Suv tahlili olish",
-                                "close":  "Yopish"
-                            }
-              }
+      "meta": {
+        "title": "BWT Uzbekistan — kraningizdan premium suv. 24 soatda bepul tahlil.",
+        "description": "Kraningizdagi suv darajangizni premium-mineral suvga aylantiring: BWT patentlangan magniy texnologiyasi, bir kunda o'rnatish, 3 yil kafolat. Uy va biznes-klass uy-joy majmualari uchun 24 soatda bepul laboratoriya tahlili.",
+        "ogTitle": "BWT Uzbekistan — kraningizdan premium suv",
+        "ogDescription": "BWT patentlangan magniy, 1 kunda o'rnatish, 3 yil kafolat. 24 soatda bepul suv tahlili."
+      },
+      "offer": {
+        "eyebrow": "Suv tahlili · Bepul",
+        "titleA": "Bizga",
+        "titleAccent": "24 soat",
+        "titleB": "bering — va suvingiz haqida butun umringizda bilganingizdan ko'ra ko'proq bilib olasiz.",
+        "leadA": "Suv tahlilining to'liq paketini olasiz, odatdagi narxi",
+        "leadPrice": "1 850 000 so'm",
+        "leadB": ". Bugun — bepul. Natija uchun moliyaviy kafolat bilan.",
+        "items": [
+          {
+            "title": "Muhandis tashrifi va uyingizda namuna olish",
+            "body": "Muhandis laboratoriya jihozi bilan keladi. Borishlarsiz va tashvishlarsiz.",
+            "price": "350 000"
+          },
+          {
+            "title": "14 parametr bo'yicha laboratoriya tahlili",
+            "body": "Qattiqlik, xlor, temir, nitrat, bakteriyalar, og'ir metallar, pH va boshqalar.",
+            "price": "780 000"
+          },
+          {
+            "title": "Tushuntirishli PDF hisobot",
+            "body": "Oddiy so'zlar bilan: nima topildi, oilaga ta'siri, nima qilish kerak.",
+            "price": "240 000"
+          },
+          {
+            "title": "BWT muhandisi maslahati (45 daqiqa)",
+            "body": "Uyingiz, byudjetingiz va ustuvorliklaringizga ko'ra tizim tanlash. Bosimsiz.",
+            "price": "480 000"
+          },
+          {
+            "title": "Bonus: «O'zbekiston suvi 2026» qo'llanmasi",
+            "body": "22 sahifalik PDF — me'yorlar, hududlar bo'yicha tarkib, tahlilni o'qish.",
+            "price": "Bonus"
+          }
+        ],
+        "totalLabel": "Umumiy qiymat:",
+        "totalStrike": "1 850 000",
+        "totalFree": "Bepul",
+        "guaranteeTitle": "Natija uchun moliyaviy kafolat",
+        "guaranteeBody": "Agar tahlil suvingizning JSSTning barcha me'yorlari ichida ekanligini va birorta parametr oshib ketmaganligini ko'rsatsa — sizga 500 000 so'mni hisobingizga o'tkazib beramiz.",
+        "formTag": "Bu haftada 7 ta joy qoldi",
+        "formTitle": "Suv tahlili olish",
+        "formSub": "15 daqiqada qo'ng'iroq qilamiz. Namuna olish uchun qulay vaqtni belgilaymiz.",
+        "fieldName": "Ismingiz",
+        "fieldNamePh": "Alisher",
+        "fieldPhone": "Telefon",
+        "fieldPhonePh": "+998 __ ___ __ __",
+        "fieldDistrict": "Manzil / Tuman",
+        "districtPlaceholder": "Tumanni tanlang",
+        "districts": [
+          "Yunusobod",
+          "Mirzo-Ulug'bek",
+          "Sergeli",
+          "Yashnobod",
+          "Chilonzor",
+          "Yakkasaroy",
+          "Mirobod",
+          "Shayxontohur",
+          "Olmazor",
+          "Uchtepa",
+          "Bektemir",
+          "Samarqand",
+          "Buxoro",
+          "Boshqa hudud"
+        ],
+        "fieldHint": "O'zbekiston bo'ylab boramiz",
+        "consent": "Shaxsiy ma'lumotlarni qayta ishlashga roziman. Sotuv qo'ng'iroqlari yo'q — faqat tahlil natijasi.",
+        "submit": "Suv tahlili-ni bepul olish",
+        "submitSending": "Yuborilmoqda...",
+        "fineprint": "Sotuv qo'ng'iroqlari yo'q. Faqat Telegram orqali tahlil natijasi.",
+        "successTitle": "Ariza qabul qilindi",
+        "successBody": "Muhandisimiz 15 daqiqa ichida namuna olish uchun qulay vaqtni belgilash uchun qo'ng'iroq qiladi. Ishonchingiz uchun rahmat!",
+        "successAgain": "Yana yuborish"
+      },
+      "products": {
+        "eyebrow": "BWT SLIM qatori",
+        "titleA": "Uyingizga",
+        "titleAccent": "mos tizimni",
+        "lead": "BWT Uzbekistan katalogidan haqiqiy modellar. Aniq konfiguratsiya — bepul suv tahlilidan keyin.",
+        "from": "dan",
+        "currency": " $",
+        "note": "Aniq narx — suv tahlilidan keyin",
+        "ctaQuiz": "Suv tahlilini olish",
+        "ctaCatalog": "Katalogda batafsil",
+        "empty": "Katalog vaqtinchalik mavjud emas. Biz bilan bog'laning — tizimni shaxsan tanlaymiz.",
+        "popularTag": "★ Mijozlarning 90% tanlaydi"
+      },
+      "reviews": {
+        "eyebrow": "Mutaxassislar fikri",
+        "titleA": "Suvni",
+        "titleAccent": "ichidan biladiganlar",
+        "titleB": "nima deydi",
+        "watch": "Sharhni ko'rish",
+        "close": "Yopish",
+        "items": [
+          {
+            "id": "-k9LLqoQcHs",
+            "name": "Zafar Og'a",
+            "role": "Muhandis · BWT'ning ko'p yillik foydalanuvchisi",
+            "caption": "«Biz ancha yillardan beri BWT filtrlarini ishlatib kelamiz».",
+            "short": false
+          },
+          {
+            "id": "6J7DGWKyj-0",
+            "name": "Aripov Saidazimxo'ja",
+            "role": "Suv tozalash mutaxassisi",
+            "caption": "«Eng yaxshisi qaysi deganlarga BWT filtrlarini tavsiya beraman».",
+            "short": false
+          },
+          {
+            "id": "qdjj6rlegkQ",
+            "name": "Abror Hamdamov",
+            "role": "Arxitektor · zamonaviy qurilish",
+            "caption": "«Hozirgi kundagi zamonaviy qurilishlarimiz uchun BWT tavsiya beramiz».",
+            "short": false
+          },
+          {
+            "id": "NVfUnal8oII",
+            "name": "Ramziddin",
+            "role": "Filtratsiya mutaxassisi",
+            "caption": "«BWT'ni tavsiya qilaman — Yevropaning 1-raqamli suv filtrlari».",
+            "short": false
+          },
+          {
+            "id": "ZDmFpqcdmAA",
+            "name": "Filial ochilishi",
+            "role": "Yangiliklar · BWT Toshkent",
+            "caption": "«Toshkentda BWT rasmiy filiali ochildi — premium suv filtrlari».",
+            "short": true
+          },
+          {
+            "id": "zvOFBqv0HGY",
+            "name": "Solishtirish",
+            "role": "Maydon sinovi",
+            "caption": "BWT filtridan o'tgan va kran suvining farqini ko'ring.",
+            "short": true
+          },
+          {
+            "id": "AOpPSj58QXo",
+            "name": "Shaxsiy sinov",
+            "role": "BWT Uzbekistan jamoasi",
+            "caption": "«Suv sifati qanday o'zgarganini eng avvalo o'zimiz tekshirib ko'rdik».",
+            "short": true
+          }
+        ]
+      },
+      "founder": {
+        "eyebrow": "Bu ortida kim turibdi",
+        "name": "Ziyodullo Abdukakharov",
+        "role": "Teplovik asoschisi — O'zbekistondagi BWT rasmiy distribyutori",
+        "bio": "Isitish, ventilyatsiya, suv ta'minoti va kanalizatsiya tizimlari muhandisi. Sohada 10 yildan ortiq tajriba, 200 dan ortiq amalga oshirilgan loyihalar. Har bir o'rnatish va servis chiqishini shaxsan nazorat qiladi.",
+        "quote": "Suv sifati — hayot sifati.",
+        "imageAlt": "Ziyodullo Abdukakharov — Teplovik asoschisi, O'zbekistondagi BWT distribyutori"
+      }
+    }
 }
