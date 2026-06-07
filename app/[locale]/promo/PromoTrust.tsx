@@ -1,4 +1,5 @@
 import styles from "./promo.module.css";
+import Certifications from "@/app/components/Certifications";
 
 type TrustCopy = {
   eyebrow: string;
@@ -67,11 +68,8 @@ export default function PromoTrust({ copy }: Props) {
 
         <div className={styles.certsRow}>
           <span className={styles.label}>{copy.certsLabel}</span>
-          <span className={styles.certPill}>TÜV Rheinland</span>
-          <span className={styles.certPill}>NSF International</span>
-          <span className={styles.certPill}>ISO 9001</span>
-          <span className={styles.certPill}>CE</span>
         </div>
+        <Certifications className="mt-5" />
       </div>
     </section>
   );
