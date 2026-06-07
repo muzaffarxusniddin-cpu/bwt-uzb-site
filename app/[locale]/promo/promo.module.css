@@ -10,13 +10,12 @@
   --ink-soft: #14213d;
   --ink-line: #1e2d4b;
 
-  /* Recolored to site gold palette (was pink #e5007e) — keeps all var refs */
+  /* Accent recolored from magenta to site champagne gold — keeps all var refs */
   --bwt-pink: #c9a961;
   --bwt-pink-hot: #d9bc78;
 
   --gold: #c9a961;
   --gold-soft: #e8d5a8;
-  --water-blue: #4a9eff;
   --water-cyan: #d9bc78;
 
   --white: #ffffff;
@@ -194,7 +193,7 @@
   background: var(--bwt-pink-hot);
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 16px 44px rgba(229, 0, 126, 0.3);
+  box-shadow: 0 16px 44px rgba(201, 169, 97, 0.3);
 }
 .root .btnDark,
 .root a.btnDark,
@@ -270,8 +269,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 75% 30%, rgba(74, 158, 255, 0.18) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 80%, rgba(229, 0, 126, 0.12) 0%, transparent 50%);
+    radial-gradient(ellipse at 75% 30%, rgba(201, 169, 97, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(201, 169, 97, 0.12) 0%, transparent 50%);
   pointer-events: none;
 }
 .hero::after {
@@ -496,8 +495,8 @@
   transform: translateX(-50%);
   width: 78%;
   padding: 14px 16px;
-  background: rgba(74, 158, 255, 0.1);
-  border: 1px solid rgba(74, 158, 255, 0.3);
+  background: rgba(201, 169, 97, 0.1);
+  border: 1px solid rgba(201, 169, 97, 0.3);
   border-radius: 8px;
   text-align: center;
   color: #fff;
@@ -532,7 +531,7 @@
   height: 12px;
   border-radius: 50%;
   background: var(--bwt-pink);
-  box-shadow: 0 0 16px rgba(229, 0, 126, 0.7);
+  box-shadow: 0 0 16px rgba(201, 169, 97, 0.7);
 }
 .qBadge {
   position: absolute;
@@ -550,7 +549,7 @@
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: rgba(229, 0, 126, 0.18);
+  background: rgba(201, 169, 97, 0.18);
   color: var(--bwt-pink);
   display: flex;
   align-items: center;
@@ -830,8 +829,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 22px 26px;
-  background: linear-gradient(135deg, rgba(229, 0, 126, 0.1) 0%, rgba(74, 158, 255, 0.08) 100%);
-  border: 1px solid rgba(229, 0, 126, 0.2);
+  background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, rgba(201, 169, 97, 0.08) 100%);
+  border: 1px solid rgba(201, 169, 97, 0.2);
   border-radius: var(--radius-md);
   margin-bottom: 22px;
   gap: 16px;
@@ -915,7 +914,7 @@
   align-items: center;
   gap: 8px;
   padding: 6px 12px;
-  background: rgba(229, 0, 126, 0.1);
+  background: rgba(201, 169, 97, 0.1);
   color: var(--bwt-pink);
   font-family: var(--font-mono);
   font-size: 10px;
@@ -1117,7 +1116,7 @@
 .productCard:hover {
   transform: translateY(-4px);
   box-shadow: var(--sh-lg);
-  border-color: rgba(229, 0, 126, 0.3);
+  border-color: rgba(201, 169, 97, 0.3);
 }
 .productCard.featured {
   border-color: var(--bwt-pink);
@@ -1712,8 +1711,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 30% 40%, rgba(229, 0, 126, 0.18) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 70%, rgba(74, 158, 255, 0.14) 0%, transparent 55%);
+    radial-gradient(ellipse at 30% 40%, rgba(201, 169, 97, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 70%, rgba(201, 169, 97, 0.14) 0%, transparent 55%);
   pointer-events: none;
 }
 .finalInner {
@@ -1748,8 +1747,8 @@
   align-items: center;
   gap: 10px;
   padding: 10px 16px;
-  background: rgba(229, 0, 126, 0.1);
-  border: 1px solid rgba(229, 0, 126, 0.25);
+  background: rgba(201, 169, 97, 0.1);
+  border: 1px solid rgba(201, 169, 97, 0.25);
   border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
@@ -1926,7 +1925,7 @@
   background: var(--bwt-pink);
   color: #fff;
   border-radius: 50%;
-  box-shadow: 0 12px 36px rgba(229, 0, 126, 0.4);
+  box-shadow: 0 12px 36px rgba(201, 169, 97, 0.4);
   z-index: 2;
   transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.25s ease;
 }
