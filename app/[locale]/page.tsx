@@ -6,6 +6,8 @@ import Technology from "@/app/components/Technology";
 import Lifestyle from "@/app/components/Lifestyle";
 import Lineup from "@/app/components/Lineup";
 import ServiceGuarantees from "@/app/components/ServiceGuarantees";
+import Founder from "@/app/components/Founder";
+import Reviews from "@/app/components/Reviews";
 import PremiumResidences from "@/app/components/PremiumResidences";
 import ChangeTheWorld from "@/app/components/ChangeTheWorld";
 import FinalCTA from "@/app/components/FinalCTA";
@@ -29,6 +31,10 @@ export default function Home() {
       <Lineup />
       {/* 8 — Гарантии и сервис */}
       <ServiceGuarantees />
+      {/* 8.3 — Основатель */}
+      <Founder />
+      {/* 8.6 — Отзывы специалистов */}
+      <Reviews />
       {/* 9 — Premium ЖК */}
       <PremiumResidences />
       {/* 9.5 — BWT Change the World (Africa CSR) */}
