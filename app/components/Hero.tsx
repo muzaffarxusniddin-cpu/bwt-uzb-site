@@ -52,21 +52,21 @@ export default function Hero() {
           }}
         />
         <Image
-          src="/images/hero/water-splash-hero.jpg"
+          src="/images/hero/bwt-water-spring-hero.webp"
           alt=""
           fill
           priority
           sizes="100vw"
           placeholder="blur"
-          blurDataURL={imageBlurs.heroWater}
-          className="object-cover object-right"
+          blurDataURL={imageBlurs.heroSpring}
+          className="object-cover object-center"
         />
         <div className="hero-float absolute -top-1/4 right-[-10%] h-[60vh] w-[60vh] rounded-full bg-bwt-aqua/10 blur-[120px]" />
         <div className="hero-float-slow absolute bottom-[-15%] left-[-5%] h-[50vh] w-[50vh] rounded-full bg-bwt-gold/10 blur-[120px]" />
       </motion.div>
 
-      {/* Layer 2a — left block keeps the serif headline legible */}
-      <div className="absolute inset-0 bg-gradient-to-r from-bwt-navy from-0% via-bwt-navy/85 via-45% to-bwt-navy/30 to-100%" />
+      {/* Layer 2a — left block keeps the serif headline legible while the spring photo shows on the right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-bwt-navy from-0% via-bwt-navy/88 via-42% to-bwt-navy/25 to-100%" />
 
       {/* Layer 2b — bottom darkening under the SCROLL cue */}
       <div className="absolute inset-0 bg-gradient-to-t from-bwt-navy/60 via-transparent to-transparent" />
