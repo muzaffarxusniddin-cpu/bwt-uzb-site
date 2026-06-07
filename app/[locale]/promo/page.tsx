@@ -505,6 +505,96 @@ export default async function PromoPage({ params }: PageProps) {
         }}
       />
 
+      {/* ─── CHANGE THE WORLD (Africa CSR) ─── */}
+      <section style={{ background: "var(--ink)", color: "var(--white)" }}>
+        <div
+          className={styles.container}
+          style={{ paddingTop: "var(--pad-section)", paddingBottom: "var(--pad-section)" }}
+        >
+          <div className={`${styles.eyebrow} ${styles.eyebrowGold}`}>{t("africa.eyebrow")}</div>
+          <h2 style={{ maxWidth: "760px" }}>
+            <span className={styles.serif} style={{ color: "var(--gold)" }}>
+              {t("africa.title")}
+            </span>
+          </h2>
+          <p className={styles.lead} style={{ maxWidth: "640px" }}>
+            {t("africa.lead")}
+          </p>
+          <div style={{ display: "flex", gap: "48px", marginTop: "40px", flexWrap: "wrap" }}>
+            <div>
+              <div
+                className={styles.serif}
+                style={{ color: "var(--gold)", fontSize: "3rem", lineHeight: 1 }}
+              >
+                {t("africa.stat1Num")}
+              </div>
+              <div
+                style={{
+                  marginTop: "8px",
+                  fontSize: "13px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.08em",
+                  opacity: 0.7,
+                }}
+              >
+                {t("africa.stat1Label")}
+              </div>
+            </div>
+            <div>
+              <div
+                className={styles.serif}
+                style={{ color: "var(--gold)", fontSize: "3rem", lineHeight: 1 }}
+              >
+                {t("africa.stat2Num")}
+              </div>
+              <div
+                style={{
+                  marginTop: "8px",
+                  fontSize: "13px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.08em",
+                  opacity: 0.7,
+                }}
+              >
+                {t("africa.stat2Label")}
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              gap: "16px",
+              marginTop: "40px",
+              flexWrap: "wrap",
+              alignItems: "center",
+            }}
+          >
+            <a
+              href="https://www.aquapearls.org/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.btn} ${styles.btnPrimary}`}
+            >
+              {t("africa.linkProject")}
+            </a>
+            <a
+              href="https://ewater.services/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.btn} ${styles.btnGhostLight}`}
+            >
+              {t("africa.linkMonitor")}
+            </a>
+            <span
+              className={styles.serif}
+              style={{ color: "var(--gold)", fontStyle: "italic", marginLeft: "auto" }}
+            >
+              {t("africa.brandLine")}
+            </span>
+          </div>
+        </div>
+      </section>
+
       {/* ─── FINAL CTA ─── */}
       <section className={styles.final}>
         <div className={styles.container}>

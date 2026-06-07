@@ -7,6 +7,7 @@ import Lifestyle from "@/app/components/Lifestyle";
 import Lineup from "@/app/components/Lineup";
 import ServiceGuarantees from "@/app/components/ServiceGuarantees";
 import PremiumResidences from "@/app/components/PremiumResidences";
+import ChangeTheWorld from "@/app/components/ChangeTheWorld";
 import FinalCTA from "@/app/components/FinalCTA";
 
 export default function Home() {
@@ -30,6 +31,8 @@ export default function Home() {
       <ServiceGuarantees />
       {/* 9 — Premium ЖК */}
       <PremiumResidences />
+      {/* 9.5 — BWT Change the World (Africa CSR) */}
+      <ChangeTheWorld />
       {/* 10 — Final CTA / Lead form */}
       <FinalCTA />
     </>

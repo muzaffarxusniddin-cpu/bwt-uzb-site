@@ -1,4 +1,16 @@
 {
+    "changeWorld": {
+      "eyebrow": "BWT · Change the World",
+      "title": "Toza suv — faqat sizning uyingiz uchun emas",
+      "lead": "BWT sotib olib, siz brendning global missiyasiga qo'shilasiz. BWT Afrikada artezian quduqlarini qazib, filtrlar bilan jihozlaydi — suv tanqis bo'lgan joylarda toza ichimlik suvi.",
+      "stats": [
+        { "num": "731", "label": "ishlab turgan quduq" },
+        { "num": "10 000", "label": "rejadagi quduq" }
+      ],
+      "linkProject": "AQUA pearls loyihasi haqida",
+      "linkMonitor": "Quduqlarni onlayn kuzatish",
+      "brandLine": "BWT — For You and Planet Blue"
+    },
     "nav":  {
                 "home":  "Bosh sahifa",
                 "catalog":  "Katalog",
@@ -540,6 +552,18 @@
                                     ]
                     },
     "promo":  {
+                  "africa":  {
+                                 "eyebrow": "BWT · Change the World",
+                                 "title": "Har bir BWT filtri dunyoni o'zgartiradi",
+                                 "lead": "BWT Afrikada artezian quduqlarini qazib, filtrlar bilan jihozlaydi. Tizim sotib olib, siz shu missiyaning bir qismiga aylanasiz.",
+                                 "stat1Num": "731",
+                                 "stat1Label": "ishlab turgan quduq",
+                                 "stat2Num": "10 000",
+                                 "stat2Label": "rejadagi quduq",
+                                 "linkProject": "AQUA pearls loyihasi",
+                                 "linkMonitor": "Onlayn kuzatish",
+                                 "brandLine": "BWT — For You and Planet Blue"
+                             },
                   "meta":  {
                                "title":  "BWT Uzbekistan — kraningizdan premium suv. 24 soatda bepul tahlil.",
                                "description":  "Kraningizdagi suv darajangizni premium-mineral suvga aylantiring: BWT patentlangan magniy texnologiyasi, bir kunda o'rnatish, 3 yil kafolat. Uy va biznes-klass uy-joy majmualari uchun 24 soatda bepul laboratoriya tahlili.",

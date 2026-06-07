@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { imageBlurs } from "@/lib/image-blurs";
 import type { Metadata } from "next";
 import { altMeta } from "@/lib/seo";
+import ChangeTheWorld from "@/app/components/ChangeTheWorld";
 
 export async function generateMetadata({
   params,
@@ -186,6 +187,9 @@ export default async function AboutPage({
           </ol>
         </div>
       </section>
+
+      {/* BWT Change the World (Africa CSR) */}
+      <ChangeTheWorld />
 
       {/* Mission quote */}
       <section className="bg-bwt-cream py-16 text-center lg:py-[120px]">
