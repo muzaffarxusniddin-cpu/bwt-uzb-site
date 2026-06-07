@@ -10,13 +10,14 @@
   --ink-soft: #14213d;
   --ink-line: #1e2d4b;
 
-  --bwt-pink: #e5007e;
-  --bwt-pink-hot: #ff1f8f;
+  /* Recolored to site gold palette (was pink #e5007e) — keeps all var refs */
+  --bwt-pink: #c9a961;
+  --bwt-pink-hot: #d9bc78;
 
-  --gold: #c9a96e;
+  --gold: #c9a961;
   --gold-soft: #e8d5a8;
   --water-blue: #4a9eff;
-  --water-cyan: #7ad0e8;
+  --water-cyan: #d9bc78;
 
   --white: #ffffff;
   --bg-paper: #f7f8fa;
@@ -45,7 +46,7 @@
 
   --sh-md: 0 8px 24px rgba(10, 22, 40, 0.08), 0 2px 4px rgba(10, 22, 40, 0.04);
   --sh-lg: 0 24px 64px rgba(10, 22, 40, 0.12), 0 4px 12px rgba(10, 22, 40, 0.06);
-  --sh-pink: 0 12px 36px rgba(229, 0, 126, 0.22);
+  --sh-pink: 0 12px 36px rgba(201, 169, 97, 0.30);
 
   font-family: var(--font-sans);
   font-size: 16px;
