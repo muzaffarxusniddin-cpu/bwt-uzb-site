@@ -25,11 +25,11 @@ const cardItem: Variants = {
 
 // Layout (span + gradient) stays in the component; text comes from the catalog.
 const STYLES = [
-  { span: "lg:row-span-2", img: "/images/lifestyle/woman-drinking-water-morning.jpg", key: "morning" }, // Утро
-  { span: "lg:col-span-2", img: "/images/hero/kitchen-faucet-glass-pour.jpg", key: "guests" }, // Чай и кофе для гостей
-  { span: "", img: "/images/lifestyle/glass-with-ice-water.jpg", key: "cooking" }, // Готовка
+  { span: "lg:row-span-2", img: "/images/lifestyle/bwt-pouring-water.webp", key: "morning" }, // Утро
+  { span: "lg:col-span-2", img: "/images/lifestyle/bwt-family-dining.webp", key: "guests" }, // Чай и кофе для гостей
+  { span: "", img: "/images/lifestyle/bwt-cooking-salad.webp", key: "cooking" }, // Готовка
   { span: "", img: "/images/lifestyle/kids-drinking-water.jpg", key: "kids" }, // Дети
-  { span: "lg:col-span-2", img: "/images/lifestyle/lab-scientist-water-sample.jpg", key: "calm" }, // Спокойствие
+  { span: "lg:col-span-2", img: "/images/lifestyle/bwt-hands-tap.webp", key: "calm" }, // Спокойствие
   { span: "", img: "/images/pain_points/limescale-kettle-interior.jpg", key: "limescale" }, // Техника
 ] as const;
 
