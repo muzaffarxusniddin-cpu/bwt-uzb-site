@@ -388,6 +388,8 @@ export default async function PromoPage({ params }: PageProps) {
             <div className={styles.techCert}>
               <span className={styles.certBadge}>TÜV</span>
               <span className={styles.certBadge}>NSF</span>
+              <span className={styles.certBadge}>DIN</span>
+              <span className={styles.certBadge}>EN</span>
               <span className={styles.certBadge}>ISO 9001</span>
             </div>
           </div>

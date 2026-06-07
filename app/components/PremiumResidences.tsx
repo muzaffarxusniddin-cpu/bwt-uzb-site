@@ -44,7 +44,7 @@ function Counter() {
 
   useEffect(() => {
     if (inView) {
-      const controls = animate(count, 300, { duration: 1.6, ease: EASE });
+      const controls = animate(count, 1200, { duration: 1.8, ease: EASE });
       return () => controls.stop();
     }
   }, [inView, count]);

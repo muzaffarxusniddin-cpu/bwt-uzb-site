@@ -7,8 +7,8 @@ import CatalogFullList from "./CatalogFullList";
 
 const MODELS: { id: string; name: string; src: string; w: number; h: number; popular?: boolean }[] = [
   { id: "slim2", name: "BWT Slim 2", src: "/images/products/slim-2.webp", w: 295, h: 418 },
-  { id: "slim3", name: "BWT Slim 3", src: "/images/products/slim-3.webp", w: 392, h: 314, popular: true },
-  { id: "slim4", name: "BWT Slim 4", src: "/images/products/slim-4.webp", w: 295, h: 418 },
+  { id: "slim3", name: "BWT Slim 3", src: "/images/products/slim-3.webp", w: 392, h: 314 },
+  { id: "slim4", name: "BWT Slim 4", src: "/images/products/slim-4.webp", w: 295, h: 418, popular: true },
 ];
 
 // Comparison matrix per row; "area" rows render the localized area strings.

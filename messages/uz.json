@@ -78,9 +78,9 @@
                        "title":  "Germaniya muhandisligi o'zbek uyi uchun",
                        "facts":  [
                                      {
-                                         "stat":  "35+",
+                                         "stat":  "10",
                                          "unit":  "yil",
-                                         "text":  "1990-yildan beri bozorda Germaniya muhandisligi"
+                                         "text":  "O'zbekiston bozorida 2016-yildan beri"
                                      },
                                      {
                                          "stat":  "90+",
@@ -326,7 +326,7 @@
     "about":  {
                   "heroEyebrow":  "Kompaniya haqida",
                   "heroTitle":  "BWT — Best Water Technology",
-                  "heroSubtitle":  "1990 yildan beri suv texnologiyalarida Yevropa yetakchisi. Ildizlari — 1823 yildagi Germaniya kimyo an'anasida.",
+                  "heroSubtitle":  "Suv texnologiyalarida Yevropa yetakchisi. Germaniya muhandisligi merosi 1823 yildan. O'zbekiston bozorida 10 yil.",
                   "heroTagline":  "For You and Planet Blue — siz va sayyoramiz uchun.",
                   "storyEyebrow":  "Brend merosi",
                   "story":  [
@@ -340,7 +340,7 @@
                                 },
                                 {
                                     "title":  "BWT O'zbekistonda",
-                                    "body":  "2016-yildan beri O'zbekistonda BWT'ni eksklyuziv ravishda taqdim etamiz. Premium turar joy majmualari, xususiy uylar va tijorat obyektlarida 300+ o'rnatilishlar. Mamlakatning barcha viloyatlarida sertifikatlangan xizmat. Har bir tizim — bu shunchaki filtr emas, bu uyingizdagi Germaniya muhandislik yechimi."
+                                    "body":  "2016-yildan beri O'zbekistonda BWT'ni eksklyuziv ravishda taqdim etamiz. Premium turar joy majmualari, xususiy uylar va tijorat obyektlarida 1200+ o'rnatilishlar. Mamlakatning barcha viloyatlarida sertifikatlangan xizmat. Har bir tizim — bu shunchaki filtr emas, bu uyingizdagi Germaniya muhandislik yechimi."
                                 }
                             ],
                   "trustEyebrow":  "Ishonch va kafolat",
@@ -351,8 +351,8 @@
                                     "label":  "Meros tug'ilgan yil — Pforzxaym, Germaniya"
                                 },
                                 {
-                                    "stat":  "35+",
-                                    "label":  "BWT 1990 yilda tashkil etilgandan beri yil"
+                                    "stat":  "10",
+                                    "label":  "O'zbekiston bozorida yil"
                                 },
                                 {
                                     "stat":  "90+",
@@ -363,7 +363,7 @@
                                     "label":  "xodimlar butun dunyoda"
                                 },
                                 {
-                                    "stat":  "300+",
+                                    "stat":  "1200+",
                                     "label":  "O'zbekistonda o'rnatilgan obyektlar"
                                 },
                                 {
@@ -556,7 +556,7 @@
                                                   "Modera Towers",
                                                   "Golden House"
                                               ],
-                               "badge":  "1990 yildan beri Germaniya muhandisligi",
+                               "badge":  "1823 yildan beri Germaniya muhandisligi",
                                "title":  "Kraningizdan premium-mineral suv",
                                "subtitle":  "Siri — BWT'ning boshqalarda yo'q patentlangan magniyida. Bir kunda o'rnatish, 3 yil kafolat. Uy va biznes-klass uy-joy majmualari uchun 24 soat ichida bepul laboratoriya tahlili.",
                                "fineprint":  "Laboratoriya tahlili + BWT muhandisi maslahati. Agar normadan ortiq ifloslanish topa olmasak — sizga 500 000 so'm to'laymiz.",
@@ -574,7 +574,7 @@
                                "shockText":  "14 dH — Toshkentdagi suv normadan ikki barobar qattiqroq. O'sha choynakdagi oq quyq, kranadagi qatlam va choydagi parda — bularning hammasi shu."
                            },
                   "prestige":  {
-                                   "label":  "O'zbekistonda 100+ premium obyektlar",
+                                   "label":  "O'zbekistonda 1200+ premium obyektlar",
                                    "items":  [
                                                  "NestOne",
                                                  "Piramit",
@@ -868,14 +868,14 @@
                                 "lead":  "+ O'zbekiston bo'ylab 100 dan ortiq xususiy uylar va ofislar. Har bir obyekt — laboratoriya tahlilidan keyin individual tizim tanlash.",
                                 "stats":  [
                                               {
-                                                  "num":  "100",
+                                                  "num":  "1200",
                                                   "unit":  "+",
                                                   "label":  "O'zbekistondagi premium obyektlar"
                                               },
                                               {
-                                                  "num":  "35",
+                                                  "num":  "10",
                                                   "unit":  " yil",
-                                                  "label":  "BWT Germaniya muhandisligi"
+                                                  "label":  "O'zbekiston bozorida"
                                               },
                                               {
                                                   "num":  "90",
