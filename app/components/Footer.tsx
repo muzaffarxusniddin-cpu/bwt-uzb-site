@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { BRAND } from "@/lib/config";
 import { Phone, Mail, MapPin, Send, Camera } from "lucide-react";
+import Certifications from "@/app/components/Certifications";
 
 type FooterStrings = {
   tagline: string;
@@ -89,7 +90,6 @@ const FOOTER: Record<string, FooterStrings> = {
   },
 };
 
-const CERTS = ["TÜV", "NSF", "ISO 9001"];
 
 export default function Footer({ locale }: { locale: string }) {
   const f = FOOTER[locale] ?? FOOTER.ru;
@@ -172,14 +172,7 @@ export default function Footer({ locale }: { locale: string }) {
           <p className="font-sans text-xs text-bwt-ivory/50">
             © {new Date().getFullYear()} {BRAND.legalName} · {f.legalSuffix}
           </p>
-          {/* TODO(asset): swap TÜV / NSF / ISO 9001 text for logo badges when provided */}
-          <div className="flex items-center gap-5">
-            {CERTS.map((c) => (
-              <span key={c} className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-bwt-ivory/40">
-                {c}
-              </span>
-            ))}
-          </div>
+          <Certifications compact />
         </div>
       </div>
     </footer>

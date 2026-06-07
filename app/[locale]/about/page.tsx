@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { altMeta } from "@/lib/seo";
 import ChangeTheWorld from "@/app/components/ChangeTheWorld";
 import Founder from "@/app/components/Founder";
+import Certifications from "@/app/components/Certifications";
 
 export async function generateMetadata({
   params,
@@ -41,7 +42,6 @@ const STORY_IMAGES = [
   },
 ];
 
-const CERTS = ["TÜV", "NSF", "DIN", "EN", "ISO 9001"];
 
 export default async function AboutPage({
   params,
@@ -153,17 +153,7 @@ export default async function AboutPage({
             <p className="mb-6 font-sans text-xs uppercase tracking-[0.25em] text-bwt-gold/80">
               {t("certsTitle")}
             </p>
-            {/* TODO(asset): swap text labels for logo badges when provided */}
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {CERTS.map((c) => (
-                <span
-                  key={c}
-                  className="rounded-btn border border-bwt-gold/40 px-5 py-2.5 font-sans text-sm font-semibold uppercase tracking-[0.15em] text-bwt-ivory/70"
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
+            <Certifications className="mt-2" />
           </div>
         </div>
       </section>

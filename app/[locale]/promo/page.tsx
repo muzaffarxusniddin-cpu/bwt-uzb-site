@@ -13,6 +13,7 @@ import PromoProducts from "./PromoProducts";
 import PromoHero from "./PromoHero";
 import PromoTrust from "./PromoTrust";
 import PromoReviews from "./PromoReviews";
+import Certifications from "@/app/components/Certifications";
 
 // 5-min ISR — matches the rest of the site, lets ERP product edits propagate.
 export const revalidate = 300;
@@ -385,13 +386,7 @@ export default async function PromoPage({ params }: PageProps) {
               <div className={styles.a}>{t("tech.bottomA")}</div>
               <div className={styles.b}>{t("tech.bottomB")}</div>
             </div>
-            <div className={styles.techCert}>
-              <span className={styles.certBadge}>TÜV</span>
-              <span className={styles.certBadge}>NSF</span>
-              <span className={styles.certBadge}>DIN</span>
-              <span className={styles.certBadge}>EN</span>
-              <span className={styles.certBadge}>ISO 9001</span>
-            </div>
+            <Certifications />
           </div>
         </div>
       </section>
