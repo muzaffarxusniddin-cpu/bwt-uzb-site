@@ -301,11 +301,86 @@
                     "closer":  "Butun O'zbekiston bo'ylab chiqamiz"
                 },
     "residences":  {
-                       "eyebrow":  "O'zbekistonda o'rnatilgan",
-                       "countSuffix":  "butun mamlakat bo'ylab premium obyekt",
-                       "listTitle":  "BWT o'rnatilgan premium TJlar",
-                       "homes":  "+ butun O'zbekiston bo'ylab 100 xususiy uy"
-                   },
+      "eyebrow": "O'zbekistonda o'rnatilgan",
+      "countSuffix": "butun mamlakat bo'ylab premium obyekt",
+      "listTitle": "BWT o'rnatilgan premium TJlar",
+      "homes": "+ butun O'zbekiston bo'ylab 100 xususiy uy",
+      "titleA": "11 ta premium uy-joy majmuasi allaqachon tanladi",
+      "titleAccent": "BWT",
+      "lead": "+ O'zbekiston bo'ylab 100 dan ortiq xususiy uylar va ofislar. Har bir obyekt — laboratoriya tahlilidan keyin individual tizim tanlash.",
+      "stats": [
+        {
+          "num": "1200",
+          "unit": "+",
+          "label": "O'zbekistondagi premium obyektlar"
+        },
+        {
+          "num": "10",
+          "unit": " yil",
+          "label": "O'zbekiston bozorida"
+        },
+        {
+          "num": "90",
+          "unit": " daq",
+          "label": "Sertifikatlangan jamoa bilan o'rnatish"
+        },
+        {
+          "num": "3",
+          "unit": " yil",
+          "label": "Jihoz va o'rnatishga kafolat"
+        }
+      ],
+      "objectsTitle": "BWT o'rnatilgan premium uy-joy majmualari",
+      "objectsMeta": "+ 100 ta xususiy uy",
+      "objects": [
+        {
+          "name": "NestOne",
+          "cat": "Premium · Toshkent"
+        },
+        {
+          "name": "Piramit",
+          "cat": "Premium · Toshkent"
+        },
+        {
+          "name": "NRG Voha",
+          "cat": "Biznes · Toshkent"
+        },
+        {
+          "name": "NRG Mirzo Ulugbek",
+          "cat": "Biznes · Toshkent"
+        },
+        {
+          "name": "NRG Hayot",
+          "cat": "Biznes · Toshkent"
+        },
+        {
+          "name": "Mirabad Avenue",
+          "cat": "Premium · Toshkent"
+        },
+        {
+          "name": "Modera Towers",
+          "cat": "Premium · Toshkent"
+        },
+        {
+          "name": "NRG Park",
+          "cat": "Biznes · Toshkent"
+        },
+        {
+          "name": "KISLOROD",
+          "cat": "Murad Buildings"
+        },
+        {
+          "name": "Golden House",
+          "cat": "Premium · Toshkent"
+        },
+        {
+          "name": "NRG Oybek",
+          "cat": "Biznes · Toshkent"
+        }
+      ],
+      "moreName": "100+ xususiy uylar",
+      "moreCat": "O'zbekiston bo'ylab"
+    },
     "finalCta":  {
                      "title":  "Uyingiz suvi tarkibini biling. Bepul. 24 soatda.",
                      "subtitle":  "Jo'mragingizdan laboratoriya tahlili. Olib kelamiz, olib ketamiz va natijalarni Telegramda yuboramiz.",
