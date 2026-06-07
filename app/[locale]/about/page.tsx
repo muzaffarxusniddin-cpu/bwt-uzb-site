@@ -6,6 +6,7 @@ import { imageBlurs } from "@/lib/image-blurs";
 import type { Metadata } from "next";
 import { altMeta } from "@/lib/seo";
 import ChangeTheWorld from "@/app/components/ChangeTheWorld";
+import Founder from "@/app/components/Founder";
 
 export async function generateMetadata({
   params,
@@ -124,6 +125,9 @@ export default async function AboutPage({
           </div>
         </div>
       </section>
+
+      {/* Founder — local distributor */}
+      <Founder />
 
       {/* Trust block (replaces team section) */}
       <section className="bg-bwt-navy py-16 text-bwt-ivory lg:py-[120px]">
