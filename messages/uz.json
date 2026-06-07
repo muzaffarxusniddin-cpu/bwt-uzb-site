@@ -64,14 +64,14 @@
                                          },
                                          {
                                              "label":  "Mikroplastik",
-                                             "text":  "har litrda zarrachalar"
+                                             "text":  "har litrda 1–5 mkm zarrachalar — hatto shisha suvda ham bor"
                                          },
                                          {
                                              "label":  "Bakteriya va sistalar",
                                              "text":  "ko'rinmaydi, lekin salomatlik uchun xavfli"
                                          }
                                      ],
-                         "closer":  "Shisha suv — yechim emas. Plastikda mikroplastik bor, va u sog'liq uchun eng xavfli suvlardan biri hisoblanadi."
+                         "closer":  "Mikroplastik — har litrda, va shisha suv ham qutqarmaydi: plastikda u bor. BWT UF-membranasi zarrachalarni 0.01 mkm gacha ushlaydi — bu 100% himoya."
                      },
     "painPoints":  {
                        "eyebrow":  "Oqibatlar",

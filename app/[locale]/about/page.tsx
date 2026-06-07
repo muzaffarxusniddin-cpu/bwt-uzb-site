@@ -41,7 +41,7 @@ const STORY_IMAGES = [
   },
 ];
 
-const CERTS = ["TÜV", "NSF", "ISO 9001", "DIN"];
+const CERTS = ["TÜV", "NSF", "DIN", "EN", "ISO 9001"];
 
 export default async function AboutPage({
   params,
