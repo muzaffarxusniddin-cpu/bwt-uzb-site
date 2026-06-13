@@ -85,7 +85,6 @@ export default async function LocaleLayout({
           <Footer locale={locale} />
         </NextIntlClientProvider>
       </body>
-      {/* 2. Google Analytics ID shu yerga ulanadi */}
       <GoogleAnalytics gaId="G-XYKWF44598" />
     </html>
   );
