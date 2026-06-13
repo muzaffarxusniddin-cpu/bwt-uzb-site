@@ -9,6 +9,8 @@ import { routing } from "@/i18n/routing";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import SmoothScroll from "@/app/components/SmoothScroll";
+// 1. Google Analytics import qilinadi
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const playfair = Playfair_Display({
   subsets: ["latin", "cyrillic"],
@@ -41,7 +43,9 @@ export const metadata: Metadata = {
     locale: "ru_UZ",
     siteName: BRAND.name,
     type: "website",
-    images: [{ url: "/images/bwt-logo-1200w.png", width: 1200, alt: "BWT Uzbekistan" }],
+    images: [
+      { url: "/images/bwt-logo-1200w.png", width: 1200, alt: "BWT Uzbekistan" },
+    ],
   },
 };
 
@@ -81,6 +85,8 @@ export default async function LocaleLayout({
           <Footer locale={locale} />
         </NextIntlClientProvider>
       </body>
+      {/* 2. Google Analytics ID shu yerga ulanadi */}
+      <GoogleAnalytics gaId="G-XYKWF44598" />
     </html>
   );
 }
