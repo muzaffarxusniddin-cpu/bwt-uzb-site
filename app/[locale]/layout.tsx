@@ -70,9 +70,8 @@ export async function generateMetadata({
       },
     },
 
-    // Google Search Console tasdiqlovi
     verification: {
-      google: "google319733f181918eeb",
+      google: "google319733f181918eeb", // .html qismi olib tashlandi
     },
 
     // Ijtimoiy tarmoqlar (Telegram, Facebook) uchun mukammal ko'rinish
