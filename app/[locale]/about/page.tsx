@@ -9,17 +9,66 @@ import ChangeTheWorld from "@/app/components/ChangeTheWorld";
 import Founder from "@/app/components/Founder";
 import Certifications from "@/app/components/Certifications";
 
+// Kompaniya sahifasi uchun mukammal dinamik SEO funksiyasi
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const isUz = locale === "uz";
+
+  // Siz taqdim etgan mukammal SEO matnlari
+  const seoData = {
+    uz: {
+      title: "BWT Kompaniyasi Haqida — Yevropa Suv Texnologiyalari Yetakchisi",
+      description:
+        "1823-yilda tashkil etilgan va dunyoning 122 ta mamlakatida yetakchi bo'lgan BWT (Best Water Technology) brendi tarixi. O'zbekistondagi rasmiy dilerdan nemis sifati va kafolati.",
+      ogTitle: "BWT Uzbekistan — Yevropa Suv Texnologiyalari Yetakchisi",
+    },
+    ru: {
+      title: "О Компании BWT — Европейский Лидер Водных Технологий",
+      description:
+        "История, миссия и ценности бренда BWT (Best Water Technology), основанного в 1823 году. Официальный представитель мирового эксперта по очистке воды в Узбекистане.",
+      ogTitle: "О Компании BWT — Мировой Эксперт по Очистке Воды",
+    },
+  };
+
+  const currentSeo = isUz ? seoData.uz : seoData.ru;
+
   return {
-    title: "О компании · BWT Uzbekistan",
-    description:
-      "BWT — немецкая инженерия воды с 1990 года, более 90 стран. Официальный дистрибьютор в Узбекистане.",
+    metadataBase: new URL("https://bwt-uzb.uz"),
+    title: currentSeo.title,
+    description: currentSeo.description,
+
+    // Loyihadagi altMeta yordamchi funksiyasini saqlab qolamiz
     alternates: altMeta(locale, "/about"),
+
+    // Telegram, Facebook va boshqa ijtimoiy tarmoqlar uchun to'liq OG sozlamalari
+    openGraph: {
+      title: currentSeo.ogTitle,
+      description: currentSeo.description,
+      locale: isUz ? "uz_UZ" : "ru_UZ",
+      siteName: "BWT Uzbekistan",
+      type: "website",
+      url: `https://bwt-uzb.uz/${isUz ? "uz/about" : "about"}`,
+      images: [
+        {
+          url: "/images/installations/bwt-under-sink-install.jpg", // Hero qismidagi professional o'rnatish rasmi
+          width: 1200,
+          height: 630,
+          alt: "BWT Germany Engineering",
+        },
+      ],
+    },
+
+    // Twitter / X kartalari uchun moslashtirish
+    twitter: {
+      card: "summary_large_image",
+      title: currentSeo.ogTitle,
+      description: currentSeo.description,
+      images: ["/images/installations/bwt-under-sink-install.jpg"],
+    },
   };
 }
 
@@ -41,7 +90,6 @@ const STORY_IMAGES = [
     alt: "Команда BWT Uzbekistan на установке системы",
   },
 ];
-
 
 export default async function AboutPage({
   params,
@@ -76,8 +124,12 @@ export default async function AboutPage({
           <h1 className="max-w-[820px] font-serif text-4xl font-normal leading-[1.1] sm:text-5xl lg:text-6xl">
             {t("heroTitle")}
           </h1>
-          <p className="mt-6 max-w-xl font-sans text-lg text-bwt-ivory/70">{t("heroSubtitle")}</p>
-          <p className="mt-4 font-serif text-lg italic text-bwt-gold">{t("heroTagline")}</p>
+          <p className="mt-6 max-w-xl font-sans text-lg text-bwt-ivory/70">
+            {t("heroSubtitle")}
+          </p>
+          <p className="mt-4 font-serif text-lg italic text-bwt-gold">
+            {t("heroTagline")}
+          </p>
         </div>
       </section>
 
@@ -114,7 +166,9 @@ export default async function AboutPage({
                     )}
                   </div>
                   <div className={flip ? "lg:order-1" : ""}>
-                    <h2 className="font-serif text-3xl text-bwt-charcoal lg:text-4xl">{s.title}</h2>
+                    <h2 className="font-serif text-3xl text-bwt-charcoal lg:text-4xl">
+                      {s.title}
+                    </h2>
                     <p className="mt-5 font-sans text-lg leading-relaxed text-bwt-graphite">
                       {s.body}
                     </p>
@@ -140,7 +194,9 @@ export default async function AboutPage({
           <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-3">
             {trust.map((tr) => (
               <div key={tr.label}>
-                <div className="font-serif text-3xl text-bwt-gold sm:text-4xl">{tr.stat}</div>
+                <div className="font-serif text-3xl text-bwt-gold sm:text-4xl">
+                  {tr.stat}
+                </div>
                 <p className="mx-auto mt-2 max-w-[200px] font-sans text-sm text-bwt-ivory/65">
                   {tr.label}
                 </p>
@@ -174,8 +230,12 @@ export default async function AboutPage({
                 className="relative min-w-[210px] shrink-0 border-t-2 border-bwt-gold/25 pt-5 lg:min-w-0 lg:shrink"
               >
                 <span className="absolute -top-[5px] left-0 h-2.5 w-2.5 rounded-full bg-bwt-gold" />
-                <div className="font-serif text-2xl text-bwt-gold">{m.year}</div>
-                <p className="mt-2 font-sans text-sm leading-relaxed text-bwt-graphite">{m.text}</p>
+                <div className="font-serif text-2xl text-bwt-gold">
+                  {m.year}
+                </div>
+                <p className="mt-2 font-sans text-sm leading-relaxed text-bwt-graphite">
+                  {m.text}
+                </p>
               </li>
             ))}
           </ol>

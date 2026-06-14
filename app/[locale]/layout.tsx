@@ -60,22 +60,19 @@ export async function generateMetadata({
     description: currentSeo.description,
     applicationName: BRAND.name,
 
-    // Mukammal Canonical va muqobil tillar (Google aynan shuni talab qiladi)
     alternates: {
       canonical: `https://bwt-uzb.uz/${currentSeo.localeUrl}`,
       languages: {
         "uz-UZ": "https://bwt-uzb.uz/uz",
         "ru-UZ": "https://bwt-uzb.uz",
-        "x-default": "https://bwt-uzb.uz", // Standart til (rus tili)
+        "x-default": "https://bwt-uzb.uz",
       },
     },
 
-    // Google Search Console yangi tasdiqlov kodi joylashtirildi
     verification: {
       google: "JyetMDcKmg29g-BPPtYr5D7KLuu4hS_2QVNLOapluoc",
     },
 
-    // Ijtimoiy tarmoqlar (Telegram, Facebook) uchun mukammal ko'rinish
     openGraph: {
       title: currentSeo.ogTitle,
       description: currentSeo.description,
@@ -93,7 +90,6 @@ export async function generateMetadata({
       ],
     },
 
-    // Twitter / X ijtimoiy tarmog'i uchun maxsus meta taglar
     twitter: {
       card: "summary_large_image",
       title: currentSeo.ogTitle,
@@ -101,7 +97,6 @@ export async function generateMetadata({
       images: ["/images/bwt-logo-1200w.png"],
     },
 
-    // Brauzer belgilari (Favicons)
     icons: {
       icon: [
         { url: "/icons/bwt-192.png", sizes: "192x192", type: "image/png" },

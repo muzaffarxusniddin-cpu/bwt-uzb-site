@@ -14,21 +14,76 @@ import { imageBlurs } from "@/lib/image-blurs";
 import type { Metadata } from "next";
 import { altMeta } from "@/lib/seo";
 
+// Servis sahifasi uchun mukammal dinamik SEO funksiyasi
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const isUz = locale === "uz";
+
+  // Siz taqdim etgan mukammal SEO matnlari
+  const seoData = {
+    uz: {
+      title:
+        "Suv Filtrlariga Xizmat Ko'rsatish va Bepul Suv Tahlili — BWT Servis",
+      description:
+        "Toshkentda suv filtrlarini professional o'rnatish, texnik xizmat ko'rsatish va ta'mirlash. Qattiq suv va nakipga qarshi filtrlar hamda uyingizda bepul suv tahlilini (analizini) o'tkazish xizmati.",
+      ogTitle: "BWT Servis — Professional Suv Tahlili va O'rnatish",
+    },
+    ru: {
+      title: "Установка Фильтров для Воды и Анализ Качества Воды — BWT Сервис",
+      description:
+        "Профессиональный монтаж и обслуживание систем очистки воды BWT в Ташкенте. Установка умягчителей воды от жесткости и накипи. Закажите бесплатную проверку и экспресс-анализ качества воды прямо дома.",
+      ogTitle: "BWT Сервис — Установка Фильтров и Экспресс-Анализ Воды",
+    },
+  };
+
+  const currentSeo = isUz ? seoData.uz : seoData.ru;
+
   return {
-    title: "Сервис · BWT Uzbekistan",
-    description:
-      "Установка за 90 минут, обслуживание, гарантия 3 года и поддержка по всему Узбекистану.",
+    metadataBase: new URL("https://bwt-uzb.uz"),
+    title: currentSeo.title,
+    description: currentSeo.description,
+
+    // Mavjud alternates sozlamasini saqlagan holda Google talablariga muvofiqlashtirish
     alternates: altMeta(locale, "/services"),
+
+    // Ijtimoiy tarmoqlar (Telegram, Facebook va h.k.) uchun ulashuv kartalari
+    openGraph: {
+      title: currentSeo.ogTitle,
+      description: currentSeo.description,
+      locale: isUz ? "uz_UZ" : "ru_UZ",
+      siteName: "BWT Uzbekistan",
+      type: "website",
+      url: `https://bwt-uzb.uz/${isUz ? "uz/services" : "services"}`,
+      images: [
+        {
+          url: "/images/installations/delivery-installation-team.jpg", // Mavjud jamoa rasmidan OG-image sifatida foydalanamiz
+          width: 1200,
+          height: 630,
+          alt: "BWT Service Team",
+        },
+      ],
+    },
+
+    // Twitter / X platformasi uchun moslashtirish
+    twitter: {
+      card: "summary_large_image",
+      title: currentSeo.ogTitle,
+      description: currentSeo.description,
+      images: ["/images/installations/delivery-installation-team.jpg"],
+    },
   };
 }
 
-const JOURNEY_ICONS: LucideIcon[] = [Wrench, ShieldCheck, RefreshCw, MessageCircle];
+const JOURNEY_ICONS: LucideIcon[] = [
+  Wrench,
+  ShieldCheck,
+  RefreshCw,
+  MessageCircle,
+];
 
 export default async function ServicesPage({
   params,
@@ -63,7 +118,9 @@ export default async function ServicesPage({
           <h1 className="max-w-[820px] font-serif text-4xl font-normal leading-[1.1] sm:text-5xl lg:text-6xl">
             {t("heroTitle")}
           </h1>
-          <p className="mt-6 max-w-xl font-sans text-lg text-bwt-ivory/70">{t("heroSubtitle")}</p>
+          <p className="mt-6 max-w-xl font-sans text-lg text-bwt-ivory/70">
+            {t("heroSubtitle")}
+          </p>
         </div>
       </section>
 
@@ -90,7 +147,9 @@ export default async function ServicesPage({
                     </span>
                     <Icon className="h-7 w-7 text-bwt-gold" strokeWidth={1.5} />
                   </div>
-                  <h3 className="mt-6 font-serif text-2xl text-bwt-charcoal">{s.title}</h3>
+                  <h3 className="mt-6 font-serif text-2xl text-bwt-charcoal">
+                    {s.title}
+                  </h3>
                   <p className="mt-3 flex-1 font-sans text-sm leading-relaxed text-bwt-graphite">
                     {s.text}
                   </p>
@@ -141,7 +200,9 @@ export default async function ServicesPage({
                 <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-bwt-gold/15 text-bwt-gold">
                   <Check className="h-4 w-4" strokeWidth={2.5} />
                 </span>
-                <span className="font-sans text-base text-bwt-charcoal">{item}</span>
+                <span className="font-sans text-base text-bwt-charcoal">
+                  {item}
+                </span>
               </li>
             ))}
           </ul>

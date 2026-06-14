@@ -1,20 +1,80 @@
 import { getTranslations } from "next-intl/server";
 import { BRAND } from "@/lib/config";
-import { Phone, Mail, Send, MessageCircle, Camera, MapPin, Clock, type LucideIcon } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  Send,
+  MessageCircle,
+  Camera,
+  MapPin,
+  Clock,
+  type LucideIcon,
+} from "lucide-react";
 import ContactForm from "./ContactForm";
 import type { Metadata } from "next";
 import { altMeta } from "@/lib/seo";
 
+// Kontaktlar sahifasi uchun mukammal dinamik SEO funksiyasi
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const isUz = locale === "uz";
+
+  // Siz taqdim etgan mukammal SEO matnlari
+  const seoData = {
+    uz: {
+      title:
+        "BWT Uzbekistan Kontaktlar — Toshkentdagi Rasmiy Ofis va Telefonlar",
+      description:
+        "Toshkentdagi BWT rasmiy dileri va vakolatxonasi bilan bog'laning. Suv filtrlarini sotib olish, servis xizmati va hamkorlik bo'yicha telefon raqamlarimiz hamda manzilimiz.",
+      ogTitle: "BWT Uzbekistan — Rasmiy Ofis va Kontaktlar",
+    },
+    ru: {
+      title: "Контакты BWT Uzbekistan — Официальный Офис в Ташкенте и Телефоны",
+      description:
+        "Свяжитесь с официальным представительством BWT в Ташкенте. Телефоны, адрес и график работы для заказа фильтров для воды, сервисного обслуживания и сотрудничества.",
+      ogTitle: "BWT Uzbekistan — Официальные Контакты и Офис",
+    },
+  };
+
+  const currentSeo = isUz ? seoData.uz : seoData.ru;
+
   return {
-    title: "Контакты · BWT Uzbekistan",
-    description: "Телефон, Telegram, WhatsApp, Instagram, email и адрес офиса BWT в Ташкенте.",
+    metadataBase: new URL("https://bwt-uzb.uz"),
+    title: currentSeo.title,
+    description: currentSeo.description,
+
+    // Loyihadagi altMeta yordamchi funksiyasini saqlab qolamiz
     alternates: altMeta(locale, "/contacts"),
+
+    // Ijtimoiy tarmoqlarda kontaktlar sahifasi linki yuborilganda chiroyli karta chiqishi uchun
+    openGraph: {
+      title: currentSeo.ogTitle,
+      description: currentSeo.description,
+      locale: isUz ? "uz_UZ" : "ru_UZ",
+      siteName: "BWT Uzbekistan",
+      type: "website",
+      url: `https://bwt-uzb.uz/${isUz ? "uz/contacts" : "contacts"}`,
+      images: [
+        {
+          url: "/images/bwt-logo-1200w.png", // Brend logotipi yoki ofis rasmi uchun default havola
+          width: 1200,
+          height: 630,
+          alt: "BWT Uzbekistan Contacts",
+        },
+      ],
+    },
+
+    // Twitter / X platformasi uchun moslashtirish
+    twitter: {
+      card: "summary_large_image",
+      title: currentSeo.ogTitle,
+      description: currentSeo.description,
+      images: ["/images/bwt-logo-1200w.png"],
+    },
   };
 }
 
@@ -30,13 +90,48 @@ export default async function ContactsPage({
   const t = await getTranslations({ locale, namespace: "contactsPage" });
   const hours = BRAND.workingHours[loc];
 
-  const rows: { icon: LucideIcon; label: string; value: string; href: string }[] = [
-    { icon: Phone, label: t("labels.phone"), value: BRAND.phone, href: BRAND.phoneHref },
-    { icon: Mail, label: t("labels.email"), value: BRAND.email, href: `mailto:${BRAND.email}` },
-    { icon: Send, label: t("labels.telegram"), value: BRAND.telegramHandle, href: BRAND.telegram },
-    { icon: MessageCircle, label: t("labels.whatsapp"), value: t("whatsappValue"), href: waHref },
-    { icon: Camera, label: t("labels.instagram"), value: BRAND.instagramHandle, href: BRAND.instagram },
-    { icon: MapPin, label: t("labels.office"), value: BRAND.address[loc], href: BRAND.geo.googleLink },
+  const rows: {
+    icon: LucideIcon;
+    label: string;
+    value: string;
+    href: string;
+  }[] = [
+    {
+      icon: Phone,
+      label: t("labels.phone"),
+      value: BRAND.phone,
+      href: BRAND.phoneHref,
+    },
+    {
+      icon: Mail,
+      label: t("labels.email"),
+      value: BRAND.email,
+      href: `mailto:${BRAND.email}`,
+    },
+    {
+      icon: Send,
+      label: t("labels.telegram"),
+      value: BRAND.telegramHandle,
+      href: BRAND.telegram,
+    },
+    {
+      icon: MessageCircle,
+      label: t("labels.whatsapp"),
+      value: t("whatsappValue"),
+      href: waHref,
+    },
+    {
+      icon: Camera,
+      label: t("labels.instagram"),
+      value: BRAND.instagramHandle,
+      href: BRAND.instagram,
+    },
+    {
+      icon: MapPin,
+      label: t("labels.office"),
+      value: BRAND.address[loc],
+      href: BRAND.geo.googleLink,
+    },
   ];
 
   return (
@@ -59,7 +154,9 @@ export default async function ContactsPage({
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             {/* Left — contact info */}
             <div className="rounded-card border border-bwt-silver/60 bg-white p-8 lg:p-10">
-              <h2 className="font-serif text-2xl text-bwt-charcoal">{t("infoTitle")}</h2>
+              <h2 className="font-serif text-2xl text-bwt-charcoal">
+                {t("infoTitle")}
+              </h2>
               <ul className="mt-6 space-y-1">
                 {rows.map((r) => {
                   const Icon = r.icon;
@@ -67,7 +164,9 @@ export default async function ContactsPage({
                     <li key={r.label}>
                       <a
                         href={r.href}
-                        target={r.href.startsWith("http") ? "_blank" : undefined}
+                        target={
+                          r.href.startsWith("http") ? "_blank" : undefined
+                        }
                         rel="noopener noreferrer"
                         className="flex items-center gap-4 rounded-btn px-2 py-2.5 transition-colors hover:bg-bwt-cream"
                       >
@@ -98,7 +197,9 @@ export default async function ContactsPage({
                     <span className="block font-sans text-base font-medium text-bwt-charcoal">
                       {hours.weekdays}
                     </span>
-                    <span className="block font-sans text-sm text-bwt-graphite">{hours.sunday}</span>
+                    <span className="block font-sans text-sm text-bwt-graphite">
+                      {hours.sunday}
+                    </span>
                   </span>
                 </li>
               </ul>

@@ -5,17 +5,66 @@ import { Droplet, MapPin, Send, Check, type LucideIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { altMeta } from "@/lib/seo";
 
+// Ariza sahifasi uchun mukammal dinamik SEO funksiyasi
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const isUz = locale === "uz";
+
+  // Siz taqdim etgan mukammal SEO matnlari
+  const seoData = {
+    uz: {
+      title: "Suv Filtrini Tanlash va Ariza Qoldirish — BWT Uzbekistan",
+      description:
+        "BWT mutaxassislaridan bepul konsultatsiya olish, suv sifatini tekshirish yoki filtr o'rnatish uchun onlayn so'rov qoldiring. Biz sizga eng to'g'ri suv tozalash tizimini tanlashda yordam beramiz.",
+      ogTitle: "BWT Uzbekistan — Onlayn Ariza Qoldirish",
+    },
+    ru: {
+      title: "Оставить Заявку на Подбор Фильтра и Анализ Воды — BWT Uzbekistan",
+      description:
+        "Оставьте онлайн-заявку на подбор системы очистки воды BWT в Ташкенте. Бесплатный экспресс-анализ качества воды из-под крана и профессиональная консультация от экспертов.",
+      ogTitle: "BWT Uzbekistan — Онлайн Заявка на Анализ и Подбор",
+    },
+  };
+
+  const currentSeo = isUz ? seoData.uz : seoData.ru;
+
   return {
-    title: "Бесплатный анализ воды · BWT Uzbekistan",
-    description:
-      "Закажите бесплатный анализ воды на дому. Привезём, заберём, пришлём результаты в Telegram за 24 часа.",
+    metadataBase: new URL("https://bwt-uzb.uz"),
+    title: currentSeo.title,
+    description: currentSeo.description,
+
+    // Loyihadagi altMeta yordamchi funksiyasini saqlab qolamiz
     alternates: altMeta(locale, "/request"),
+
+    // Ijtimoiy tarmoqlar (Telegram, Facebook va h.k.) uchun Open Graph sozlamalari
+    openGraph: {
+      title: currentSeo.ogTitle,
+      description: currentSeo.description,
+      locale: isUz ? "uz_UZ" : "ru_UZ",
+      siteName: "BWT Uzbekistan",
+      type: "website",
+      url: `https://bwt-uzb.uz/${isUz ? "uz/request" : "request"}`,
+      images: [
+        {
+          url: "/images/bwt-logo-1200w.png", // Umumiy brend logotipi yoki maxsus jozibador rasm havolasi
+          width: 1200,
+          height: 630,
+          alt: "BWT Uzbekistan Request",
+        },
+      ],
+    },
+
+    // Twitter / X platformasi uchun moslashtirish
+    twitter: {
+      card: "summary_large_image",
+      title: currentSeo.ogTitle,
+      description: currentSeo.description,
+      images: ["/images/bwt-logo-1200w.png"],
+    },
   };
 }
 
@@ -44,7 +93,11 @@ export default async function RequestPage({
           <p className="mx-auto mt-5 max-w-lg text-center font-sans text-lg text-bwt-ivory/75">
             {t("heroSubtitle")}
           </p>
-          <Suspense fallback={<div className="mt-10 text-center text-bwt-ivory/50">…</div>}>
+          <Suspense
+            fallback={
+              <div className="mt-10 text-center text-bwt-ivory/50">…</div>
+            }
+          >
             <RequestClient />
           </Suspense>
 
@@ -54,7 +107,8 @@ export default async function RequestPage({
                 key={item}
                 className="inline-flex items-center gap-2 font-sans text-sm text-bwt-ivory/70"
               >
-                <Check className="h-4 w-4 text-bwt-gold" strokeWidth={2.5} /> {item}
+                <Check className="h-4 w-4 text-bwt-gold" strokeWidth={2.5} />{" "}
+                {item}
               </li>
             ))}
           </ul>
@@ -70,10 +124,17 @@ export default async function RequestPage({
             {benefits.map((b, i) => {
               const Icon = BENEFIT_ICONS[i];
               return (
-                <div key={b.title} className="rounded-card border border-bwt-silver/60 bg-white p-8">
+                <div
+                  key={b.title}
+                  className="rounded-card border border-bwt-silver/60 bg-white p-8"
+                >
                   <Icon className="h-8 w-8 text-bwt-gold" strokeWidth={1.5} />
-                  <h3 className="mt-5 font-serif text-xl text-bwt-charcoal">{b.title}</h3>
-                  <p className="mt-2 font-sans text-sm text-bwt-graphite">{b.text}</p>
+                  <h3 className="mt-5 font-serif text-xl text-bwt-charcoal">
+                    {b.title}
+                  </h3>
+                  <p className="mt-2 font-sans text-sm text-bwt-graphite">
+                    {b.text}
+                  </p>
                 </div>
               );
             })}
