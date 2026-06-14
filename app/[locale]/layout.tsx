@@ -9,7 +9,6 @@ import { routing } from "@/i18n/routing";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import SmoothScroll from "@/app/components/SmoothScroll";
-// 1. Google Analytics import qilinadi
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 const playfair = Playfair_Display({
