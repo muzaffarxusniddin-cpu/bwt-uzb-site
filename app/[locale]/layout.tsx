@@ -70,8 +70,9 @@ export async function generateMetadata({
       },
     },
 
+    // Google Search Console yangi tasdiqlov kodi joylashtirildi
     verification: {
-      google: "google319733f181918eeb", // .html qismi olib tashlandi
+      google: "JyetMDcKmg29g-BPPtYr5D7KLuu4hS_2QVNLOapluoc",
     },
 
     // Ijtimoiy tarmoqlar (Telegram, Facebook) uchun mukammal ko'rinish
