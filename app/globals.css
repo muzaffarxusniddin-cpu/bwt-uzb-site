@@ -1,57 +1,70 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────────────────────────────────
-   BWT Uzbekistan — premium design tokens (Midnight Navy + Champagne Gold).
+   BWT Uzbekistan — КП design system (Deep Navy #001D46 + BWT Pink #F087B6).
+   Matches the approved commercial-proposal (КП) visual identity:
+   navy header/footer/dark blocks, white content, pink accent bars & labels.
    Registered via Tailwind v4 @theme so utilities are generated:
-   bg-bwt-navy, text-bwt-gold, border-bwt-silver, font-serif, rounded-btn,
-   shadow-card, etc.
+   bg-bwt-navy, text-bwt-gold, border-bwt-silver, rounded-btn, shadow-card.
+   NOTE: the historical token names bwt-gold* are kept for compatibility —
+   they now resolve to the BWT pink accent from the КП identity.
    ───────────────────────────────────────────────────────────────────────── */
 @theme {
-  --color-bwt-navy: #0a1628;
-  --color-bwt-navy-light: #1b2942;
-  --color-bwt-navy-dark: #050b17;
+  --color-bwt-navy: #001d46;
+  --color-bwt-navy-light: #0e2e5c;
+  --color-bwt-navy-dark: #001233;
 
-  --color-bwt-gold: #c9a961;
-  --color-bwt-gold-light: #d9bc78;
-  --color-bwt-gold-dark: #a88a48;
+  /* Accent (former "gold" tokens) — BWT pink from the КП identity */
+  --color-bwt-gold: #f087b6;
+  --color-bwt-gold-light: #f5a9c8;
+  --color-bwt-gold-dark: #c4527f;
 
-  --color-bwt-aqua: #4dd0e1;
-  --color-bwt-aqua-soft: #b2ebf2;
+  --color-bwt-aqua: #6ea8e8;
+  --color-bwt-aqua-soft: #cfe0f5;
 
-  --color-bwt-ivory: #fafaf7;
-  --color-bwt-cream: #f5f2eb;
-  --color-bwt-charcoal: #1a1a1a;
-  --color-bwt-graphite: #6b6b6b;
-  --color-bwt-silver: #d4d4d4;
+  /* Light surfaces — КП uses pure white pages + light-gray cards */
+  --color-bwt-ivory: #ffffff;
+  --color-bwt-cream: #f0f1f4;
+  --color-bwt-charcoal: #001d46;
+  --color-bwt-graphite: #5b6472;
+  --color-bwt-silver: #d9dce3;
 
   --color-bwt-success: #2d7a4f;
   --color-bwt-danger: #b8473a;
 
-  /* Fonts — wired to the next/font CSS variables set in layout.tsx */
-  --font-serif: var(--font-playfair), "Cormorant Garamond", Georgia, serif;
+  /* КП typography is a single bold sans family */
+  --font-serif: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --radius-btn: 4px;
-  --radius-card: 12px;
+  --radius-card: 10px;
   --radius-img: 8px;
 
-  --shadow-soft: 0 1px 3px rgba(10, 22, 40, 0.06);
-  --shadow-card: 0 10px 30px rgba(10, 22, 40, 0.08);
-  --shadow-modal: 0 40px 60px rgba(10, 22, 40, 0.15);
+  --shadow-soft: 0 1px 3px rgba(0, 29, 70, 0.06);
+  --shadow-card: 0 10px 30px rgba(0, 29, 70, 0.08);
+  --shadow-modal: 0 40px 60px rgba(0, 29, 70, 0.15);
 }
 
-/* Legacy palette — kept so pages not yet migrated to the new design system
-   (catalog, about, services, contacts, request) keep rendering correctly. */
+/* КП heading style: former serif headings render as bold condensed sans.
+   Placed after the Tailwind utilities so it wins over font-normal/serif. */
+.font-serif {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+/* Legacy palette — pages not yet migrated to the component design system
+   (catalog, about, services, contacts, request) pick up КП colors here. */
 :root {
-  --primary: #0057a8;
-  --primary-dark: #00427e;
-  --secondary: #00aeef;
-  --accent: #e30613;
-  --bg: #f5f9fd;
+  --primary: #001d46;
+  --primary-dark: #001233;
+  --secondary: #f087b6;
+  --accent: #c4527f;
+  --bg: #f5f6f8;
   --surface: #ffffff;
   --text: #1a1a1a;
-  --text-muted: #6b7280;
-  --border: #e5e7eb;
+  --text-muted: #5b6472;
+  --border: #e2e5ea;
 }
 
 html,

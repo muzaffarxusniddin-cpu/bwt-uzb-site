@@ -40,7 +40,7 @@ export default function Installations() {
           <p className="font-sans text-xs uppercase tracking-[0.25em] text-bwt-gold">
             {t("eyebrow")}
           </p>
-          <h2 className="mt-4 font-serif text-3xl font-normal leading-[1.15] text-bwt-charcoal lg:text-4xl">
+          <h2 className="mt-4 border-l-4 border-bwt-gold pl-5 font-serif text-3xl font-normal leading-[1.15] text-bwt-charcoal lg:text-4xl">
             {t("title")}
           </h2>
           <p className="mt-5 font-sans text-lg leading-relaxed text-bwt-graphite">{t("lead")}</p>

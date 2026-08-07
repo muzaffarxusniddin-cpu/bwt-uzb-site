@@ -41,8 +41,13 @@ Read it FIRST before making any changes:
 
 ## Brand rules (critical)
 
-- NO pink as primary color (Uzbek market does not accept it)
-- Primary palette: Midnight Navy `#0A1628` + Champagne Gold `#C9A961`
+- Design system = the approved КП (commercial proposal) identity, August 2026 — owner-approved.
+- Primary palette: Deep Navy `#001D46` + BWT Pink accent `#F087B6` (dark `#C4527F`, light `#F5A9C8`)
+- White content pages, navy header/footer/dark blocks, light-gray cards `#F0F1F4`
+- Section titles: bold sans, navy, with 4px pink left bar; eyebrow labels: spaced uppercase pink
+- Single font family: Inter (bold for headings). Playfair/serif removed.
+- Legacy token names `bwt-gold*` in code now resolve to the pink accent — do not "fix" them back to gold.
+- The old rule "no pink" is obsolete: owner approved the pink КП identity for the site redesign.
 - Premium positioning — no Bootstrap look, no Tilda templates
 - BWT origin: GERMANY (not Austria) — verified by owner
 - Russian primary language, Uzbek secondary

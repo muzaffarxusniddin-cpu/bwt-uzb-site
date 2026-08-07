@@ -35,7 +35,7 @@ export default function SlimReveal() {
     <section
       ref={ref}
       className="overflow-hidden pb-20 pt-28 lg:pb-40 lg:pt-48"
-      style={{ background: "linear-gradient(135deg, #fafaf7 0%, #f5f2eb 100%)" }}
+      style={{ background: "linear-gradient(135deg, #ffffff 0%, #f0f1f4 100%)" }}
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <motion.p
@@ -53,7 +53,7 @@ export default function SlimReveal() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="max-w-[720px] font-serif text-4xl font-normal leading-[1.1] text-bwt-charcoal sm:text-5xl lg:text-6xl"
+          className="border-l-4 border-bwt-gold pl-5 max-w-[720px] font-serif text-4xl font-normal leading-[1.1] text-bwt-charcoal sm:text-5xl lg:text-6xl"
         >
           {t("title")}
         </motion.h2>

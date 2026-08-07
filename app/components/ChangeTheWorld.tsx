@@ -72,7 +72,7 @@ export default function ChangeTheWorld() {
           className="max-w-[760px]"
         >
           <p className="font-sans text-xs uppercase tracking-[0.25em] text-bwt-gold">{t("eyebrow")}</p>
-          <h2 className="mt-5 font-serif text-3xl font-normal leading-[1.15] lg:text-5xl">
+          <h2 className="mt-5 border-l-4 border-bwt-gold pl-5 font-serif text-3xl font-normal leading-[1.15] lg:text-5xl">
             {t("title")}
           </h2>
           <p className="mt-6 font-sans text-lg leading-relaxed text-bwt-ivory/70">{t("lead")}</p>

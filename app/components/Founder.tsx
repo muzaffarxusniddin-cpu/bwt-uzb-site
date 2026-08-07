@@ -40,7 +40,7 @@ export default function Founder() {
             <p className="font-sans text-xs uppercase tracking-[0.25em] text-bwt-gold">
               {t("founder.eyebrow")}
             </p>
-            <h2 className="mt-4 font-serif text-3xl text-bwt-charcoal lg:text-4xl">
+            <h2 className="mt-4 border-l-4 border-bwt-gold pl-5 font-serif text-3xl text-bwt-charcoal lg:text-4xl">
               {t("founder.name")}
             </h2>
             <p className="mt-2 font-sans text-sm uppercase tracking-wider text-bwt-graphite">

@@ -83,7 +83,7 @@ export default function Lineup() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="max-w-[720px] font-serif text-4xl font-normal leading-[1.1] text-bwt-charcoal sm:text-5xl lg:text-6xl"
+          className="border-l-4 border-bwt-gold pl-5 max-w-[720px] font-serif text-4xl font-normal leading-[1.1] text-bwt-charcoal sm:text-5xl lg:text-6xl"
         >
           {t("title")}
         </motion.h2>
@@ -99,7 +99,7 @@ export default function Lineup() {
           {TIERS_META.map((tier, i) => (
             <div
               key={tier.id}
-              className={`relative flex flex-col rounded-card border bg-bwt-ivory p-8 transition-shadow hover:shadow-card ${
+              className={`relative flex flex-col rounded-card border border-b-[3px] border-b-bwt-gold bg-bwt-ivory p-8 transition-shadow hover:shadow-card ${
                 tier.popular ? "border-bwt-gold shadow-card lg:-translate-y-3" : "border-bwt-silver/60"
               }`}
             >

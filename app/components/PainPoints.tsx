@@ -67,7 +67,7 @@ export default function PainPoints() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="max-w-[720px] font-serif text-4xl font-normal leading-[1.1] text-bwt-ivory sm:text-5xl lg:text-6xl"
+          className="border-l-4 border-bwt-gold pl-5 max-w-[720px] font-serif text-4xl font-normal leading-[1.1] text-bwt-ivory sm:text-5xl lg:text-6xl"
         >
           {t("title")}
         </motion.h2>
@@ -115,7 +115,7 @@ export default function PainPoints() {
                   </>
                 )}
                 <Icon
-                  className="relative h-8 w-8 text-bwt-gold transition-[filter] duration-300 group-hover:drop-shadow-[0_0_14px_rgba(201,169,97,0.55)]"
+                  className="relative h-8 w-8 text-bwt-gold transition-[filter] duration-300 group-hover:drop-shadow-[0_0_14px_rgba(240,135,182,0.55)]"
                   strokeWidth={1.5}
                 />
                 <h3 className="relative mt-8 font-sans text-sm font-semibold uppercase tracking-wider text-bwt-ivory">

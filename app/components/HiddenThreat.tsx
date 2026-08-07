@@ -45,7 +45,7 @@ export default function HiddenThreat() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="max-w-[800px] font-serif text-4xl font-normal leading-[1.1] text-bwt-charcoal sm:text-5xl lg:text-6xl"
+          className="border-l-4 border-bwt-gold pl-5 max-w-[800px] font-serif text-4xl font-normal leading-[1.1] text-bwt-charcoal sm:text-5xl lg:text-6xl"
         >
           {t("title")}
         </motion.h2>

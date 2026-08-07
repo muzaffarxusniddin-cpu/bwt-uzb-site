@@ -48,7 +48,7 @@ export default function PremiumResidences() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="mt-5 max-w-[14ch] font-sans text-4xl font-extrabold leading-[1.05] tracking-tight text-bwt-charcoal lg:text-6xl"
+          className="mt-5 border-l-4 border-bwt-gold pl-5 max-w-[14ch] font-sans text-4xl font-extrabold leading-[1.05] tracking-tight text-bwt-charcoal lg:text-6xl"
         >
           {t("titleA")}{" "}
           <span className="font-serif text-[1.05em] font-medium italic text-bwt-gold">
@@ -78,7 +78,7 @@ export default function PremiumResidences() {
             <motion.div
               key={s.label}
               variants={tileItem}
-              className="rounded-card border border-bwt-silver/60 bg-white p-7 shadow-[0_1px_3px_rgba(10,22,40,0.04)] transition-shadow duration-300 hover:shadow-[0_8px_30px_rgba(10,22,40,0.08)]"
+              className="rounded-card border-b-[3px] border-bwt-gold bg-bwt-cream p-7 shadow-[0_1px_3px_rgba(0,29,70,0.04)] transition-shadow duration-300 hover:shadow-[0_8px_30px_rgba(0,29,70,0.10)]"
             >
               <div className="font-sans text-5xl font-extrabold leading-none tracking-tight text-bwt-charcoal lg:text-6xl">
                 {s.num}
@@ -119,7 +119,7 @@ export default function PremiumResidences() {
             <motion.article
               key={o.name}
               variants={tileItem}
-              className="group rounded-card border border-bwt-silver/60 bg-white p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-bwt-gold/50 hover:shadow-[0_8px_24px_rgba(10,22,40,0.08)]"
+              className="group rounded-card border border-bwt-silver/60 bg-white p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-bwt-gold/50 hover:shadow-[0_8px_24px_rgba(0,29,70,0.08)]"
             >
               <div className="font-mono text-xs tracking-widest text-bwt-gold">
                 {String(i + 1).padStart(2, "0")}
