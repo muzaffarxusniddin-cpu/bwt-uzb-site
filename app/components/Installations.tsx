@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
+import RevealText from "./anim/RevealText";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const VIEWPORT = { once: true, margin: "-80px" } as const;
@@ -41,7 +42,7 @@ export default function Installations() {
             {t("eyebrow")}
           </p>
           <h2 className="mt-4 border-l-4 border-bwt-gold pl-5 font-serif text-3xl font-normal leading-[1.15] text-bwt-charcoal lg:text-4xl">
-            {t("title")}
+            <RevealText text={t("title")} />
           </h2>
           <p className="mt-5 font-sans text-lg leading-relaxed text-bwt-graphite">{t("lead")}</p>
         </motion.div>

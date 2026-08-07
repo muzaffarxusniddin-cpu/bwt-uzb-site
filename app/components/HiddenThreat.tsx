@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { motion, type Variants } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
+import RevealText from "./anim/RevealText";
 import { imageBlurs } from "@/lib/image-blurs";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -26,6 +28,8 @@ const fromLeft: Variants = {
 export default function HiddenThreat() {
   const t = useTranslations("hiddenThreat");
   const bullets = t.raw("bullets") as { label: string; text: string }[];
+  const imgRef = useRef<HTMLDivElement>(null);
+  const imgInView = useInView(imgRef, { once: true, margin: "-80px" });
 
   return (
     <section className="bg-bwt-ivory py-20 lg:py-40">
@@ -47,15 +51,15 @@ export default function HiddenThreat() {
           viewport={VIEWPORT}
           className="border-l-4 border-bwt-gold pl-5 max-w-[800px] font-serif text-4xl font-normal leading-[1.1] text-bwt-charcoal sm:text-5xl lg:text-6xl"
         >
-          {t("title")}
+          <RevealText text={t("title")} />
         </motion.h2>
 
-        <div className="mt-12 grid grid-cols-1 gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-16">
-          {/* Left — image (clip-path reveal) */}
+        <div ref={imgRef} className="mt-12 grid grid-cols-1 gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-16">
+          {/* Left — image (clip-path reveal; observed via the unclipped grid parent,
+              because a fully clipped element never intersects the viewport) */}
           <motion.div
             initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
-            whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
-            viewport={VIEWPORT}
+            animate={{ clipPath: imgInView ? "inset(0% 0% 0% 0%)" : "inset(100% 0% 0% 0%)" }}
             transition={{ duration: 0.9, ease: EASE }}
             className="relative aspect-[4/5] overflow-hidden rounded-img shadow-card"
           >

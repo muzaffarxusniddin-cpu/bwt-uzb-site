@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
+import CountUp from "./anim/CountUp";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const VIEWPORT = { once: true, margin: "-80px" } as const;
@@ -81,7 +82,7 @@ export default function PremiumResidences() {
               className="rounded-card border-b-[3px] border-bwt-gold bg-bwt-cream p-7 shadow-[0_1px_3px_rgba(0,29,70,0.04)] transition-shadow duration-300 hover:shadow-[0_8px_30px_rgba(0,29,70,0.10)]"
             >
               <div className="font-sans text-5xl font-extrabold leading-none tracking-tight text-bwt-charcoal lg:text-6xl">
-                {s.num}
+                <CountUp value={s.num} />
                 <span className="text-2xl font-bold text-bwt-gold lg:text-3xl">{s.unit}</span>
               </div>
               <div className="mt-3 font-sans text-sm leading-snug text-bwt-graphite">

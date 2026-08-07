@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { Droplet } from "lucide-react";
 import { useTranslations } from "next-intl";
+import RevealText from "./anim/RevealText";
 import Certifications from "@/app/components/Certifications";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -146,7 +147,7 @@ export default function Technology() {
           viewport={VIEWPORT}
           className="border-l-4 border-bwt-gold pl-5 max-w-[720px] font-serif text-4xl font-normal leading-[1.1] text-bwt-ivory sm:text-5xl lg:text-6xl"
         >
-          {t("title")}
+          <RevealText text={t("title")} />
         </motion.h2>
 
         <div className="mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-16">

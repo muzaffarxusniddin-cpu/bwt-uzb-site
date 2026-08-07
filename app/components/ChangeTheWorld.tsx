@@ -4,6 +4,8 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
+import RevealText from "./anim/RevealText";
+import CountUp from "./anim/CountUp";
 import { ArrowUpRight, Play, X } from "lucide-react";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -73,7 +75,7 @@ export default function ChangeTheWorld() {
         >
           <p className="font-sans text-xs uppercase tracking-[0.25em] text-bwt-gold">{t("eyebrow")}</p>
           <h2 className="mt-5 border-l-4 border-bwt-gold pl-5 font-serif text-3xl font-normal leading-[1.15] lg:text-5xl">
-            {t("title")}
+            <RevealText text={t("title")} />
           </h2>
           <p className="mt-6 font-sans text-lg leading-relaxed text-bwt-ivory/70">{t("lead")}</p>
         </motion.div>
@@ -88,7 +90,7 @@ export default function ChangeTheWorld() {
         >
           {stats.map((s) => (
             <div key={s.label} className="border-l-2 border-bwt-gold/40 pl-6">
-              <div className="font-serif text-5xl text-bwt-gold lg:text-6xl">{s.num}</div>
+              <div className="font-serif text-5xl text-bwt-gold lg:text-6xl"><CountUp value={s.num} /></div>
               <p className="mt-2 font-sans text-sm uppercase tracking-wider text-bwt-ivory/65">
                 {s.label}
               </p>

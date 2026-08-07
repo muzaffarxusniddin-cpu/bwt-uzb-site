@@ -7,6 +7,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { BRAND } from "@/lib/config";
 import { Menu, X, Phone } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import Magnetic from "./anim/Magnetic";
 
 const NAV = [
   { href: "/", key: "home" },
@@ -87,12 +88,14 @@ export default function Header() {
               <Phone className="h-4 w-4" />
               {BRAND.phone}
             </a>
-            <Link
-              href="/request"
-              className="hidden rounded-btn bg-bwt-gold px-5 py-2.5 font-sans text-sm font-semibold uppercase tracking-wider text-bwt-navy-dark transition-colors hover:bg-bwt-gold-light sm:inline-flex"
-            >
-              {t("request")}
-            </Link>
+            <Magnetic className="hidden sm:inline-block">
+              <Link
+                href="/request"
+                className="inline-flex rounded-btn bg-bwt-gold px-5 py-2.5 font-sans text-sm font-semibold uppercase tracking-wider text-bwt-navy-dark transition-colors hover:bg-bwt-gold-light"
+              >
+                {t("request")}
+              </Link>
+            </Magnetic>
             <button
               onClick={() => setOpen(true)}
               className="rounded-btn p-2 text-bwt-ivory hover:bg-white/10 lg:hidden"

@@ -7,6 +7,8 @@ import { ArrowRight } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { imageBlurs } from "@/lib/image-blurs";
+import RevealText from "./anim/RevealText";
+import Magnetic from "./anim/Magnetic";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -86,7 +88,7 @@ export default function Hero() {
               variants={fadeUp}
               className="font-serif text-[3.5rem] font-normal leading-[1.04] text-bwt-ivory sm:text-7xl lg:text-[5.5rem]"
             >
-              {t("title")}
+              <RevealText text={t("title")} delay={0.2} stagger={0.07} />
             </motion.h1>
 
             {locale === "uz" && (
@@ -109,13 +111,15 @@ export default function Hero() {
               variants={fadeUp}
               className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center"
             >
-              <Link
-                href="/request"
-                className="group inline-flex items-center gap-2.5 rounded-btn bg-bwt-gold px-7 py-4 font-sans text-sm font-semibold uppercase tracking-wider text-bwt-navy-dark transition-colors hover:bg-bwt-gold-light"
-              >
-                {tb("selectSystem")}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              <Magnetic>
+                <Link
+                  href="/request"
+                  className="group inline-flex items-center gap-2.5 rounded-btn bg-bwt-gold px-7 py-4 font-sans text-sm font-semibold uppercase tracking-wider text-bwt-navy-dark transition-colors hover:bg-bwt-gold-light"
+                >
+                  {tb("selectSystem")}
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Magnetic>
               <a
                 href="#lead"
                 className="group inline-flex items-center gap-2 font-sans text-sm font-medium uppercase tracking-wider text-bwt-gold transition-colors hover:text-bwt-gold-light"

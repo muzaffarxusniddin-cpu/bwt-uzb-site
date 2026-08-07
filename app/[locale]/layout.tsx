@@ -9,6 +9,7 @@ import { routing } from "@/i18n/routing";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import SmoothScroll from "@/app/components/SmoothScroll";
+import Preloader from "@/app/components/Preloader";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -69,6 +70,7 @@ export default async function LocaleLayout({
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
+          <Preloader />
           <SmoothScroll />
           <Header />
           <main className="flex-1">{children}</main>

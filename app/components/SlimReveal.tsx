@@ -5,6 +5,8 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { useTranslations } from "next-intl";
+import CountUp from "./anim/CountUp";
+import RevealText from "./anim/RevealText";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const VIEWPORT = { once: true, margin: "-80px" } as const;
@@ -55,7 +57,7 @@ export default function SlimReveal() {
           viewport={VIEWPORT}
           className="border-l-4 border-bwt-gold pl-5 max-w-[720px] font-serif text-4xl font-normal leading-[1.1] text-bwt-charcoal sm:text-5xl lg:text-6xl"
         >
-          {t("title")}
+          <RevealText text={t("title")} />
         </motion.h2>
 
         <div className="mt-12 grid grid-cols-1 items-center gap-10 lg:mt-20 lg:grid-cols-12 lg:gap-16">
@@ -98,7 +100,7 @@ export default function SlimReveal() {
                   />
                 )}
                 <div className="flex items-baseline gap-3">
-                  <span className="font-serif text-5xl text-bwt-gold lg:text-6xl">{f.stat}</span>
+                  <span className="font-serif text-5xl text-bwt-gold lg:text-6xl"><CountUp value={f.stat} /></span>
                   <span className="font-sans text-sm uppercase tracking-wider text-bwt-graphite">
                     {f.unit}
                   </span>

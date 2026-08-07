@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
+import RevealText from "./anim/RevealText";
 import { imageBlurs } from "@/lib/image-blurs";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -46,7 +47,7 @@ export default function ServiceGuarantees() {
           viewport={VIEWPORT}
           className="border-l-4 border-bwt-gold pl-5 max-w-[720px] font-serif text-4xl font-normal leading-[1.1] text-bwt-ivory sm:text-5xl lg:text-6xl"
         >
-          {t("title")}
+          <RevealText text={t("title")} />
         </motion.h2>
 
         <motion.div
