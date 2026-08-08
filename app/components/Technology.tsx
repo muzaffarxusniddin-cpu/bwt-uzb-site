@@ -6,6 +6,7 @@ import { Droplet } from "lucide-react";
 import { useTranslations } from "next-intl";
 import RevealText from "./anim/RevealText";
 import Certifications from "@/app/components/Certifications";
+import SlimSceneMount from "@/app/components/three/SlimSceneMount";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const VIEWPORT = { once: true, margin: "-80px" } as const;
@@ -152,12 +153,21 @@ export default function Technology() {
 
         <div className="mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-16">
           <div className="hidden lg:block">
-            <div className="sticky top-24 flex h-[calc(100vh-6rem)] items-center justify-center">
-              <FilterViz
+            <div className="sticky top-24 h-[calc(100vh-6rem)]">
+              {/* 3D exploded view of BWT Slim; the flat schematic stays as the
+                  fallback for reduced-motion, touch devices and no-WebGL. */}
+              <SlimSceneMount
                 active={active}
-                stages={stages}
-                waterIn={t("waterIn")}
-                waterOut={t("waterOut")}
+                fallback={
+                  <div className="flex h-full items-center justify-center">
+                    <FilterViz
+                      active={active}
+                      stages={stages}
+                      waterIn={t("waterIn")}
+                      waterOut={t("waterOut")}
+                    />
+                  </div>
+                }
               />
             </div>
           </div>
@@ -184,7 +194,8 @@ export default function Technology() {
                     {s.badge}
                   </span>
                 )}
-                <div className="mt-10 text-bwt-gold/90">{STAGE_ICONS[i]}</div>
+                {/* Line icons carry the visual on mobile; on desktop the 3D scene does. */}
+                <div className="mt-10 text-bwt-gold/90 lg:hidden">{STAGE_ICONS[i]}</div>
               </motion.div>
             ))}
           </div>
