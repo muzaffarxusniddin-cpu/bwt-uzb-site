@@ -43,6 +43,9 @@ export default function SlimSceneMount({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { margin: "200px" });
+  /* Fires once, well before the section is on screen: the cue to fetch every
+     stage clip so switching stages never shows an empty panel. */
+  const near = useInView(ref, { margin: "800px", once: true });
   const reduced = useReducedMotion();
   const [ok, setOk] = useState<boolean | null>(null);
   const [variant, setVariant] = useState<Variant>("schema");
@@ -66,7 +69,7 @@ export default function SlimSceneMount({
         ) : variant === "3d" ? (
           <SlimScene active={active} paused={!inView} />
         ) : (
-          <FiltrationColumn active={active} {...schema} />
+          <FiltrationColumn active={active} near={near} {...schema} />
         )
       ) : ok === false ? (
         fallback

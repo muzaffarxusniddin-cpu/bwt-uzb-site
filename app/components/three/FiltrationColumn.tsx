@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { STAGE_ANIMATIONS, STAGE_VIDEO_OVERLAYS } from "./StageAnimations";
 
@@ -35,20 +35,33 @@ export default function FiltrationColumn({
   stages,
   waterIn,
   waterOut,
+  near = true,
 }: {
   active: number;
   stages: Stage[];
   waterIn: string;
   waterOut: string;
+  /** The section is close to the viewport — start fetching every clip. */
+  near?: boolean;
 }) {
   const reduced = useReducedMotion();
   const [videoFailed, setVideoFailed] = useState<Set<number>>(new Set());
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const i = Math.min(active, STAGE_ANIMATIONS.length - 1);
   const Illustration = STAGE_ANIMATIONS[i];
   const src = STAGE_VIDEOS[i];
   const useVideo = !reduced && !!src && !videoFailed.has(i);
   const Overlay = STAGE_VIDEO_OVERLAYS[i];
   const progress = (active + 1) / stages.length;
+
+  /* Only the visible clip runs; the others hold their first frame ready. */
+  useEffect(() => {
+    videoRefs.current.forEach((v, idx) => {
+      if (!v) return;
+      if (idx === i && useVideo) void v.play().catch(() => {});
+      else v.pause();
+    });
+  }, [i, useVideo, near]);
 
   return (
     <div className="flex h-full w-full items-center justify-center gap-8 lg:gap-10">
@@ -112,46 +125,74 @@ export default function FiltrationColumn({
       <div className="relative hidden aspect-square w-[380px] shrink-0 xl:block">
         <div className="pointer-events-none absolute inset-6 rounded-full bg-bwt-gold/10 blur-3xl" />
         <div className="absolute inset-0 rounded-[2rem] border border-white/10 bg-white/[0.03]" />
+
+        {/* Vector scene — only for stages without footage (04, reduced motion,
+            a clip that failed). Never under a clip: the owner must not see the
+            old drawing flash before the approved video takes over. */}
         <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={reduced ? false : { opacity: 0, scale: 0.96, y: 10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={reduced ? undefined : { opacity: 0, scale: 0.97, y: -8 }}
-            transition={{ duration: reduced ? 0 : 0.45, ease: EASE }}
-            className={useVideo ? "absolute inset-0 overflow-hidden rounded-[2rem]" : "absolute inset-4"}
-          >
-            {useVideo ? (
-              <>
-                {/* vector scene stays underneath as an instant poster */}
-                <div className="absolute inset-4">
-                  <Illustration />
-                </div>
+          {!useVideo && (
+            <motion.div
+              key={active}
+              initial={reduced ? false : { opacity: 0, scale: 0.96, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={reduced ? undefined : { opacity: 0, scale: 0.97, y: -8 }}
+              transition={{ duration: reduced ? 0 : 0.45, ease: EASE }}
+              className="absolute inset-4"
+            >
+              <Illustration />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* All clips live in one stack: they are fetched together once the
+            section approaches the viewport, so switching stages is instant.
+            Only the active one plays — the rest stay paused. */}
+        {near && (
+          <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[2rem]">
+            {STAGE_VIDEOS.map((v, idx) =>
+              v && !videoFailed.has(idx) ? (
                 <video
-                  src={src ?? undefined}
-                  autoPlay
+                  key={v}
+                  ref={(el) => {
+                    videoRefs.current[idx] = el;
+                  }}
+                  src={v}
                   muted
                   loop
                   playsInline
-                  preload="metadata"
-                  onError={() => setVideoFailed((s) => new Set(s).add(i))}
-                  className="absolute inset-0 h-full w-full object-cover"
+                  preload="auto"
+                  onError={() => setVideoFailed((s) => new Set(s).add(idx))}
+                  className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500"
+                  style={{ opacity: useVideo && idx === i ? 1 : 0 }}
                 />
-                {/* didactic vector layer over the footage */}
-                {Overlay && (
-                  <div className="pointer-events-none absolute inset-0">
-                    <Overlay />
-                  </div>
-                )}
-                {/* blend the clip into the navy panel */}
-                <div className="pointer-events-none absolute inset-0 rounded-[2rem] shadow-[inset_0_0_60px_rgba(0,18,51,0.85)]" />
-                <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-t from-bwt-navy/45 via-transparent to-bwt-navy/30" />
-              </>
-            ) : (
-              <Illustration />
+              ) : null,
             )}
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        )}
+
+        {/* didactic vector layer over the footage */}
+        {useVideo && Overlay && (
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`ov-${active}`}
+              initial={reduced ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={reduced ? undefined : { opacity: 0 }}
+              transition={{ duration: reduced ? 0 : 0.35, ease: EASE }}
+              className="pointer-events-none absolute inset-0"
+            >
+              <Overlay />
+            </motion.div>
+          </AnimatePresence>
+        )}
+
+        {/* blend the clip into the navy panel */}
+        {useVideo && (
+          <>
+            <div className="pointer-events-none absolute inset-0 rounded-[2rem] shadow-[inset_0_0_60px_rgba(0,18,51,0.85)]" />
+            <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-t from-bwt-navy/45 via-transparent to-bwt-navy/30" />
+          </>
+        )}
       </div>
     </div>
   );
