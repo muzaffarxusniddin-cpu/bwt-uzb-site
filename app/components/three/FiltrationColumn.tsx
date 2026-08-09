@@ -54,13 +54,19 @@ export default function FiltrationColumn({
   const Overlay = STAGE_VIDEO_OVERLAYS[i];
   const progress = (active + 1) / stages.length;
 
-  /* Only the visible clip runs; the others hold their first frame ready. */
+  /* Only the visible clip runs; the others hold their first frame ready.
+     autoPlay starts them, this keeps exactly one running — and retries on the
+     next frame, since a ref may still be attaching when the effect fires. */
   useEffect(() => {
-    videoRefs.current.forEach((v, idx) => {
-      if (!v) return;
-      if (idx === i && useVideo) void v.play().catch(() => {});
-      else v.pause();
-    });
+    const sync = () =>
+      videoRefs.current.forEach((v, idx) => {
+        if (!v) return;
+        if (idx === i && useVideo) void v.play().catch(() => {});
+        else if (!v.paused) v.pause();
+      });
+    sync();
+    const t = window.setTimeout(sync, 120);
+    return () => window.clearTimeout(t);
   }, [i, useVideo, near]);
 
   return (
@@ -157,6 +163,7 @@ export default function FiltrationColumn({
                     videoRefs.current[idx] = el;
                   }}
                   src={v}
+                  autoPlay
                   muted
                   loop
                   playsInline
