@@ -154,10 +154,12 @@ export default function Technology() {
         <div className="mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-16">
           <div className="hidden lg:block">
             <div className="sticky top-24 h-[calc(100vh-6rem)]">
-              {/* 3D exploded view of BWT Slim; the flat schematic stays as the
-                  fallback for reduced-motion, touch devices and no-WebGL. */}
+              {/* Animated filtration schematic; ?viz=3d and ?viz=photo swap in
+                  the WebGL scene / product photo. FilterViz is the static
+                  fallback for reduced motion. */}
               <SlimSceneMount
                 active={active}
+                schema={{ stages, waterIn: t("waterIn"), waterOut: t("waterOut") }}
                 fallback={
                   <div className="flex h-full items-center justify-center">
                     <FilterViz

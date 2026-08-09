@@ -1,0 +1,173 @@
+"use client";
+
+import { useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { STAGE_ANIMATIONS, STAGE_VIDEO_OVERLAYS } from "./StageAnimations";
+
+/* Photoreal macro loops generated for each stage (public/videos/stages/).
+   When a clip is missing or fails — or the user prefers reduced motion —
+   the vector illustration takes over seamlessly. */
+const STAGE_VIDEOS: (string | null)[] = [
+  "/videos/stages/stage-1-mesh.mp4",
+  "/videos/stages/stage-2-carbon.mp4",
+  "/videos/stages/stage-3-resin.mp4",
+  // 04 — the fibre footage was replaced by the vector scene: the owner wanted
+  // the mechanical stage's exact composition with pathogens instead of grit.
+  null,
+  "/videos/stages/stage-5-magnesium.mp4",
+  "/videos/stages/stage-6-glass.mp4",
+];
+
+/* ─────────────────────────────────────────────────────────────────────────
+   The filtration column — an upgraded version of the original schematic.
+
+   Left: water enters dirty at the top, passes six stages, leaves clean.
+   Right: a large animated illustration of what the current stage actually
+   does. Vector art throughout, so it stays crisp and weighs almost nothing.
+   ───────────────────────────────────────────────────────────────────────── */
+
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+type Stage = { n: string; short: string };
+
+export default function FiltrationColumn({
+  active,
+  stages,
+  waterIn,
+  waterOut,
+}: {
+  active: number;
+  stages: Stage[];
+  waterIn: string;
+  waterOut: string;
+}) {
+  const reduced = useReducedMotion();
+  const [videoFailed, setVideoFailed] = useState<Set<number>>(new Set());
+  const i = Math.min(active, STAGE_ANIMATIONS.length - 1);
+  const Illustration = STAGE_ANIMATIONS[i];
+  const src = STAGE_VIDEOS[i];
+  const useVideo = !reduced && !!src && !videoFailed.has(i);
+  const Overlay = STAGE_VIDEO_OVERLAYS[i];
+  const progress = (active + 1) / stages.length;
+
+  return (
+    <div className="flex h-full w-full items-center justify-center gap-8 lg:gap-10">
+      {/* ── stage rail ─────────────────────────────────────────────── */}
+      <div className="w-[205px] shrink-0">
+        <div className="flex flex-col items-center gap-1.5 text-bwt-ivory/45">
+          <DropIcon dirty />
+          <span className="font-sans text-[0.58rem] uppercase tracking-[0.25em]">{waterIn}</span>
+        </div>
+
+        <div className="relative my-3 overflow-hidden rounded-[1.5rem] border border-white/12">
+          {/* water level filling as the reader descends the stages */}
+          <motion.div
+            className="pointer-events-none absolute inset-x-0 top-0 bg-gradient-to-b from-bwt-gold/16 to-bwt-gold/4"
+            initial={false}
+            animate={{ height: `${progress * 100}%` }}
+            transition={{ duration: reduced ? 0 : 0.7, ease: EASE }}
+          />
+          {stages.map((s, i) => {
+            const on = active === i;
+            const done = i < active;
+            return (
+              <div
+                key={s.n}
+                className={`relative flex h-[62px] items-center gap-3.5 px-4 transition-colors duration-500 ${
+                  i > 0 ? "border-t border-white/10" : ""
+                } ${on ? "bg-bwt-gold/12" : ""}`}
+              >
+                <motion.span
+                  className="absolute left-0 top-0 h-full w-[3px] origin-top bg-bwt-gold"
+                  initial={false}
+                  animate={{ scaleY: on ? 1 : 0 }}
+                  transition={{ duration: reduced ? 0 : 0.45, ease: EASE }}
+                />
+                <span
+                  className={`font-sans text-lg font-bold tabular-nums transition-colors duration-500 ${
+                    on ? "text-bwt-gold" : done ? "text-bwt-ivory/55" : "text-bwt-ivory/25"
+                  }`}
+                >
+                  {s.n}
+                </span>
+                <span
+                  className={`font-sans text-[0.72rem] uppercase leading-tight tracking-wider transition-colors duration-500 ${
+                    on ? "text-bwt-ivory" : done ? "text-bwt-ivory/50" : "text-bwt-ivory/25"
+                  }`}
+                >
+                  {s.short}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="flex flex-col items-center gap-1.5 text-bwt-gold">
+          <DropIcon />
+          <span className="font-sans text-[0.58rem] uppercase tracking-[0.25em]">{waterOut}</span>
+        </div>
+      </div>
+
+      {/* ── stage illustration ─────────────────────────────────────── */}
+      <div className="relative hidden aspect-square w-[380px] shrink-0 xl:block">
+        <div className="pointer-events-none absolute inset-6 rounded-full bg-bwt-gold/10 blur-3xl" />
+        <div className="absolute inset-0 rounded-[2rem] border border-white/10 bg-white/[0.03]" />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active}
+            initial={reduced ? false : { opacity: 0, scale: 0.96, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={reduced ? undefined : { opacity: 0, scale: 0.97, y: -8 }}
+            transition={{ duration: reduced ? 0 : 0.45, ease: EASE }}
+            className={useVideo ? "absolute inset-0 overflow-hidden rounded-[2rem]" : "absolute inset-4"}
+          >
+            {useVideo ? (
+              <>
+                {/* vector scene stays underneath as an instant poster */}
+                <div className="absolute inset-4">
+                  <Illustration />
+                </div>
+                <video
+                  src={src ?? undefined}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  onError={() => setVideoFailed((s) => new Set(s).add(i))}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                {/* didactic vector layer over the footage */}
+                {Overlay && (
+                  <div className="pointer-events-none absolute inset-0">
+                    <Overlay />
+                  </div>
+                )}
+                {/* blend the clip into the navy panel */}
+                <div className="pointer-events-none absolute inset-0 rounded-[2rem] shadow-[inset_0_0_60px_rgba(0,18,51,0.85)]" />
+                <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-t from-bwt-navy/45 via-transparent to-bwt-navy/30" />
+              </>
+            ) : (
+              <Illustration />
+            )}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
+function DropIcon({ dirty = false }: { dirty?: boolean }) {
+  return (
+    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" strokeWidth={1.5} stroke="currentColor">
+      <path d="M12 3s-6 7.2-6 12a6 6 0 0 0 12 0c0-4.8-6-12-6-12z" strokeLinejoin="round" />
+      {dirty && (
+        <>
+          <circle cx="10.5" cy="14" r="1.1" fill="currentColor" stroke="none" />
+          <circle cx="13.6" cy="16.6" r="0.9" fill="currentColor" stroke="none" />
+          <circle cx="13" cy="12" r="0.7" fill="currentColor" stroke="none" />
+        </>
+      )}
+    </svg>
+  );
+}
