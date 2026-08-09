@@ -9,6 +9,7 @@ import { Link } from "@/i18n/navigation";
 import { imageBlurs } from "@/lib/image-blurs";
 import RevealText from "./anim/RevealText";
 import Magnetic from "./anim/Magnetic";
+import CountUp from "./anim/CountUp";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -24,11 +25,24 @@ const fadeUp: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
 };
 
+/* Deterministic bubble field — same on server and client. */
+const BUBBLES = [
+  { left: 8, size: 10, dur: 21, delay: 0, dx: 26 },
+  { left: 19, size: 5, dur: 16, delay: 3.5, dx: -18 },
+  { left: 31, size: 14, dur: 26, delay: 7, dx: 34 },
+  { left: 44, size: 7, dur: 19, delay: 1.5, dx: -24 },
+  { left: 57, size: 11, dur: 23, delay: 9, dx: 20 },
+  { left: 68, size: 6, dur: 17, delay: 5, dx: -30 },
+  { left: 79, size: 16, dur: 29, delay: 2.5, dx: 16 },
+  { left: 90, size: 8, dur: 20, delay: 11, dx: -14 },
+];
+
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const t = useTranslations("hero");
   const tb = useTranslations("buttons");
   const locale = useLocale();
+  const facts = t.raw("facts") as { value: string; label: string }[];
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -44,7 +58,7 @@ export default function Hero() {
       ref={ref}
       className="relative isolate min-h-svh w-full overflow-hidden bg-bwt-navy"
     >
-      {/* Layer 1 — animated background (scroll parallax only) */}
+      {/* Layer 1 — animated background (scroll parallax + slow push-in) */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-20">
         <div
           className="absolute inset-0"
@@ -53,21 +67,60 @@ export default function Hero() {
               "radial-gradient(120% 80% at 70% 15%, #0e2e5c 0%, #001d46 45%, #001233 100%)",
           }}
         />
-        <Image
-          src="/images/hero/bwt-water-spring-hero.webp"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          placeholder="blur"
-          blurDataURL={imageBlurs.heroSpring}
-          className="object-cover object-center"
+        <div className="hero-kenburns absolute inset-0">
+          <Image
+            src="/images/hero/bwt-water-spring-hero.webp"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL={imageBlurs.heroSpring}
+            className="object-cover object-center"
+          />
+        </div>
+
+        {/* caustics — light moving over water */}
+        <div
+          className="hero-caustics absolute -inset-[10%]"
+          style={{
+            background:
+              "radial-gradient(38% 28% at 30% 35%, rgba(207,227,251,0.55) 0%, transparent 60%), radial-gradient(30% 22% at 72% 55%, rgba(240,135,182,0.35) 0%, transparent 62%)",
+          }}
         />
+        <div
+          className="hero-caustics-b absolute -inset-[10%]"
+          style={{
+            background:
+              "radial-gradient(34% 26% at 62% 22%, rgba(255,255,255,0.45) 0%, transparent 58%), radial-gradient(26% 20% at 22% 72%, rgba(159,203,247,0.4) 0%, transparent 60%)",
+          }}
+        />
+
         <div className="hero-float absolute -top-1/4 right-[-10%] h-[60vh] w-[60vh] rounded-full bg-bwt-aqua/10 blur-[120px]" />
         <div className="hero-float-slow absolute bottom-[-15%] left-[-5%] h-[50vh] w-[50vh] rounded-full bg-bwt-gold/10 blur-[120px]" />
       </motion.div>
 
-      {/* Layer 2a — left block keeps the serif headline legible while the spring photo shows on the right */}
+      {/* Layer 1b — bubbles rising through the frame */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        {BUBBLES.map((b, i) => (
+          <span
+            key={i}
+            className="hero-bubble absolute bottom-[-8vh] rounded-full border border-white/25 bg-white/10 backdrop-blur-[1px]"
+            style={
+              {
+                left: `${b.left}%`,
+                height: b.size,
+                width: b.size,
+                "--dur": `${b.dur}s`,
+                "--delay": `${b.delay}s`,
+                "--dx": `${b.dx}px`,
+              } as React.CSSProperties
+            }
+          />
+        ))}
+      </div>
+
+      {/* Layer 2a — left block keeps the headline legible over the photo */}
       <div className="absolute inset-0 bg-gradient-to-r from-bwt-navy from-0% via-bwt-navy/88 via-42% to-bwt-navy/25 to-100%" />
 
       {/* Layer 2b — bottom darkening under the SCROLL cue */}
@@ -77,12 +130,17 @@ export default function Hero() {
       <div className="relative z-10 mx-auto flex min-h-svh max-w-[1440px] flex-col justify-center px-6 lg:px-16">
         <motion.div style={{ y: contentY, opacity: contentOpacity }} className="max-w-3xl">
           <motion.div variants={container} initial="hidden" animate="show">
-            <motion.p
-              variants={fadeUp}
-              className="mb-6 font-sans text-xs font-medium uppercase tracking-[0.25em] text-bwt-gold"
-            >
-              {t("eyebrow")}
-            </motion.p>
+            <motion.div variants={fadeUp} className="mb-6 flex items-center gap-3.5">
+              <motion.span
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: EASE }}
+                className="block h-[3px] w-10 origin-left bg-bwt-gold"
+              />
+              <p className="font-sans text-xs font-medium uppercase tracking-[0.25em] text-bwt-gold">
+                {t("eyebrow")}
+              </p>
+            </motion.div>
 
             <motion.h1
               variants={fadeUp}
@@ -107,26 +165,36 @@ export default function Hero() {
               {t("body")}
             </motion.p>
 
+            <motion.div variants={fadeUp} className="mt-10">
+              <Magnetic>
+                <span className="relative inline-flex">
+                  <span className="hero-cta-pulse pointer-events-none absolute -inset-2 rounded-btn bg-bwt-gold/40 blur-lg" />
+                  <Link
+                    href="/request"
+                    className="group relative inline-flex items-center gap-2.5 rounded-btn bg-bwt-gold px-8 py-[1.15rem] font-sans text-sm font-semibold uppercase tracking-wider text-bwt-navy-dark transition-colors hover:bg-bwt-gold-light"
+                  >
+                    {tb("submitRequest")}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </span>
+              </Magnetic>
+            </motion.div>
+
+            {/* Trust strip — three facts, numbers count up on load */}
             <motion.div
               variants={fadeUp}
-              className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center"
+              className="mt-12 flex flex-wrap items-start gap-x-10 gap-y-6 border-t border-white/12 pt-7"
             >
-              <Magnetic>
-                <Link
-                  href="/request"
-                  className="group inline-flex items-center gap-2.5 rounded-btn bg-bwt-gold px-7 py-4 font-sans text-sm font-semibold uppercase tracking-wider text-bwt-navy-dark transition-colors hover:bg-bwt-gold-light"
-                >
-                  {tb("selectSystem")}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Magnetic>
-              <a
-                href="#lead"
-                className="group inline-flex items-center gap-2 font-sans text-sm font-medium uppercase tracking-wider text-bwt-gold transition-colors hover:text-bwt-gold-light"
-              >
-                {tb("freeAnalysis")}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              {facts.map((f) => (
+                <div key={f.label} className="min-w-[92px]">
+                  <div className="font-sans text-3xl font-bold leading-none text-bwt-ivory">
+                    <CountUp value={f.value} />
+                  </div>
+                  <div className="mt-2 max-w-[150px] font-sans text-[0.7rem] uppercase leading-snug tracking-[0.14em] text-bwt-ivory/55">
+                    {f.label}
+                  </div>
+                </div>
+              ))}
             </motion.div>
           </motion.div>
         </motion.div>

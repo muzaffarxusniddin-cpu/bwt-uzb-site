@@ -153,10 +153,94 @@ html.lenis body {
   animation: hero-scroll-cue 2.6s ease-in-out infinite;
 }
 
+/* Slow push-in on the background photo — the frame is never quite still. */
+@keyframes hero-kenburns {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.12) translate3d(-1.5%, -1%, 0);
+  }
+}
+.hero-kenburns {
+  animation: hero-kenburns 28s ease-in-out infinite alternate;
+  transform-origin: 65% 40%;
+  will-change: transform;
+}
+
+/* Caustics: two soft light sheets drifting across the water. */
+@keyframes hero-caustics {
+  0% {
+    transform: translate3d(-6%, 0, 0) scale(1.1);
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(6%, 3%, 0) scale(1.25);
+    opacity: 0.35;
+  }
+}
+.hero-caustics {
+  animation: hero-caustics 18s ease-in-out infinite alternate;
+  mix-blend-mode: soft-light;
+  will-change: transform, opacity;
+}
+.hero-caustics-b {
+  animation: hero-caustics 24s ease-in-out infinite alternate-reverse;
+  mix-blend-mode: soft-light;
+  will-change: transform, opacity;
+}
+
+/* Bubbles drifting up through the frame. */
+@keyframes hero-bubble {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.8);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.55;
+  }
+  80% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate3d(var(--dx, 12px), -105vh, 0) scale(1.15);
+    opacity: 0;
+  }
+}
+.hero-bubble {
+  animation: hero-bubble var(--dur, 18s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  will-change: transform, opacity;
+}
+
+/* Breathing halo behind the primary call to action. */
+@keyframes hero-cta-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.14);
+    opacity: 0.12;
+  }
+}
+.hero-cta-pulse {
+  animation: hero-cta-pulse 3.4s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-float,
   .hero-float-slow,
-  .hero-scroll-cue {
+  .hero-scroll-cue,
+  .hero-kenburns,
+  .hero-caustics,
+  .hero-caustics-b,
+  .hero-bubble,
+  .hero-cta-pulse {
     animation: none;
   }
 }
