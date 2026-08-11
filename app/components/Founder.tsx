@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
+import RevealText from "./anim/RevealText";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const VIEWPORT = { once: true, margin: "-80px" } as const;
@@ -27,13 +28,21 @@ export default function Founder() {
             viewport={VIEWPORT}
             className="relative aspect-[4/5] overflow-hidden rounded-card shadow-card"
           >
-            <Image
-              src="/images/founder/founder.jpg"
-              alt={t("founder.imageAlt")}
-              fill
-              sizes="(max-width: 1024px) 100vw, 420px"
-              className="object-cover"
-            />
+            <motion.div
+              initial={{ scale: 1.07 }}
+              whileInView={{ scale: 1 }}
+              viewport={VIEWPORT}
+              transition={{ duration: 1.1, ease: EASE }}
+              className="absolute inset-0"
+            >
+              <Image
+                src="/images/founder/founder.jpg"
+                alt={t("founder.imageAlt")}
+                fill
+                sizes="(max-width: 1024px) 100vw, 420px"
+                className="object-cover"
+              />
+            </motion.div>
           </motion.div>
 
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={VIEWPORT}>
@@ -41,7 +50,7 @@ export default function Founder() {
               {t("founder.eyebrow")}
             </p>
             <h2 className="mt-4 border-l-4 border-bwt-gold pl-5 font-serif text-3xl text-bwt-charcoal lg:text-4xl">
-              {t("founder.name")}
+              <RevealText text={t("founder.name")} />
             </h2>
             <p className="mt-2 font-sans text-sm uppercase tracking-wider text-bwt-graphite">
               {t("founder.role")}

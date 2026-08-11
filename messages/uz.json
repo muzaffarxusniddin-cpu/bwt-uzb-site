@@ -818,6 +818,13 @@
           "role": "BWT Uzbekistan jamoasi",
           "caption": "«Suv sifati qanday o'zgarganini eng avvalo o'zimiz tekshirib ko'rdik».",
           "short": true
+        },
+        {
+          "id": "79GNn_cQQSE",
+          "name": "Temur Ahmedov",
+          "role": "Shaharsoz",
+          "caption": "BWT suv filtrlari va sifatli suvning shahar hamda uy uchun ahamiyati haqida.",
+          "short": false
         }
       ]
     },

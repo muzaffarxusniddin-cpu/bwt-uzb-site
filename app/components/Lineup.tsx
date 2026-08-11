@@ -16,6 +16,16 @@ const fadeUp: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
 };
 
+const tiersContainer: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
+
+const tierCard: Variants = {
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+};
+
 const TIERS_META = [
   { id: "slim2", name: "BWT Slim 2", popular: false },
   { id: "slim3", name: "BWT Slim 3", popular: false },
@@ -91,17 +101,20 @@ export default function Lineup() {
 
         {/* Tier cards */}
         <motion.div
-          variants={fadeUp}
+          variants={tiersContainer}
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
           className="mt-12 grid grid-cols-1 gap-6 lg:mt-16 lg:grid-cols-3"
         >
           {TIERS_META.map((tier, i) => (
-            <div
+            <motion.div
               key={tier.id}
+              variants={tierCard}
               className={`relative flex flex-col rounded-card border border-b-[3px] border-b-bwt-gold bg-bwt-ivory p-8 transition-shadow hover:shadow-card ${
-                tier.popular ? "border-bwt-gold shadow-card lg:-translate-y-3" : "border-bwt-silver/60"
+                /* margin, not translate: framer-motion owns this element's
+                   transform while the card animates in */
+                tier.popular ? "border-bwt-gold shadow-card lg:-mt-3 lg:mb-3" : "border-bwt-silver/60"
               }`}
             >
               {tier.popular && (
@@ -143,7 +156,7 @@ export default function Lineup() {
               >
                 {t("learnPrice")}
               </Link>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
 

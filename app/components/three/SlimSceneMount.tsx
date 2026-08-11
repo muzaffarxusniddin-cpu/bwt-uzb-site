@@ -49,6 +49,10 @@ export default function SlimSceneMount({
   const reduced = useReducedMotion();
   const [ok, setOk] = useState<boolean | null>(null);
   const [variant, setVariant] = useState<Variant>("schema");
+  /* The six stage clips weigh ~5 MB together. Worth it on a desktop where the
+     panel is visible and stage switching must feel instant — never worth it
+     for a reader who has asked their browser to save data. */
+  const [allowPrefetch, setAllowPrefetch] = useState(true);
 
   useEffect(() => {
     // Skip 3D on reduced-motion, coarse pointers (phones/tablets) and no-WebGL.
@@ -59,6 +63,14 @@ export default function SlimSceneMount({
     setVariant(v);
     // Only the WebGL scene needs gating; SVG and photo run anywhere.
     setOk(v === "3d" ? !coarse && !small && webglAvailable() : true);
+
+    const conn = (
+      navigator as Navigator & { connection?: { saveData?: boolean } }
+    ).connection;
+    const saveData =
+      conn?.saveData === true ||
+      window.matchMedia("(prefers-reduced-data: reduce)").matches;
+    setAllowPrefetch(!saveData && !small);
   }, [reduced]);
 
   return (
@@ -69,7 +81,7 @@ export default function SlimSceneMount({
         ) : variant === "3d" ? (
           <SlimScene active={active} paused={!inView} />
         ) : (
-          <FiltrationColumn active={active} near={near} {...schema} />
+          <FiltrationColumn active={active} near={near && allowPrefetch} {...schema} />
         )
       ) : ok === false ? (
         fallback

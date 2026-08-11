@@ -105,7 +105,7 @@ export default function Hero() {
         {BUBBLES.map((b, i) => (
           <span
             key={i}
-            className="hero-bubble absolute bottom-[-8vh] rounded-full border border-white/25 bg-white/10 backdrop-blur-[1px]"
+            className="hero-bubble absolute bottom-[-8vh] rounded-full border border-white/25 bg-white/10"
             style={
               {
                 left: `${b.left}%`,

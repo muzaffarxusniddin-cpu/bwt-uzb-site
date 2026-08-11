@@ -67,7 +67,6 @@ export default function HiddenThreat() {
               src="/images/pain_points/limescale-kettle-interior.jpg"
               alt="Накипь и отложения внутри чайника от жёсткой воды"
               fill
-              priority
               sizes="(max-width: 1024px) 100vw, 50vw"
               placeholder="blur"
               blurDataURL={imageBlurs.limescale}

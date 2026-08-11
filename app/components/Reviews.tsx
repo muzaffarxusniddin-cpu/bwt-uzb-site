@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Play, X, ArrowRight } from "lucide-react";
+import RevealText from "./anim/RevealText";
 
 type Review = { id: string; name: string; role: string; caption: string; short: boolean };
 
@@ -54,15 +55,17 @@ export default function Reviews() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="text-center"
+          className="max-w-[760px]"
         >
-          <p className="font-sans text-xs uppercase tracking-[0.25em] text-bwt-gold">
+          <p className="font-sans text-xs font-medium uppercase tracking-[0.25em] text-bwt-gold">
             {t("reviews.eyebrow")}
           </p>
-          <h2 className="mx-auto mt-4 max-w-[640px] font-serif text-3xl font-normal leading-[1.15] text-bwt-charcoal lg:text-4xl">
-            {t("reviews.titleA")}{" "}
-            <span className="italic text-bwt-gold-dark">{t("reviews.titleAccent")}</span>{" "}
-            {t("reviews.titleB")}
+          <h2 className="mt-4 border-l-4 border-bwt-gold pl-5 font-serif text-3xl font-normal leading-[1.15] text-bwt-charcoal lg:text-4xl">
+            <RevealText text={t("reviews.titleA")} />{" "}
+            <span className="italic text-bwt-gold-dark">
+              <RevealText text={t("reviews.titleAccent")} delay={0.12} />
+            </span>{" "}
+            <RevealText text={t("reviews.titleB")} delay={0.2} />
           </h2>
         </motion.div>
 
@@ -71,12 +74,14 @@ export default function Reviews() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4"
         >
           {reviews.map((r) => (
             <motion.article
               key={r.id}
               variants={fadeUp}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.3, ease: EASE }}
               className="group flex flex-col overflow-hidden rounded-card border border-bwt-silver/50 bg-white transition-shadow hover:shadow-card"
             >
               <button
@@ -89,7 +94,7 @@ export default function Reviews() {
                   src={YT_THUMB(r.id)}
                   alt={r.caption}
                   fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   unoptimized
                 />

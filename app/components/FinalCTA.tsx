@@ -5,6 +5,9 @@ import { motion, type Variants } from "framer-motion";
 import { CheckCircle2, Loader2, Phone, Send, MessageCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { BRAND, ERP_API } from "@/lib/config";
+import RevealText from "./anim/RevealText";
+import Magnetic from "./anim/Magnetic";
+import Certifications from "@/app/components/Certifications";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const VIEWPORT = { once: true, margin: "-80px" } as const;
@@ -68,6 +71,14 @@ export default function FinalCTA() {
       </div>
 
       <div className="relative mx-auto max-w-[720px] px-6 lg:px-16">
+        {/* Pink rule — the КП signature, centred here because the block is centred */}
+        <motion.span
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={VIEWPORT}
+          transition={{ duration: 0.7, ease: EASE }}
+          className="mx-auto mb-8 block h-[3px] w-14 bg-bwt-gold"
+        />
         <motion.h2
           variants={fadeUp}
           initial="hidden"
@@ -75,7 +86,7 @@ export default function FinalCTA() {
           viewport={VIEWPORT}
           className="text-center font-serif text-4xl font-normal leading-[1.1] text-bwt-ivory sm:text-5xl"
         >
-          {t("title")}
+          <RevealText text={t("title")} />
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -142,17 +153,21 @@ export default function FinalCTA() {
 
             {error && <p className="font-sans text-sm text-bwt-danger">{error}</p>}
 
-            <button
-              type="submit"
-              disabled={sending}
-              className="flex h-14 w-full items-center justify-center gap-2.5 rounded-btn bg-bwt-gold font-sans text-sm font-semibold uppercase tracking-wider text-bwt-navy-dark transition-colors hover:bg-bwt-gold-light disabled:opacity-60"
-            >
-              {sending ? (
-                <><Loader2 className="h-5 w-5 animate-spin" /> …</>
-              ) : (
-                t("submit")
-              )}
-            </button>
+            {/* w-full on the wrapper keeps the inline-block magnetic shell the
+                full width of the form, so the button below still fills it. */}
+            <Magnetic className="w-full" strength={0.14}>
+              <button
+                type="submit"
+                disabled={sending}
+                className="flex h-14 w-full items-center justify-center gap-2.5 rounded-btn bg-bwt-gold font-sans text-sm font-semibold uppercase tracking-wider text-bwt-navy-dark transition-colors hover:bg-bwt-gold-light disabled:opacity-60"
+              >
+                {sending ? (
+                  <><Loader2 className="h-5 w-5 animate-spin" /> …</>
+                ) : (
+                  t("submit")
+                )}
+              </button>
+            </Magnetic>
             <p className="text-center font-sans text-xs text-bwt-ivory/50">{t("reassurance")}</p>
           </motion.form>
         )}
@@ -168,6 +183,17 @@ export default function FinalCTA() {
             <MessageCircle className="h-4 w-4 text-bwt-gold" /> WhatsApp
           </a>
         </div>
+
+        {/* Last thing before the footer: the certificates that back the promise */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={VIEWPORT}
+          className="mt-12 border-t border-white/10 pt-10"
+        >
+          <Certifications compact />
+        </motion.div>
       </div>
     </section>
   );

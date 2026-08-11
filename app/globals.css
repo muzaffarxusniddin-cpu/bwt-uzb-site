@@ -244,3 +244,39 @@ html.lenis body {
     animation: none;
   }
 }
+
+/* ── Phone budget ──────────────────────────────────────────────────────────
+   The hero stacks five ambient layers. Three of them are the expensive kind:
+   soft-light blending and 120px blurs repaint off the compositor every frame,
+   which is what makes mid-range Androids drop the first scroll. Transform-only
+   motion (ken burns, bubbles, the scroll cue) is compositor work and stays.
+   ───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .hero-caustics,
+  .hero-caustics-b,
+  .hero-float,
+  .hero-float-slow {
+    display: none;
+  }
+  /* Four bubbles read the same as eight at phone width. */
+  .hero-bubble:nth-child(2n) {
+    display: none;
+  }
+  .hero-kenburns {
+    animation-duration: 36s;
+  }
+}
+
+/* Devices that ask for less data get the still frame — no drifting layers. */
+@media (prefers-reduced-data: reduce) {
+  .hero-caustics,
+  .hero-caustics-b,
+  .hero-bubble,
+  .hero-float,
+  .hero-float-slow {
+    display: none;
+  }
+  .hero-kenburns {
+    animation: none;
+  }
+}

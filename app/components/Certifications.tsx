@@ -1,4 +1,20 @@
+"use client";
+
 import Image from "next/image";
+import { motion, type Variants } from "framer-motion";
+
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const VIEWPORT = { once: true, margin: "-60px" } as const;
+
+const row: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.06 } },
+};
+
+const badge: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: EASE } },
+};
 
 /** International certification logo badges (white cards — work on light & dark backgrounds). */
 const CERTS = [
@@ -19,13 +35,18 @@ export default function Certifications({
   compact?: boolean;
 }) {
   return (
-    <div
+    <motion.div
+      variants={row}
+      initial="hidden"
+      whileInView="show"
+      viewport={VIEWPORT}
       className={`flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 ${className}`}
     >
       {CERTS.map((c) => (
-        <span
+        <motion.span
           key={c.alt}
-          className={`flex items-center justify-center rounded-md bg-white shadow-sm ring-1 ring-black/5 ${
+          variants={badge}
+          className={`flex items-center justify-center rounded-md bg-white shadow-sm ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-md ${
             compact ? "h-8 px-2.5" : "h-12 px-4"
           }`}
         >
@@ -36,8 +57,8 @@ export default function Certifications({
             height={56}
             className={`w-auto object-contain ${compact ? "h-4" : "h-6 sm:h-7"}`}
           />
-        </span>
+        </motion.span>
       ))}
-    </div>
+    </motion.div>
   );
 }

@@ -88,7 +88,7 @@ export default function PainPoints() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="mt-12 grid grid-cols-2 gap-4 lg:mt-20 lg:grid-cols-3 lg:gap-6"
+          className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3 lg:gap-6"
         >
           {cards.map((c, i) => {
             const Icon = ICONS[i];
@@ -107,7 +107,7 @@ export default function PainPoints() {
                       src={img.src}
                       alt={img.alt}
                       fill
-                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       placeholder="blur"
                       blurDataURL={imageBlurs[img.key]}
                       className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
