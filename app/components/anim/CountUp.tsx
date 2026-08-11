@@ -37,15 +37,20 @@ export default function CountUp({
     return s;
   };
 
-  const [text, setText] = useState(() => (isNaN(target) ? value : fmt(0) + suffix));
+  /* Start at the real figure: if the animation never runs — throttled tab,
+     no JS, slow device — the reader still sees the number, never a zero. */
+  const [text, setText] = useState(() => (isNaN(target) ? value : fmt(target) + suffix));
+  const started = useRef(false);
 
   useEffect(() => {
-    if (isNaN(target)) return;
-    if (!inView) return;
-    if (reduced) {
+    if (isNaN(target) || started.current || !inView) return;
+    started.current = true;
+    const throttled = typeof document !== "undefined" && document.visibilityState !== "visible";
+    if (reduced || throttled) {
       setText(fmt(target) + suffix);
       return;
     }
+    setText(fmt(0) + suffix);
     const ctrl = animate(0, target, {
       duration,
       ease: EASE,
