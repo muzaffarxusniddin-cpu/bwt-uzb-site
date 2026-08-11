@@ -127,7 +127,10 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-bwt-navy/60 via-transparent to-transparent" />
 
       {/* Layer 3 — content */}
-      <div className="relative z-10 mx-auto flex min-h-svh max-w-[1440px] flex-col justify-center px-6 lg:px-16">
+      {/* pt clears the fixed 64px header, pb keeps the scroll cue off the facts —
+          on a phone the block is taller than one screen, so it must not be centred
+          into the chrome. */}
+      <div className="relative z-10 mx-auto flex min-h-svh max-w-[1440px] flex-col justify-center px-6 pb-24 pt-24 sm:pb-28 lg:px-16 lg:pb-0 lg:pt-0">
         <motion.div style={{ y: contentY, opacity: contentOpacity }} className="max-w-3xl">
           <motion.div variants={container} initial="hidden" animate="show">
             <motion.div variants={fadeUp} className="mb-6 flex items-center gap-3.5">
@@ -144,7 +147,7 @@ export default function Hero() {
 
             <motion.h1
               variants={fadeUp}
-              className="font-serif text-[3.5rem] font-normal leading-[1.04] text-bwt-ivory sm:text-7xl lg:text-[5.5rem]"
+              className="font-serif text-[2.7rem] font-normal leading-[1.06] text-bwt-ivory min-[400px]:text-[3.1rem] sm:text-6xl sm:leading-[1.04] md:text-7xl lg:text-[5.5rem]"
             >
               <RevealText text={t("title")} delay={0.2} stagger={0.07} />
             </motion.h1>
@@ -165,7 +168,7 @@ export default function Hero() {
               {t("body")}
             </motion.p>
 
-            <motion.div variants={fadeUp} className="mt-10">
+            <motion.div variants={fadeUp} className="mt-8 sm:mt-10">
               <Magnetic>
                 <span className="relative inline-flex">
                   <span className="hero-cta-pulse pointer-events-none absolute -inset-2 rounded-btn bg-bwt-gold/40 blur-lg" />
@@ -180,17 +183,19 @@ export default function Hero() {
               </Magnetic>
             </motion.div>
 
-            {/* Trust strip — three facts, numbers count up on load */}
+            {/* Trust strip — three facts, numbers count up on load.
+                A three-column grid on phones: the old flex-wrap let long labels
+                spill out of their 92px track and collide with the next fact. */}
             <motion.div
               variants={fadeUp}
-              className="mt-12 flex flex-wrap items-start gap-x-10 gap-y-6 border-t border-white/12 pt-7"
+              className="mt-9 grid grid-cols-3 gap-x-4 gap-y-6 border-t border-white/12 pt-6 sm:flex sm:flex-wrap sm:items-start sm:gap-x-10 lg:mt-12 lg:pt-7"
             >
               {facts.map((f) => (
-                <div key={f.label} className="min-w-[92px]">
-                  <div className="font-sans text-3xl font-bold leading-none text-bwt-ivory">
+                <div key={f.label} className="sm:min-w-[92px]">
+                  <div className="font-sans text-2xl font-bold leading-none text-bwt-ivory sm:text-3xl">
                     <CountUp value={f.value} />
                   </div>
-                  <div className="mt-2 max-w-[150px] font-sans text-[0.7rem] uppercase leading-snug tracking-[0.14em] text-bwt-ivory/55">
+                  <div className="mt-2 font-sans text-[0.6rem] uppercase leading-snug tracking-[0.1em] text-bwt-ivory/55 sm:max-w-[150px] sm:text-[0.7rem] sm:tracking-[0.14em]">
                     {f.label}
                   </div>
                 </div>
@@ -205,7 +210,9 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        /* Hidden on phones: the hero already overflows there and the cue landed
+           on top of the facts strip. */
+        className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 sm:block"
       >
         <div className="flex flex-col items-center gap-3 text-bwt-ivory/50">
           <span className="font-sans text-[0.65rem] uppercase tracking-[0.3em]">

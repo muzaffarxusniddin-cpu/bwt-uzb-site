@@ -1,12 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { motion, type Variants } from "framer-motion";
 import { Droplet } from "lucide-react";
 import { useTranslations } from "next-intl";
 import RevealText from "./anim/RevealText";
 import Certifications from "@/app/components/Certifications";
 import SlimSceneMount from "@/app/components/three/SlimSceneMount";
+
+/* Phones never mount the filtration column, so the stage art is pulled in
+   separately — and only the stage the reader has actually reached animates. */
+const StageArt = dynamic(() => import("@/app/components/three/StageArt"), {
+  ssr: false,
+});
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const VIEWPORT = { once: true, margin: "-80px" } as const;
@@ -196,8 +203,21 @@ export default function Technology() {
                     {s.badge}
                   </span>
                 )}
-                {/* Line icons carry the visual on mobile; on desktop the 3D scene does. */}
-                <div className="mt-10 text-bwt-gold/90 lg:hidden">{STAGE_ICONS[i]}</div>
+                {/* Mobile gets the same animated scene as the desktop panel —
+                    but only for the stage in view, so one SVG animates at a time.
+                    Stages further down hold their line icon until you reach them. */}
+                <div className="relative mt-9 aspect-square w-full max-w-[340px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] lg:hidden">
+                  <div className="pointer-events-none absolute inset-8 rounded-full bg-bwt-gold/10 blur-2xl" />
+                  {active === i ? (
+                    <div className="absolute inset-3">
+                      <StageArt index={i} />
+                    </div>
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-bwt-gold/50">
+                      {STAGE_ICONS[i]}
+                    </div>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
