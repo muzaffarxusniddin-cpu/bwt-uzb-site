@@ -21,7 +21,13 @@ const container: Variants = {
   show: { transition: { staggerChildren: 0.06 } },
 };
 
-const YT_THUMB = (id: string) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+/* hqdefault is 480×360 — a 4:3 canvas with the 16:9 frame letterboxed inside.
+   Dropped into a 16:9 card with object-cover it gets scaled up until the black
+   bars are gone, and that overscan is what cuts people's foreheads off.
+   maxresdefault is the true 16:9 frame: it fills the card with nothing cropped.
+   It only exists for HD uploads, so the <Image> below falls back on error. */
+const YT_THUMB = (id: string) => `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
+const YT_THUMB_FALLBACK = (id: string) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 const YT_EMBED = (id: string) =>
   `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
 
@@ -90,13 +96,33 @@ export default function Reviews() {
                 className="relative aspect-video w-full overflow-hidden"
                 aria-label={`${t("reviews.watch")} — ${r.name}`}
               >
+                {/* Blurred copy fills the card, the sharp frame sits on top
+                    uncropped — so a portrait or 4:3 clip keeps the whole head
+                    in shot instead of being overscanned to fit 16:9. */}
+                <Image
+                  src={YT_THUMB(r.id)}
+                  alt=""
+                  aria-hidden
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="scale-110 object-cover blur-xl saturate-125"
+                  unoptimized
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    if (!img.src.endsWith("hqdefault.jpg")) img.src = YT_THUMB_FALLBACK(r.id);
+                  }}
+                />
                 <Image
                   src={YT_THUMB(r.id)}
                   alt={r.caption}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-contain transition-transform duration-500 group-hover:scale-105"
                   unoptimized
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    if (!img.src.endsWith("hqdefault.jpg")) img.src = YT_THUMB_FALLBACK(r.id);
+                  }}
                 />
                 <span className="absolute inset-0 bg-bwt-navy/10 transition-colors group-hover:bg-bwt-navy/0" />
                 <span className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-bwt-gold text-bwt-navy-dark shadow-lg transition-transform duration-300 group-hover:scale-110">
