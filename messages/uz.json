@@ -325,7 +325,7 @@
     "countSuffix": "butun mamlakat bo'ylab premium obyekt",
     "listTitle": "BWT o'rnatilgan premium TJlar",
     "homes": "+ butun O'zbekiston bo'ylab 100 xususiy uy",
-    "titleA": "11 ta premium uy-joy majmuasi allaqachon tanladi",
+    "titleA": "16 ta premium uy-joy majmuasi allaqachon tanladi",
     "titleAccent": "BWT",
     "lead": "+ O'zbekiston bo'ylab 100 dan ortiq xususiy uylar va ofislar. Har bir obyekt — laboratoriya tahlilidan keyin individual tizim tanlash.",
     "stats": [
@@ -396,6 +396,26 @@
       {
         "name": "NRG Oybek",
         "cat": "Biznes · Toshkent"
+      },
+      {
+        "name": "Amirsay",
+        "cat": "Premium · Chimyon"
+      },
+      {
+        "name": "Boulevard",
+        "cat": "Premium · Toshkent"
+      },
+      {
+        "name": "First Village Residences",
+        "cat": "Premium · Toshkent"
+      },
+      {
+        "name": "Gardens Residence",
+        "cat": "Premium · Toshkent"
+      },
+      {
+        "name": "Infinity Residence",
+        "cat": "Premium · Toshkent"
       }
     ],
     "moreName": "100+ xususiy uylar",

@@ -1,8 +1,27 @@
 "use client";
 
+import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 import CountUp from "./anim/CountUp";
+
+/* Photos of the buildings, keyed by the object name in messages/*.json.
+   Three objects have no shot yet — those tiles fall back to a navy panel
+   with the same geometry, so the grid never breaks rhythm. */
+const PHOTOS: Record<string, string> = {
+  NestOne: "/images/residences/nestone.webp",
+  "NRG Hayot": "/images/residences/nrg-hayot.webp",
+  "Mirabad Avenue": "/images/residences/mirabad-avenue.webp",
+  "Modera Towers": "/images/residences/modera-towers.webp",
+  "NRG Park": "/images/residences/nrg-park.webp",
+  KISLOROD: "/images/residences/kislorod.webp",
+  "Golden House": "/images/residences/golden-house.webp",
+  "NRG Oybek": "/images/residences/nrg-oybek.webp",
+  Boulevard: "/images/residences/boulevard.webp",
+  "First Village Residences": "/images/residences/first-village.webp",
+  "Gardens Residence": "/images/residences/gardens-residence.webp",
+  "Infinity Residence": "/images/residences/infinity-residence.webp",
+};
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const VIEWPORT = { once: true, margin: "-80px" } as const;
@@ -114,35 +133,63 @@ export default function PremiumResidences() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6"
+          className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4"
         >
-          {objects.map((o, i) => (
-            <motion.article
-              key={o.name}
-              variants={tileItem}
-              className="group rounded-card border border-bwt-silver/60 bg-white p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-bwt-gold/50 hover:shadow-[0_8px_24px_rgba(0,29,70,0.08)]"
-            >
-              <div className="font-mono text-xs tracking-widest text-bwt-gold">
-                {String(i + 1).padStart(2, "0")}
-              </div>
-              <div className="mt-3 font-sans text-base font-semibold leading-tight text-bwt-charcoal">
-                {o.name}
-              </div>
-              <div className="mt-1 font-sans text-xs text-bwt-graphite/80">{o.cat}</div>
-            </motion.article>
-          ))}
+          {objects.map((o, i) => {
+            const photo = PHOTOS[o.name];
+            return (
+              <motion.article
+                key={o.name}
+                variants={tileItem}
+                className="group relative aspect-[4/3] overflow-hidden rounded-card bg-bwt-navy transition-transform duration-300 hover:-translate-y-1"
+              >
+                {photo ? (
+                  <Image
+                    src={photo}
+                    alt={`${o.name} — жилой комплекс с установленными системами BWT`}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                ) : (
+                  /* No shot yet — a navy panel keeps the tile the same size */
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "radial-gradient(120% 90% at 70% 10%, #0e2e5c 0%, #001d46 60%, #001233 100%)",
+                    }}
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-bwt-navy-dark via-bwt-navy-dark/45 to-transparent" />
+                <div className="absolute left-4 top-3 font-mono text-xs tracking-widest text-bwt-gold">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-4">
+                  <div className="font-sans text-base font-semibold leading-tight text-white">
+                    {o.name}
+                  </div>
+                  <div className="mt-1 font-sans text-xs text-white/65">{o.cat}</div>
+                </div>
+              </motion.article>
+            );
+          })}
 
-          {/* Featured dark tile — private homes */}
-          <motion.article
-            variants={tileItem}
-            className="rounded-card bg-bwt-navy p-4 text-white"
-          >
-            <div className="font-mono text-xs tracking-widest text-bwt-gold">+</div>
-            <div className="mt-3 font-sans text-base font-semibold leading-tight">
-              {t("moreName")}
-            </div>
-            <div className="mt-1 font-sans text-xs text-white/60">{t("moreCat")}</div>
-          </motion.article>
+        </motion.div>
+
+        {/* Private homes — a full-width band, so the tile grid stays a clean 4×4 */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={VIEWPORT}
+          className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 rounded-card border border-bwt-gold/30 bg-bwt-navy px-5 py-5 text-white"
+        >
+          <span className="font-mono text-xs tracking-widest text-bwt-gold">+</span>
+          <span className="font-sans text-base font-semibold leading-tight">
+            {t("moreName")}
+          </span>
+          <span className="font-sans text-xs text-white/60">{t("moreCat")}</span>
         </motion.div>
       </div>
     </section>
